@@ -25,7 +25,7 @@ document.getElementById('process-btn').addEventListener('click', async () => {
     btn.disabled = true;
     btn.style.opacity = 0.5;
     loadingText.style.display = 'block';
-    loadingText.innerText = "⏳ Đang đọc file và gửi lên Google (Model: Gemini 1.5 Flash)...";
+    loadingText.innerText = "Hệ thống đang xử lí, trong lúc đó thì bạn làm quả lọ đi nhé !!! -.-";
 
     try {
         const file = fileInput.files[0];
