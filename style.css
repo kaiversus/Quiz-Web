@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 /* 1. Cấu hình chung & Hình nền */
 :root {
     --text-color: #ffffff;
@@ -12,6 +13,10 @@
     --success-color: #2ecc71; 
     --error-color: #e74c3c;
 }
+/* Áp dụng font cho toàn bộ web, bao gồm cả nút bấm và ô nhập liệu */
+body, button, input, textarea, select {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
 
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -20,7 +25,23 @@ body {
     color: var(--text-color);
     overflow: hidden;
     /* HÌNH NỀN: Bạn có thể thay link ảnh khác ở đây */
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background-image: url('pic.gif');
+
+    /* Giúp ảnh bao phủ toàn màn hình */
+    background-size: cover; 
+
+    /* Căn giữa ảnh */
+    background-position: center;
+
+    /* Không lặp lại ảnh nếu ảnh quá nhỏ */
+    background-repeat: no-repeat;
+
+    /* Giữ cố định ảnh nền khi cuộn chuột (tạo hiệu ứng đẹp) */
+    background-attachment: fixed;
+    
+    /* Màu nền dự phòng nếu ảnh lỗi */
+    background-color: #1a1a1a;
+    /* background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); */
     background-size: cover;
 }
 
@@ -30,31 +51,63 @@ body {
     background: rgba(0, 0, 0, 0.6); /* Nền tối để nổi bật modal */
     display: flex; justify-content: center; align-items: center;
     z-index: 1000;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(1px);
 }
 
 .modal-content {
-    background: rgba(20, 20, 30, 0.85); /* Kính tối màu */
-    backdrop-filter: var(--blur-strength);
-    border: var(--glass-border);
-    box-shadow: var(--glass-shadow);
-    padding: 40px;
-    border-radius: 20px;
-    text-align: center;
+    /* 1. Màu nền tối đen, có độ trong suốt 90% để tệp với nền sau */
+    background-color: rgba(20, 35, 30, 0.9); 
+    
+    /* Hoặc nếu thích hiệu ứng mờ kính (Glassmorphism) thì thêm dòng này: */
+    backdrop-filter: blur(5px);
+
+    /* 2. Màu chữ trắng để nổi bật trên nền tối */
+    color: #ffffff;
+
+    /* 3. Bo góc tròn trịa hơn cho hiện đại */
+    border-radius: 16px;
+
+    /* 4. Thêm viền mỏng sáng nhẹ để khung không bị chìm hẳn vào nền tối */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    /* 5. Đổ bóng đậm giúp khung nổi lên trên */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+
+    /* Các thuộc tính canh chỉnh vị trí (giữ nguyên hoặc chỉnh tùy ý) */
+    margin: 10% auto;
+    padding: 30px;
+    width: 90%;
     max-width: 500px;
-    color: white;
+    text-align: center;
 }
 
 .hidden { display: none !important; }
 
-#start-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white; border: none;
-    padding: 12px 40px; font-size: 18px; font-weight: bold;
-    cursor: pointer; border-radius: 50px;
+/* Áp dụng cho cả nút Bắt đầu và nút Xử lý file */
+#start-btn, #process-btn {
+    /* Đổi từ màu tím sang gradient Xanh Neon chủ đạo */
+    background: linear-gradient(135deg, #00d2ff 0%, #0078ff 100%);
+    
+    color: #fff;
+    border: none;
+    padding: 12px 40px;
+    font-size: 16px;
+    font-weight: 800; /* Chữ đậm hơn */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 50px;
     margin-top: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    transition: transform 0.2s;
+    
+    /* Hiệu ứng phát sáng màu xanh */
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+    transition: all 0.3s ease;
+    width: 100%; /* Full chiều rộng cho đẹp */
+}
+
+#start-btn:hover, #process-btn:hover {
+    transform: translateY(-2px); /* Nhấc nhẹ nút lên */
+    box-shadow: 0 0 30px rgba(0, 210, 255, 0.7); /* Sáng mạnh hơn khi di chuột */
 }
 #start-btn:hover { transform: scale(1.05); }
 
@@ -78,13 +131,13 @@ body {
 }
 
 /* Tiêu đề & Chữ */
-h3 { color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px; }
-.question-text { 
-    font-size: 1.5em; 
-    font-weight: 600; 
-    margin-bottom: 30px; 
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    line-height: 1.4;
+h3, label {
+    color: #149bb9 !important; /* Màu xanh chủ đạo */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
 }
 
 /* Nút Đáp Án (Hiệu ứng kính) */
@@ -104,7 +157,7 @@ h3 { color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px;
 }
 
 .option-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(20, 35, 30, 0.9);
     transform: translateX(10px); /* Di chuyển nhẹ sang phải */
     border-color: var(--accent-color);
 }
@@ -140,13 +193,19 @@ h3 { color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px;
 .sidebar {
     flex: 1;
     max-width: 350px;
-    background: rgba(20, 20, 30, 0.6); /* Đậm hơn một chút */
-    backdrop-filter: blur(20px); /* Mờ mạnh hơn */
-    border-left: var(--glass-border);
+    
+    /* Dùng màu nền tối giống hệt Modal (rgba 20, 35, 30) */
+    background: rgba(20, 24, 30, 0.95); 
+    
+    backdrop-filter: blur(10px);
+    
+    /* Viền trái màu xanh nhẹ để ngăn cách với nội dung */
+    border-left: 1px solid rgba(0, 210, 255, 0.15);
+    
     padding: 20px;
     display: flex;
     flex-direction: column;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
 }
 
 .grid-list {
@@ -159,35 +218,70 @@ h3 { color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px;
 }
 
 /* Các ô tròn số câu */
+/* Ô số bình thường (chưa làm) */
 .q-circle {
-    width: 45px; height: 45px;
+    width: 40px; height: 40px;
     display: flex; justify-content: center; align-items: center;
-    background: rgba(255,255,255,0.1);
-    border-radius: 50%;
+    
+    /* Nền rất tối */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    border-radius: 10px; /* Bo góc vuông nhẹ (squircle) nhìn hiện đại hơn tròn hẳn */
     cursor: pointer;
     font-weight: bold;
     font-size: 0.9em;
+    color: #888;
     transition: 0.2s;
-    border: 1px solid transparent;
 }
-.q-circle:hover { background: rgba(255,255,255,0.3); }
+
+.q-circle:hover {
+    border-color: #00d2ff;
+    color: #fff;
+}
+
+/* Ô đang chọn (Active) - QUAN TRỌNG */
 .q-circle.active { 
-    border: 2px solid var(--accent-color); 
-    background: rgba(0, 210, 255, 0.2);
-    box-shadow: 0 0 10px var(--accent-color);
+    border: 1px solid #00d2ff; 
+    background: rgba(0, 210, 255, 0.2); /* Nền xanh trong suốt */
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
 }
-.q-circle.done-correct { background: #28a745; color: white; box-shadow: 0 0 5px #28a745; }
-.q-circle.done-wrong { background: #dc3545; color: white; box-shadow: 0 0 5px #dc3545; }
+
+/* Ô đã làm đúng/sai (giữ nguyên màu xanh lá/đỏ nhưng làm dịu lại cho hợp nền tối) */
+.q-circle.done-correct { background: rgba(46, 204, 113, 0.2); border-color: #2ecc71; color: #2ecc71; }
+.q-circle.done-wrong { background: rgba(231, 76, 60, 0.2); border-color: #e74c3c; color: #e74c3c; }
 
 /* Nút Điều hướng */
 .navigation-buttons button {
-    padding: 12px 25px; cursor: pointer;
-    background: rgba(255,255,255,0.1);
-    color: white; border: var(--glass-border);
+    padding: 12px 25px;
+    cursor: pointer;
+    
+    /* Nền tối thẫm */
+    background: rgba(20, 24, 30, 0.85);
+    
+    color: rgba(255, 255, 255, 0.8);
+    
+    /* Viền mỏng */
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    transition: 0.2s;
+    transition: all 0.3s ease;
+    font-weight: 600;
 }
-.navigation-buttons button:hover { background: rgba(255,255,255,0.2); }
+
+.navigation-buttons {
+    display: flex;
+    /* Đẩy 2 nút ra 2 đầu trái phải */
+    justify-content: space-between; 
+    
+    /* Giảm khoảng cách với hộp bên trên xuống còn 10px (bạn có thể chỉnh số này) */
+    margin-top: 5px;
+    
+    /* Bỏ border và padding cũ đi cho nút sát lên trên hơn */
+    border-top: none;
+    padding-top: 0;
+}
+.navigation-buttons button:hover { background:rgba(20, 24, 30, 0.85);; }
 
 /* Tùy chỉnh thanh cuộn (Webkit) */
 ::-webkit-scrollbar { width: 8px; }
@@ -299,4 +393,28 @@ h3 { color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px;
     border-color: var(--accent-color); /* Hover đổi màu viền xanh */
     background: rgba(0, 210, 255, 0.1);
     color: white;
+}
+/* Tạo một cái hộp tối màu bao quanh riêng câu hỏi */
+/* 1. Sửa lại khung chứa câu hỏi cho thoáng hơn */
+#question-content {
+    background: rgba(20, 24, 30, 0.85);
+    
+    /* Tăng padding lên: Trên/Dưới 40px, Trái/Phải 40px */
+    padding: 40px; 
+    border-radius: 16px;
+    margin-bottom: 25px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    
+    /* Thêm dòng này để chắc chắn chữ được căn giữa theo chiều dọc nếu nội dung ngắn */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px !important;
+}
+
+/* Tìm nút đáp án đầu tiên và đẩy nó cách xa dòng câu hỏi phía trên ra */
+.option-btn:first-of-type {
+    margin-top: 20px !important; /* Bạn chỉnh số 60px này lớn/nhỏ tùy ý */
 }
