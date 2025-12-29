@@ -1,11 +1,16 @@
 /* 1. Cấu hình chung & Hình nền */
 :root {
     --text-color: #ffffff;
-    --glass-bg: rgba(255, 255, 255, 0.1); /* Màu kính trong suốt */
+    --glass-bg: rgba(255, 255, 255, 0.1); 
+    /* THÊM DÒNG NÀY: Nền kính tối hơn cho modal kết quả */
+    --glass-bg-dark: rgba(20, 20, 35, 0.9); 
     --glass-border: 1px solid rgba(255, 255, 255, 0.2);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    --blur-strength: blur(12px); /* Độ mờ của kính */
-    --accent-color: #00d2ff; /* Màu điểm nhấn (xanh neon) */
+    --blur-strength: blur(12px);
+    --accent-color: #00d2ff; 
+    /* THÊM 2 DÒNG NÀY: Màu đúng/sai cho bảng kết quả */
+    --success-color: #2ecc71; 
+    --error-color: #e74c3c;
 }
 
 body {
@@ -276,4 +281,22 @@ h3 { color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px;
     background: rgba(255, 255, 255, 0.1) !important;
     border-color: white !important;
     box-shadow: none !important;
+}
+/* --- THÊM ĐOẠN NÀY ĐỂ Ô CHỌN FILE ĐẸP HƠN --- */
+#file-upload {
+    width: 100%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05); /* Nền mờ nhẹ */
+    border: 2px dashed rgba(255, 255, 255, 0.3); /* Viền nét đứt */
+    border-radius: 10px;
+    color: #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Đảm bảo padding không làm vỡ khung */
+}
+
+#file-upload:hover {
+    border-color: var(--accent-color); /* Hover đổi màu viền xanh */
+    background: rgba(0, 210, 255, 0.1);
+    color: white;
 }

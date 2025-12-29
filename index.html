@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hệ thống Ôn tập Mạng máy tính</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
 </head>
 <body>
 
@@ -19,7 +23,7 @@
             <button id="start-btn">BẮT ĐẦU LÀM BÀI</button>
         </div> -->
         
-        <div class="modal-content">
+        <!-- <div class="modal-content">
             <h2 style="color: var(--accent-color); margin-top: 0;">Nạp dữ liệu ôn tập</h2>
             
             <p>Chọn file câu hỏi (.json) từ máy tính của bạn để bắt đầu.</p>
@@ -30,6 +34,19 @@
             </div>
 
             <button id="start-btn" class="nav-btn primary-action">BẮT ĐẦU NGAY</button>
+        </div> -->
+        <div class="modal-content">
+                <h2>Ôn tập Trắc nghiệm AI 🤖</h2>
+                <p>Tải lên file tài liệu (PDF, Word, Text), AI sẽ tự tạo đề thi cho bạn.</p>
+
+                <div style="margin-bottom: 20px; text-align: left;">
+                    <label style="font-weight:bold; display:block; margin-bottom:5px;"> Chọn file tài liệu</label>
+                    <input type="file" id="file-upload" accept=".txt,.json,.pdf,.docx" 
+                        style="width: 100%; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; color: white;">
+                </div>
+
+                <button id="process-btn">🚀 TẠO ĐỀ THI & BẮT ĐẦU</button>
+                <p id="loading-text" style="display:none; color: #00d2ff; margin-top:10px;">Đang đọc file và nhờ AI soạn câu hỏi... (Vui lòng chờ)</p>
         </div>
     </div>
     
