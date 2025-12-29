@@ -136,8 +136,8 @@ const prompt = `
             }
         ]
         - Ngôn ngữ: Tiếng Việt.
-        - Trong phần explaination, hãy tìm kiếm thông tin và tự điền vào phần giải thích, nếu câu hỏi quá phức tạp hoặc không có giải thích
-        chính xác, hãy để trống và đừng điền gì cả.
+        - Trong phần explaination, hãy tìm kiếm thông tin và tự điền vào phần giải thích, vui lòng chi tiết và chính xác,
+        trích nguồn đầy đủ, nếu câu hỏi quá phức tạp hoặc không có giải thích chính xác, hãy để trống và đừng điền gì cả.
     `;
 
     const requestBody = {
