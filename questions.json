@@ -1,0 +1,2281 @@
+[
+  {
+    "id": 1,
+    "question": "Tầng nào cung cấp các phương tiện để người sử dụng có thể truy nhập được vào môi trường OSI và cung cấp các dịch vụ thông tin phân tán",
+    "options": [
+      "Transport",
+      "Application",
+      "Session",
+      "Presentation"
+    ],
+    "answer": 1,
+    "explanation": "Đây là phàn giải thích!!!"
+  },
+  {
+    "id": 2,
+    "question": "Tầng hai trong mô hình OSI tách luồng bit từ Tăng vật lý chuyến lên thành",
+    "options": [
+      "PSU",
+      "Frame",
+      "Packet",
+      "Segment"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 3,
+    "question": "Nếu như một loại mã hóa dữ liệu nào đó được dùng cho các mục đích an toàn thì tăng nào trong OSI có chức năng mã hóa:",
+    "options": [
+      "Session",
+      "Transport",
+      "Application",
+      "Presentation"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 4,
+    "question": "Kích thước nhỏ nhất của UDP header là",
+    "options": [
+      "16bytes",
+      "32bytes",
+      "20bytes",
+      "8bytes"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 5,
+    "question": "Sự biến đổi dữ liệu thành các xung điện xảy ra tại lớp nào của OSI:",
+    "options": [
+      "Session",
+      "Physical",
+      "Transport",
+      "Application"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 6,
+    "question": "Mức nào trong OSI thực hiện đảm bảo truyền toàn bộ dữ liệu từ máy nguồn đến máy đích",
+    "options": [
+      "Session",
+      "Physical",
+      "Application",
+      "Transport"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 7,
+    "question": "Card giao diện mạng thực hiện chức năng chủ yếu tại tầng nào của mô hình OSI",
+    "options": [
+      "Transport",
+      "Session",
+      "Physical",
+      "Datalink"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 8,
+    "question": "Mức nào trong OSI tương ứng với mức IP trong TCP/IP:",
+    "options": [
+      "Session",
+      "Physical",
+      "Transport",
+      "Network"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 9,
+    "question": "FDM (frequency-division multiplexing) được dùng trong truyền tín hiệu nào?",
+    "options": [
+      "Electric",
+      "Analog",
+      "Satellite",
+      "Digital"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 10,
+    "question": "Kích thước lớn nhất của IPv4 header là",
+    "options": [
+      "20bytes",
+      "60bytes",
+      "16bytes",
+      "32bytes"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 11,
+    "question": "Kích thước của TCP header là",
+    "options": [
+      "16bytes",
+      "8bytes",
+      "20bytes",
+      "32bytes"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 12,
+    "question": "Địa chỉ MAC nào là đúng?",
+    "options": [
+      "AD-ED-5C-DF-5A-97",
+      "AQ-ED-5C-DF-5A-97",
+      "AC-ED-5C-DF-5A-97",
+      "AS-ED-5C-DF-5A-97"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 13,
+    "question": "Đơn vị nào chỉ tốc độ truyền dẫn dữ liệu?",
+    "options": [
+      "Kb",
+      "Kbps",
+      "Mb",
+      "KB"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 14,
+    "question": "Tốc độ truyền dẫn dữ liệu 1Mbps có nghĩa gì?",
+    "options": [
+      "Trong 1 giây truyền được 1000byte dữ liệu",
+      "Trong 1 giây truyền được 1 Megabyte dữ liệu",
+      "Trong 1 giây truyền được 1000byte dữ liệu",
+      "Trong 1 giây truyền được 1000bit dữ liệu"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 15,
+    "question": "Tốc độ truyền dẫn dữ liệu 2Kbps có nghĩa gì?",
+    "options": [
+      "Trong 1 giây truyền được 2*1024bit dữ liệu",
+      "Trong 1 giây truyền được 2*1000byte dữ liệu",
+      "Trong 1 giây truyền được 2*1024byte dữ liệu",
+      "Trong 1 giây truyền được 2*1000bit dữ liệu"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 16,
+    "question": "Có các dạng delay nào trong packet-switching?",
+    "options": [
+      "Processing, Delay, Transmission, Propagation",
+      "Processing, Lineing, Transmission, Propagation",
+      "Processing, Waiting, Transmission, Propagation",
+      "Processing, Queueing, Transmission, Propagation"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 17,
+    "question": "Thời gian cần để chuyển tất cả các packet lên liên kết là dạng delay nào trong packet-switching?",
+    "options": [
+      "Transmission",
+      "Propagation",
+      "Queueing",
+      "Processing"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 18,
+    "question": "Thời gian cần để truyền dữ liệu từ điểm bắt đầu của liên kết đến Router tiếp theo là dạng delay nào trong packet-switching?",
+    "options": [
+      "Transmission",
+      "Propagation",
+      "Processing",
+      "Queueing"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 19,
+    "question": "Kỹ thuật dòn kênh nào có thể được sử dụng để truyền các kênh có băng thông không bằng nhau",
+    "options": [
+      "TDM (time-division multiplexing)",
+      "TDM & FDM",
+      "None of of all",
+      "FDM (frequency-division multiplexing)"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 20,
+    "question": "Trong mạng điện thoại, kỹ thuật dồn kênh nào được dùng?",
+    "options": [
+      "None of of all",
+      "TDM & FDM",
+      "FDM (frequency-division multiplexing)",
+      "TDM (time-division multiplexing)"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 21,
+    "question": "Kỹ thuật dồn kênh nào được dùng truyền tín hiệu số",
+    "options": [
+      "TDM (time-division multiplexing)",
+      "TDM & FDM",
+      "FDM (frequency-division multiplexing)",
+      "None of of all"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 22,
+    "question": "Chi phí lắp đặt thấp hơn và dễ vận hành hơn các sơ đồ mạng khác là mạng",
+    "options": [
+      "Bus",
+      "Mesh",
+      "Start",
+      "Ring"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 23,
+    "question": "Đồ hình mạng nào mà các thiết bị kết nối mạng có một đường kết nối riêng lẻ",
+    "options": [
+      "Ring",
+      "Bus",
+      "Start",
+      "Mesh"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 24,
+    "question": "Đồ hình mạng nào có khả năng tăng tính dự phòng cho hệ thống",
+    "options": [
+      "Bus",
+      "Start",
+      "Mesh",
+      "Ring"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 25,
+    "question": "Công cụ nào dùng để kiểm tra một host đang hoạt động hay không?",
+    "options": [
+      "ping",
+      "nslookup",
+      "tracert",
+      "route"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 26,
+    "question": "Công cụ nào dùng để hiện thị các bước (hops) để gói tin từ máy tính của bạn tới máy đích?",
+    "options": [
+      "nslookup",
+      "tracert",
+      "route",
+      "ping"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 27,
+    "question": "Thiết bị mạng nào hoạt động ở layer Network trong mô hình OSI",
+    "options": [
+      "Hub",
+      "Switch",
+      "Router",
+      "Repeater"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 28,
+    "question": "Thiết bị mạng nào hoạt động ở layer 2 trong mô hình TCP/IP",
+    "options": [
+      "Router",
+      "Switch",
+      "Hub",
+      "Repeater"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 29,
+    "question": "Email và FTP hoạt động ở layer nào trong mô hình OSI?",
+    "options": [
+      "Session",
+      "Transport",
+      "Application",
+      "Physical"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 30,
+    "question": "Địa chỉ MAC có bao nhiêu bit",
+    "options": [
+      "48",
+      "32",
+      "16",
+      "64"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 31,
+    "question": "Điều gì được yêu cầu phải thực hiện trước khi TCP bắt đầu gửi các segment",
+    "options": [
+      "Chỉ số port được thống nhất trước giữa máy gửi và máy nhận",
+      "Đánh số tuần tự vào các segment",
+      "Three-way handshake",
+      "Chỉ số báo nhận của các segment"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 32,
+    "question": "Câu nào sau đây mô tả thứ tự đúng của dữ liệu được đóng gói?",
+    "options": [
+      "User datagrams, session, segments, packet, frames, bits",
+      "User datagrams, packets, segments, frames, bits",
+      "User datagrams, segments, packets, frames, bits",
+      "User datagrams, packets, segments, session, frames, bits"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 33,
+    "question": "Câu nào sau đây là mô tả đúng khi switch nhận vào gói tin ARP request",
+    "options": [
+      "Switch chỉ chuyển tiếp gói ARP request đến cổng kết nối với máy đích",
+      "Địa chỉ MAC đích trong frame là FF-FF-FF-FF-FF-FF",
+      "Địa chỉ MAC nguồn trong frame là FF-FF-FF-FF-FF-FF",
+      "Switch sẽ trực tiếp trả lời gói ARP reply"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 34,
+    "question": "Giao thức nào phân giải địa chỉ IP thành MAC?",
+    "options": [
+      "TCP",
+      "IP",
+      "ARP",
+      "RARP"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 35,
+    "question": "Giao thức nào hoạt động ở tầng Transport?",
+    "options": [
+      "IP & ICMP",
+      "UDP & IP",
+      "TCP & UDP",
+      "ICMP & ARP"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 36,
+    "question": "Giao thức nào được dùng trong công cụ ping để quản lý các thông báo kết nối mạng",
+    "options": [
+      "ICMP",
+      "TCP",
+      "UDP",
+      "IP"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 37,
+    "question": "Cờ nào được bật khi một client gửi yêu cầu kết nối TCP đến Server",
+    "options": [
+      "FIN",
+      "START",
+      "SYN",
+      "ACK"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 38,
+    "question": "Giao thức nào được dùng để thực hiện các kết nối tin cậy",
+    "options": [
+      "ICMP",
+      "TCP",
+      "IP",
+      "UDP"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 39,
+    "question": "Giao thức nào được dùng để thực hiện truyền dữ liệu lớn cần đảm bảo thời gian thực",
+    "options": [
+      "TCP",
+      "ICMP",
+      "IP",
+      "UDP"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 40,
+    "question": "Kích thước của UDP header là",
+    "options": [
+      "20bytes",
+      "16bytes",
+      "32bytes",
+      "8bytes"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 41,
+    "question": "Giao thức nào được sử dụng để tìm địa chỉ MAC cho thiết bị mạng cục bộ?",
+    "options": [
+      "IP",
+      "ARP",
+      "DNS",
+      "ICMP"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 42,
+    "question": "Cable gì? (Hình ảnh cáp đồng trục)",
+    "options": [
+      "coxial",
+      "fiber",
+      "twisted pair",
+      "thinnet"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 43,
+    "question": "Địa chỉ đích nào sẽ được Host A sử dụng để gửi dữ liệu đến máy chủ HTTPS như trong hình bên dưới?",
+    "options": [
+      "The IP address of the switch, MAC address of RouterA's Fa0/0",
+      "The IP address of the HTTPS server, MAC address of RouterA's Fa0/0",
+      "The MAC address of the remote switch, IP address of the HTTPS server",
+      "The IP address of the HTTPS server, IP address of the switch"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 44,
+    "question": "Cable gì? (Hình ảnh cáp xoắn đôi)",
+    "options": [
+      "fiber",
+      "twisted pair",
+      "thinnet",
+      "coxial"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 45,
+    "question": "Tiện ích nào sau đây xác định đường đi của gói tin từ nguồn tới đích",
+    "options": [
+      "telnet",
+      "ssh",
+      "nslookup",
+      "ping",
+      "tracert"
+    ],
+    "answer": 4
+  },
+  {
+    "id": 46,
+    "question": "Trong Token bus, vòng tròn logic được thiết lập bởi các trạm",
+    "options": [
+      "Các trạm có nhu cầu nhận dữ liệu",
+      "Tất cả các trạm trên mạng",
+      "Các trạm có nhu cầu truyền dữ liệu",
+      "Các trạm trung chuyển dữ liệu"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 47,
+    "question": "Các thiết bị này nối bằng kiểu nối cable gì? (PC to Router, Switch to Switch...)",
+    "options": [
+      "cross",
+      "rollover",
+      "straight",
+      "twisted"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 48,
+    "question": "Hai đầu nối này trong kiểu nối cable gì? (Thứ tự màu 1-8 giống nhau)",
+    "options": [
+      "straight",
+      "cross",
+      "twisted",
+      "rollover"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 49,
+    "question": "Hai đầu nối này trong kiểu nối cable gì? (Thứ tự màu đảo ngược)",
+    "options": [
+      "cross",
+      "twisted",
+      "straight",
+      "rollover"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 50,
+    "question": "Cho biết mô hình mạng Wifi khi hai máy laptop kết nối mạng trực tiếp với nhau bằng card mạng wifi?",
+    "options": [
+      "Base Station Subsystem (BSS)",
+      "Ad hoc",
+      "Extended Service Set (ESS)",
+      "Distribution Subsystem (DS)"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 51,
+    "question": "Xem hình vẽ sau, cho biết mô hình triển khai mạng Wifi? (Nhiều AP kết nối với nhau)",
+    "options": [
+      "Distribution Subsystem (DS)",
+      "Ad hoc",
+      "Extended Service Set (ESS)",
+      "Base Station Subsystem (BSS)"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 52,
+    "question": "Thiết bị mạng nào sau đây hoạt động ở layer Data Link (Chọn nhiều)",
+    "options": [
+      "hub",
+      "bridge",
+      "router",
+      "repeater",
+      "switch"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 53,
+    "question": "Card mạng hoạt động ở tầng nào trong mô hình OSI",
+    "options": [
+      "transport",
+      "physical",
+      "data link",
+      "network"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 54,
+    "question": "Chuẩn cáp mạng nào sau đây hỗ trợ tốc độ lên tới 1Gb/s sử dụng 4 cặp cáp của CAT5e?",
+    "options": [
+      "1000BASE-T",
+      "1000BASE-LX",
+      "1000BASE-X",
+      "1000BASE-SX"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 55,
+    "question": "Trường nào trong IP Header được dùng để tránh trường hợp một gói tin tồn tại mãi trên mạng?",
+    "options": [
+      "flags",
+      "checksum",
+      "header length",
+      "TTL"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 56,
+    "question": "Lý do nào sau đây mà giao thức Ethernet sử dụng địa chỉ vật lý (physical address)?",
+    "options": [
+      "Nó cho phép một máy tính xác định là ở xa hay trong mạng cục bộ",
+      "Nó tạo ra sự khác biệt giữa các cách truyền thông ở layer 2 và layer 3",
+      "Nó dùng để định danh duy nhất cho các thiết bị ở layer 2",
+      "Nó định nghĩa mô hình địa chỉ luận lý cho các thiết bị"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 57,
+    "question": "Các câu nào sau đây mô tả đúng các địa chỉ cho frame và packet mà host TestkingB nhận được từ host TestKingA?",
+    "options": [
+      "Destination MAC: 0011.43da.2c98. Source MAC: 0007.0e97.af4e",
+      "Destination MAC: 0011.43da.2c98. Source MAC: 0007.0e56.ab2e",
+      "Destination MAC: 0011.43da.2c98. Source MAC: 00b0.d0ef.5f6a",
+      "Destination MAC: 0011.43da.2c98. Source MAC: 0007.0e8f.088a"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 58,
+    "question": "Thiết bị làm việc ở tầng mạng và có thể định tuyến đường đi cho việc truyền thông trên mạng",
+    "options": [
+      "router",
+      "hub",
+      "switch",
+      "gateway"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 59,
+    "question": "Host A đang giao tiếp với Host B. Các thông tin gì của gói tin khi dữ liệu rời khỏi Router TestKing 1?",
+    "options": [
+      "Src: 000A.8A47.E612; IP: 192.168.23.4. Des: 000B.DC04.12F4; 192.168.127.7",
+      "Src: 000A.8A47.E612; 192.168.23.4. Des: 0010.7BE7.FAEF; 192.168.23.1",
+      "Src: 0010.7B3A.8191; 192.168.23.4. Des: 000B.DC04.12F4; 192.168.127.7",
+      "Src: 0010.7BE7.FAEF; 192.168.23.1. Des: 000B.DC04.12F4; 192.168.127.7"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 60,
+    "question": "Thiết bị làm việc ở tăng Vật lý và chức năng như một bộ khuyếch đại tín hiệu giữa 2 cổng của hai phân đoạn mạng",
+    "options": [
+      "repeater",
+      "router",
+      "hub",
+      "switch"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 61,
+    "question": "Các chuẩn nào sau đây không phải là chuẩn của WiFi?",
+    "options": [
+      "802.11ax",
+      "802.11g",
+      "802.11v",
+      "802.11a"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 62,
+    "question": "Những câu nào sau đây là mô tả đúng cho kiểu kết nối tin cậy trong quá trình truyền dữ liệu?",
+    "options": [
+      "Nếu hết thời gian chờ trong việc truyền gói tin thì máy gửi sẽ ngắt kết nối với máy nhận",
+      "Khi buffer đầy, dữ liệu sẽ bị loại bỏ và không được truyền lại",
+      "Là quá trình gửi dữ liệu có báo nhận",
+      "Giá trị windows-size được sử dụng để điều khiển số lượng dữ liệu truyền đi trước khi chờ báo nhận gửi về"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 63,
+    "question": "Phương pháp truy nhập nào có thể lắng nghe lưu thông mạng trên đường truyền trước khi truyền dữ liệu và có phát hiện đụng độ",
+    "options": [
+      "Token Ring",
+      "Token Bus",
+      "CSMA/CD",
+      "CSMA/CA"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 64,
+    "question": "Giao thức nào thực hiện truyền các thông báo điều khiển giữa các gateway hay trạm của liên mạng",
+    "options": [
+      "ICMP",
+      "ARP",
+      "RARP",
+      "TCP"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 65,
+    "question": "Dịch vụ HTTP ở tầng Application sử dụng cơ chế truyền nào ở tầng Transport",
+    "options": [
+      "half-duplex",
+      "best-effort",
+      "reliable",
+      "full-duplex"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 66,
+    "question": "Chuẩn Ethernet nào có sử dụng cáp quang:",
+    "options": [
+      "1000BASE-RX",
+      "1000BASE-FX",
+      "1000BASE-CX",
+      "1000BASE-TX"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 67,
+    "question": "Công nghệ LAN nào sử dụng CSMA/CD",
+    "options": [
+      "Ethernet",
+      "Token Bus",
+      "FDDI",
+      "Token Ring"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 68,
+    "question": "Công nghệ nào sử dụng vòng tròn phụ hoạt động khi hệ thống bị lỗi và có tác dụng sửa lỗi",
+    "options": [
+      "Token Bus",
+      "FDDI",
+      "Ethernet",
+      "Token Ring"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 69,
+    "question": "Dịch vụ nào cho phép chuyến các file từ trạm này sang trạm khác, bất kể yếu tố địa lý hay hệ điều hành sử dụng",
+    "options": [
+      "Telnet",
+      "SMTP",
+      "FTP",
+      "HTTP"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 70,
+    "question": "Đơn vị dữ liệu datagram được dùng trong giao thức nào trong TCP/IP",
+    "options": [
+      "TCP",
+      "ICMP",
+      "IP",
+      "UDP"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 71,
+    "question": "Giao thức cho phép gửi thư đi",
+    "options": [
+      "SNMP",
+      "FTP",
+      "SMTP",
+      "ICMP"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 72,
+    "question": "Thiết bị làm việc ở tăng Vật lý và chức năng như một bộ khuyếch đại tín hiệu giữa 2 cổng của hai phân đoạn mạng",
+    "options": [
+      "router",
+      "switch",
+      "repeater",
+      "hub"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 73,
+    "question": "Hai nhà cung cấp dịch vụ ISP kết nối với nhau qua thiết bị",
+    "options": [
+      "repeater",
+      "router",
+      "switch",
+      "hub"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 74,
+    "question": "Hai nhà cung cấp dịch vụ ISP kết nối với nhau qua thiết bị",
+    "options": [
+      "router",
+      "switch",
+      "repeater",
+      "hub"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 75,
+    "question": "Trong frame, trường nào được dùng để phát hiện lỗi",
+    "options": [
+      "Flag",
+      "MTU",
+      "PDU",
+      "FCS"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 76,
+    "question": "Giao thức nào trong TCP/IP có trao đổi thông tin điều khiển trước khi truyền dữ liệu",
+    "options": [
+      "IP",
+      "UDP",
+      "ICMP",
+      "TCP"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 77,
+    "question": "Cable gì? (Hình ảnh cáp đồng trục)",
+    "options": [
+      "fiber",
+      "coxial",
+      "twisted pair",
+      "thinnet"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 78,
+    "question": "Phần nào trong địa chỉ IP được ROUTER sử dụng khi tìm đường đi",
+    "options": [
+      "Network address",
+      "PC address",
+      "Host address",
+      "router address"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 79,
+    "question": "Địa chỉ 19.219.255.255 là địa chỉ gì",
+    "options": [
+      "Broadcast lớp A",
+      "Broadcast lớp B",
+      "Host lớp B",
+      "Broadcast lớp C"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 80,
+    "question": "Một mạng con lớp B mượn 5 bít để chia subnet thì subnetmask sẽ là",
+    "options": [
+      "255.255.255.1",
+      "255.255.255.128",
+      "255.255.248.0",
+      "255.255.255.248"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 81,
+    "question": "Một mạng lớp B cần chia thành 3 mạng con sử dụng subnet mask nào sau đây",
+    "options": [
+      "255.255.192.0",
+      "255.255.255.224",
+      "255.255.255.192",
+      "255.255.224.0"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 82,
+    "question": "Địa chỉ IPv6 nào dưới đây tương đương với địa chỉ loopback của IPv4 127.0.0.1",
+    "options": [
+      "1",
+      "2000/3",
+      "::1",
+      "0::/10"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 83,
+    "question": "Địa chỉ nào biểu diễn địa chỉ link-local của IPv6",
+    "options": [
+      "FE81:280f.512b:e14f3d69",
+      "FE80::380e:611a:e14f:3d69",
+      "FE08:280e:611:a:f14f.3d69",
+      "FEFE:0345:5f1b::e14d:3d69"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 84,
+    "question": "Một mạng con lớp B mượn 5 bít để chia subnet thì subnet mask sẽ là:",
+    "options": [
+      "255.255.255.248",
+      "255.255.248.0",
+      "255.255.255.128",
+      "255.255.255.1"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 85,
+    "question": "Mạng có subnet mask 255.255.255.192 có thể đánh địa chỉ cho bao nhiêu máy",
+    "options": [
+      "192",
+      "124",
+      "62",
+      "64"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 86,
+    "question": "Địa chỉ IP nào sau đây là địa chỉ dạng Private",
+    "options": [
+      "172.30.150.1",
+      "172.50.30.1",
+      "11.11.11.11",
+      "193.120.56.1"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 87,
+    "question": "Địa chỉ mạng lớp B 172.16.0.0/19 cung cấp bao nhiêu mạng con và số host trong 1 mạng con?",
+    "options": [
+      "7 subnets, mỗi subnet có 30 hosts",
+      "8 subnets, mỗi subnet có 30 hosts",
+      "7 subnets, mỗi subnet có 8190 hosts",
+      "7 subnets, mỗi subnet có 2046 hosts",
+      "8 subnets, mỗi subnet có 8190 hosts"
+    ],
+    "answer": 4
+  },
+  {
+    "id": 88,
+    "question": "Địa chỉ mạng của Host có địa chỉ IP là 172.16.66.0/21 là bao nhiêu?",
+    "options": [
+      "172.16.48.0",
+      "172.16.36.0",
+      "172.16.64.0",
+      "172.16.0.0"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 89,
+    "question": "Giả sử cần 500 subnets, mỗi subnet có khoảng 100 hosts. Subnetmask nào sẽ được dùng, biết hệ thống dùng địa chỉ IP Lớp B?",
+    "options": [
+      "255.255.254.0",
+      "255.255.255.0",
+      "255.255.255.128",
+      "255.255.255.252"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 90,
+    "question": "Nếu một cổng Ethernet trên Router được gán địa chỉ IP là 172.16.112.1/25, thì địa chỉ mạng con hợp lệ là gì?",
+    "options": [
+      "172.16.112.0",
+      "172.16.255.0",
+      "172.16.0.0",
+      "172.16.96.0"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 91,
+    "question": "Giá trị AD (Administrative Distance) mặc định của OSPF là?",
+    "options": [
+      "110",
+      "150",
+      "120",
+      "90"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 92,
+    "question": "Giá trị AD (Administrative Distance) mặc định của OSPF là?",
+    "options": [
+      "120",
+      "150",
+      "110",
+      "90"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 93,
+    "question": "Giá trị AD (Administrative Distance) mặc định của RIP là?",
+    "options": [
+      "120",
+      "90",
+      "150",
+      "110"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 94,
+    "question": "Giá trị AD (Administrative Distance) mặc định của RIP là?",
+    "options": [
+      "110",
+      "150",
+      "90",
+      "120"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 95,
+    "question": "Giá trị AD (Administrative Distance) mặc định của Static Routing là?",
+    "options": [
+      "1",
+      "150",
+      "120",
+      "90"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 96,
+    "question": "Giá trị AD (Administrative Distance) mặc định của Static Routing là?",
+    "options": [
+      "150",
+      "90",
+      "120",
+      "1"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 97,
+    "question": "Một VLAN là một tập các thiết bị nằm cùng miền",
+    "options": [
+      "Bandwidth domain",
+      "Storm domain",
+      "Broadcast domain",
+      "Collision domain"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 98,
+    "question": "Which domain do devices in a VLAN belong to?",
+    "options": [
+      "Storm domain",
+      "Collision domain",
+      "Broadcast domain",
+      "Bandwidth domain"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 99,
+    "question": "Một VLAN là một tập các thiết bị nằm cùng miền",
+    "options": [
+      "Collision domain",
+      "Storm domain",
+      "Broadcast domain",
+      "Bandwidth domain"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 100,
+    "question": "Thiết bị nào sau đây được dùng để kết nối các VLAN",
+    "options": [
+      "Bridge",
+      "Router",
+      "Hub",
+      "Switch"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 101,
+    "question": "Thiết bị nào sau đây được dùng để kết nối các VLAN",
+    "options": [
+      "Switch",
+      "Bridge",
+      "Hub",
+      "Router"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 102,
+    "question": "Giao thức STP dùng để làm gì?",
+    "options": [
+      "Dùng để cập nhật định tuyến trong môi trường Switch",
+      "Dùng để quản lý việc thêm, xóa, sửa thông tin VLAN trong hệ thống có nhiều Switch",
+      "Dùng để chống \"routing loop\" trong mạng",
+      "Dùng để tránh \"switching loop\" trong mạng"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 103,
+    "question": "Giao thức STP dùng để làm gì?",
+    "options": [
+      "Dùng để quản lý việc thêm, xóa, sửa thông tin VLAN trong hệ thống có nhiều Switch",
+      "Dùng để tránh \"switching loop\" trong mạng",
+      "Dùng để cập nhật định tuyến trong môi trường Switch",
+      "Dùng để chống \"routing loop\" trong mạng"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 104,
+    "question": "Để kiểm tra interface fa0/5 có được gán cho VLAN 10 không, thì ta sử dụng lệnh nào sau đây?",
+    "options": [
+      "show vtp",
+      "show vlan",
+      "show ip interface",
+      "show interfaces trunk"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 105,
+    "question": "Để kiểm tra interface fa0/5 có được gán cho VLAN 10 không, thì ta sử dụng lệnh nào sau đây?",
+    "options": [
+      "show interfaces trunk",
+      "show vtp",
+      "show ip interface",
+      "show vlan"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 106,
+    "question": "Để kiểm tra interface fa0/5 đã được kích hoạt đường giao tiếp chung của các VLAN, thì ta sử dụng lệnh nào sau đây?",
+    "options": [
+      "show vlan",
+      "show interfaces trunk",
+      "show ip interface",
+      "show vtp"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 107,
+    "question": "Tham số được STP sử dụng để bầu chọn \"root bridge\"?",
+    "options": [
+      "Địa chỉ MAC",
+      "IP cost",
+      "Địa chỉ IP",
+      "port cost"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 108,
+    "question": "Tham số được STP sử dụng để bầu chọn \"root bridge\"?",
+    "options": [
+      "Địa chỉ IP",
+      "Địa chỉ MAC",
+      "IP cost",
+      "port cost"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 109,
+    "question": "Để kiểm tra interface fa0/5 đã được kích hoạt đường giao tiếp chung của các VLAN, thì ta sử dụng lệnh nào sau đây?",
+    "options": [
+      "show vtp",
+      "show interfaces trunk",
+      "show ip interface",
+      "show vlan"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 110,
+    "question": "Để kiểm tra bảng định tuyến trên Router 1 thì ta sử dụng lệnh nào sau đây?",
+    "options": [
+      "show vlan",
+      "show ip interface",
+      "show routing-table",
+      "show ip route"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 111,
+    "question": "Để kiểm tra bảng định tuyến trên Router 1 thì ta sử dụng lệnh nào sau đây?",
+    "options": [
+      "show ip interface",
+      "show ip route",
+      "show vlan",
+      "show routing-table"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 112,
+    "question": "Giao thức nào sau đây được dùng để phân phối thông tin về cấu hình VLAN đến các Switch khác trong mạng?",
+    "options": [
+      "SNMP",
+      "STP",
+      "VTP",
+      "EIGRP"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 113,
+    "question": "Giao thức nào sau đây được dùng để phân phối thông tin về cấu hình VLAN đến các Switch khác trong mạng?",
+    "options": [
+      "SNMP",
+      "EIGRP",
+      "STP",
+      "VTP"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 114,
+    "question": "Xem mô hình mạng. Mục đích của việc kết nối các Switch dạng như thế này",
+    "options": [
+      "Tránh được vòng lặp",
+      "Dùng để phân hoạch mạng thành nhiều miền đụng độ",
+      "Để tăng cường tính dự phòng cho hệ thống mạng",
+      "Dùng để phân hoạch mạng thành nhiều miền đụng độ"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 115,
+    "question": "Xem mô hình mạng. Mục đích của việc kết nối các Switch dạng như thế này",
+    "options": [
+      "Tránh được vòng lặp",
+      "Dùng để phân hoạch mạng thành nhiều miền đụng độ",
+      "Dùng để phân hoạch mạng thành nhiều miền đụng độ",
+      "Để tăng cường tính dự phòng cho hệ thống mạng"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 116,
+    "question": "Xem mô hình mạng. Switch nào được chọn là Root Bridge?",
+    "options": [
+      "SW2",
+      "SW3",
+      "SW1",
+      "Không có Switch nào"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 117,
+    "question": "Xem mô hình mạng. Switch nào được chọn là Root Bridge?",
+    "options": [
+      "Không có Switch nào",
+      "SW1",
+      "SW2",
+      "SW3"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 118,
+    "question": "Xem mô hình mạng. Những thông tin cấu hình nào sau đây là đúng cho các host trong mô hình trên?",
+    "options": [
+      "Địa chỉ IP của HB: 192.1.1.125",
+      "Subnet mask của HA: 255.255.255.224",
+      "Subnet mask của HC: 255.255.255.224",
+      "Địa chỉ IP của HC: 192.1.1.66"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 119,
+    "question": "Xem mô hình mạng. Những thông tin cấu hình nào sau đây là đúng cho các host trong mô hình trên?",
+    "options": [
+      "Địa chỉ IP của HB: 192.1.1.125",
+      "Subnet mask của HC: 255.255.255.224",
+      "Subnet mask của HA: 255.255.255.224",
+      "Địa chỉ IP của HC: 192.1.1.66"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 120,
+    "question": "Xem mô hình mạng. Những thông tin cấu hình nào sau đây là đúng cho các host trong mô hình trên?",
+    "options": [
+      "Địa chỉ IP của HA: 192.168.1.128",
+      "Subnet mask của HA: 255.255.255.224",
+      "Địa chỉ IP của HC: 192.1.1.66",
+      "Địa chỉ IP máy HB là 192.168.1.100"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 121,
+    "question": "Xem mô hình mạng. Những thông tin cấu hình nào sau đây là đúng cho các host trong mô hình trên?",
+    "options": [
+      "Subnet mask của HA: 255.255.255.224",
+      "Địa chỉ IP của HC: 192.1.1.66",
+      "Địa chỉ IP của HA: 192.168.1.128",
+      "Địa chỉ IP máy HB là 192.168.1.100"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 122,
+    "question": "Xem mô hình mạng. Router trong mô hình mạng được cấu hình như trên. Switch kết nối với router qua đường trunk. Trên Switch cấu hình 3 VLAN: VLAN1, VLAN2, and VLAN3. Một máy tính A kết nối vào VLAN2. Hỏi địa chỉ default gateway phải đặt cho máy tính này là địa chỉ nào sau đây?",
+    "options": [
+      "192.168.1.1",
+      "192.168.3.1",
+      "192.168.2.1",
+      "192.168.3.2"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 123,
+    "question": "Xem mô hình mạng. Router trong mô hình mạng được cấu hình như trên. Switch kết nối với router qua đường trunk. Trên Switch cấu hình 3 VLAN: VLAN1, VLAN2, and VLAN3. Một máy tính A kết nối vào VLAN2. Hỏi địa chỉ default gateway phải đặt cho máy tính này là địa chỉ nào sau đây?",
+    "options": [
+      "192.168.3.1",
+      "192.168.1.1",
+      "192.168.2.1",
+      "192.168.3.2"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 124,
+    "question": "Xem mô hình mạng. Router trong mô hình mạng được cấu hình như trên. Switch kết nối với router qua đường trunk. Trên Switch cấu hình 3 VLAN: VLAN1, VLAN2, and VLAN3. Một máy tính A kết nối vào VLAN2. Hỏi địa chỉ IP có thể đặt cho máy tính này là địa chỉ nào sau đây?",
+    "options": [
+      "192.168.2.255",
+      "192.168.2.100",
+      "192.168.2.0",
+      "192.168.2.1"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 125,
+    "question": "Xem mô hình mạng. Router trong mô hình mạng được cấu hình như trên. Switch kết nối với router qua đường trunk. Trên Switch cấu hình 3 VLAN: VLAN1, VLAN2, and VLAN3. Một máy tính A kết nối vào VLAN2. Hỏi địa chỉ IP có thể đặt cho máy tính này là địa chỉ nào sau đây?",
+    "options": [
+      "192.168.2.0",
+      "192.168.2.1",
+      "192.168.2.255",
+      "192.168.2.100"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 126,
+    "question": "Xem mô hình mạng. Máy của Sales không liên lạc được với Server B. Những địa chỉ IP nào đánh sai",
+    "options": [
+      "192.168.1.30",
+      "192.168.1.41",
+      "192.168.1.25",
+      "192.168.1.81"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 127,
+    "question": "Xem mô hình mạng. Máy của Sales không liên lạc được với Server B. Những địa chỉ IP nào đánh sai",
+    "options": [
+      "192.168.1.81",
+      "192.168.1.30",
+      "192.168.1.41",
+      "192.168.1.25"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 128,
+    "question": "Xem mô hình mạng. Địa chỉ IP nào sau đây có thể được gán cho máy PC?",
+    "options": [
+      "192.168.1.145",
+      "192.168.1.160",
+      "192.168.1.159",
+      "192.168.1.143"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 129,
+    "question": "Xem mô hình mạng. Địa chỉ IP nào sau đây có thể được gán cho máy PC?",
+    "options": [
+      "192.168.1.159",
+      "192.168.1.145",
+      "192.168.1.143",
+      "192.168.1.160"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 130,
+    "question": "Xem mô hình mạng. Địa chỉ IP nào sau đây có thể được gán cho máy PC?",
+    "options": [
+      "192.168.1.159",
+      "192.168.1.143",
+      "192.168.1.160",
+      "192.168.1.144"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 131,
+    "question": "Xem bảng MAC sau. Switch sẽ làm gì với các gói được gửi từ Client A đến Client E?",
+    "options": [
+      "Flood",
+      "Flood and Forward",
+      "Forward",
+      "Filter"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 132,
+    "question": "Xem bảng MAC sau. Switch sẽ làm gì với các gói được gửi từ Client A đến Client D?",
+    "options": [
+      "Flood and Forward",
+      "Forward",
+      "Flood",
+      "Filter"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 133,
+    "question": "Switch thực hiện chức năng Filter dựa vào thông tin gì?",
+    "options": [
+      "IP đích",
+      "IP nguồn",
+      "MAC nguồn",
+      "MAC đích"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 134,
+    "question": "Switch thực hiện chức năng Learn dựa vào thông tin gì?",
+    "options": [
+      "IP đích",
+      "IP nguồn",
+      "MAC đích",
+      "MAC nguồn"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 135,
+    "question": "Switch làm gì khi nhận được một khung dữ liệu (frame) trên một cổng với MAC đích là không xác định?",
+    "options": [
+      "Flood frame trên mạng (phía cổng nhận) để tìm kiếm thiết bị",
+      "Bỏ các frame",
+      "Chuyển frame ngược lại nơi gửi",
+      "Forward frame trên một port khác"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 136,
+    "question": "Giao thức nào sau đây là giao thức định tuyến?",
+    "options": [
+      "ICMP",
+      "UDP",
+      "OSPF",
+      "TCP"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 137,
+    "question": "Nếu Host A muốn gửi gói tin đến Host B, địa chỉ nguồn sẽ ở trong khung nào khi nó rời khỏi Router R1?",
+    "options": [
+      "BB:BB:BB:BB:BB:BB",
+      "172.168.11.65",
+      "CC:CC:CC:CC:CC:CC",
+      "172.168.10.130",
+      "AA:AA:AA:AA:AA:AA",
+      "172.168.11.88"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 138,
+    "question": "DNS record nào ánh xạ từ hostname ra IP",
+    "options": [
+      "A",
+      "MX",
+      "CNAME",
+      "SOA"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 139,
+    "question": "DNS record nào được sử dụng khí phân giải từ IP ra tên miền?",
+    "options": [
+      "MX",
+      "PTR",
+      "A",
+      "CNAME",
+      "SOA"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 140,
+    "question": "Chức năng Reservation trong DHCP server cho phép thực hiện điều gì sau đây?",
+    "options": [
+      "Dùng để thiết lập địa chỉ Default gateway cho các máy tính trong một Scope",
+      "Dùng để cấp phát IP cố định cho một host dựa vào địa chỉ MAC của host đó",
+      "MX",
+      "Dùng để cấp phát IP cố định cho một host dựa vào Hostname của host đó"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 141,
+    "question": "Chức năng RelayAgent trong dịch vụ DHCP cho phép thực hiện điều gì sau đây?",
+    "options": [
+      "Dùng để cấp phát IP cho một host ở cùng mạng với DHCP Server",
+      "Dùng để cấp phát IP cho một host dựa vào Hostname của host đó",
+      "Dùng để cấp phát IP cho một host ở mạng khác so với DHCP Server",
+      "Dùng để thiết lập địa chỉ IP cố định cho một host dựa vào địa chỉ MAC của host đó"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 142,
+    "question": "Thứ tự các gói tin trao đổi giữa DHCP client và DHCP server để xin cấp phát địa chỉ IP động là?",
+    "options": [
+      "DHCPOFFER, DHCPDISCOVER, DHCPREQUEST, DHCPACK",
+      "DHCPREQUEST, DHCPDISCOVER, DHCPOFFER, DHCPACK",
+      "DHCPDISCOVER, DHCPREQUEST, DHCPOFFER, DHCPACK",
+      "DHCPDISCOVER, DHCPOFFER, DHCPREQUEST, DHCPACK"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 143,
+    "question": "Câu nào sau đây là đúng khi nói về gói tin DHCPDISCOVER?",
+    "options": [
+      "Địa chỉ MAC nguồn trong gói tin này là địa chỉ MAC của DHCP client",
+      "Địa chỉ MAC đích trong gói tin này là địa chỉ MAC của DHCP server",
+      "Địa chỉ IP đích trong gói tin này là địa chỉ IP của DHCP server",
+      "Địa chỉ MAC nguồn trong gói tin này là địa chỉ MAC của DHCP Server"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 144,
+    "question": "Câu nào sau đây là đúng khi nói về gói tin DHCPOFFER?",
+    "options": [
+      "Địa chỉ MAC đích trong gói tin này là địa chỉ MAC của DHCP server",
+      "Địa chỉ IP đích trong gói tin này là địa chỉ IP của DHCP server",
+      "Địa chỉ MAC nguồn trong gói tin này là địa chỉ MAC của DHCP Server",
+      "Địa chỉ MAC nguồn trong gói tin này là địa chỉ MAC của DHCP client"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 145,
+    "question": "Các thông số cấu hình nào trong DHCP Server là tham số tùy chọn khi cấu hình cấp phát địa chỉ IP cho các máy trong mạng?",
+    "options": [
+      "IP & Subnet Mask",
+      "Subnet Mask và DNS",
+      "IP và Default Gateway",
+      "Default Gateway và DNS"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 146,
+    "question": "Giao thức nào sau đây dùng để gửi email?",
+    "options": [
+      "NTP",
+      "SMTP",
+      "IMAP",
+      "ICMP",
+      "SNMP"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 147,
+    "question": "Giao thức nào sau đây dùng để nhận email?",
+    "options": [
+      "NTP",
+      "ICMP",
+      "SNMP",
+      "SMTP",
+      "POP3"
+    ],
+    "answer": 4
+  },
+  {
+    "id": 148,
+    "question": "Trong FTP active, Server FTP dùng cổng nào để truyền dữ liệu đi cho client:",
+    "options": [
+      "23",
+      "22",
+      "21",
+      "20",
+      "1024"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 149,
+    "question": "Dịch vụ web an toàn dùng cặp giao thức và cổng nào",
+    "options": [
+      "HTTPS/443",
+      "HTTP/443",
+      "HTTPS/81",
+      "HTTPS/8080",
+      "HTTPS/80"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 150,
+    "question": "DHCP server sử dụng giao thức nào ở tầng transport và cổng bao nhiêu để lắng nghe các yêu cầu cung cấp địa chỉ IP từ DHCP client?",
+    "options": [
+      "TCP/23",
+      "UDP/67",
+      "TCP/68",
+      "TCP/67",
+      "UDP/23",
+      "UDP/68"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 151,
+    "question": "DHCP server sử dụng giao thức nào ở tầng transport và cổng bao nhiêu để trả lời các thông tin cung cấp địa chỉ IP cho DHCP client?",
+    "options": [
+      "UDP/68",
+      "TCP/23",
+      "UDP/67",
+      "UDP/23",
+      "TCP/67",
+      "TCP/68"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 152,
+    "question": "Thời điểm nào DHCP client sẽ liên lạc với DHCP server để gia hạn thời gian thuê địa chỉ IP?",
+    "options": [
+      "Khi hết thời gian thuê",
+      "50% thời gian thuê",
+      "DHCP client sẽ không cần liên lạc với DHCP server, địa chỉ IP được cấp một lần và sử dụng cho đến khi client chuyển tới một mạng khác",
+      "90% thời gian thuê",
+      "25% thời gian thuê"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 153,
+    "question": "Câu nào sau đây mô tả đúng về phân giải thuận (forward lookup) trong DNS?",
+    "options": [
+      "Chuyển tiếp yêu cầu phân giải tên miền đến một DNS Server khác",
+      "Phân giải tên ra địa chỉ IP",
+      "Phân giải IP từ DNS cục bộ mà không cần sự giúp đỡ của các DNS khác",
+      "Phân giải IP ra tên"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 154,
+    "question": "Câu nào sau đây là đúng nhất về phân giải ngược (reverse lookup) trong DNS?",
+    "options": [
+      "Phân giải từ IP ra tên miền",
+      "Phân giải từ tên miền ra địa chỉ IP",
+      "Yêu cầu phân giải được chuyển đến cho một DNS server khác để phân giải",
+      "Yêu cầu phân giải ngược được thực hiện trên DNS server cục bộ mà không cần trợ giúp từ các DNS server khác"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 155,
+    "question": "DNS sử dụng giao thức và cổng nào cho các truy vấn trực tiếp?",
+    "options": [
+      "TCP/53",
+      "UDP/53",
+      "TCP/68",
+      "UDP/67"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 156,
+    "question": "DNS sử dụng giao thức và cổng nào cho việc chuyển tiếp các zone?",
+    "options": [
+      "TCP/53",
+      "UDP/53",
+      "UDP/67",
+      "TCP/68"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 157,
+    "question": "Các thông số cấu hình nào trong DHCP Server là tham số tùy chọn khi cấu hình cấp phát địa chỉ IP cho các máy trong mạng?",
+    "options": [
+      "IP & Subnet Mask",
+      "IP và Default Gateway",
+      "Default Gateway và DNS",
+      "Subnet Mask và DNS"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 158,
+    "question": "Trong FTP passive, sau khi Server xác nhận yêu cầu truyền dữ liệu được gửi từ port N của Client thì:",
+    "options": [
+      "Client mở port N+1 để nhận dữ liệu từ Server.",
+      "Server dùng port 20 để truyền dữ liệu cho Client.",
+      "Server dùng port N+1 để truyền dữ liệu cho Client.",
+      "Client mở port 20 để nhận dữ liệu từ Server."
+    ],
+    "answer": 0
+  },
+  {
+    "id": 159,
+    "question": "FTP sử dụng giao thức và cổng nào cho việc truyền dữ liệu?",
+    "options": [
+      "UDP/20",
+      "UDP/21",
+      "TCP/21",
+      "TCP/20"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 160,
+    "question": "FTP sử dụng giao thức và cổng nào cho việc truyền các chỉ thị?",
+    "options": [
+      "UDP/21",
+      "TCP/21",
+      "TCP/20",
+      "UDP/20"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 161,
+    "question": "Trong FTP active, sau khi Server xác nhận yêu cầu truyền dữ liệu được gửi từ port N của Client thì:",
+    "options": [
+      "Client mở port N+1 để nhận dữ liệu từ Server.",
+      "Server dùng port 20 để truyền dữ liệu cho Client.",
+      "Server dùng port N+1 để truyền dữ liệu cho Client.",
+      "Client mở port N+1 để nhận dữ liệu từ Server."
+    ],
+    "answer": 1
+  },
+  {
+    "id": 162,
+    "question": "Phương thức nào trong giao thức HTTP được dùng khi Client gửi thông tin lên cho Server để xử lý dữ liệu",
+    "options": [
+      "GET",
+      "OPTION",
+      "PUT",
+      "POST",
+      "HEAD"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 163,
+    "question": "Phương thức nào trong giao thức HTTP được dùng khi Client muốn kiểm tra một đối tượng có tồn tại trên Server hay không",
+    "options": [
+      "OPTION",
+      "POST",
+      "GET",
+      "HEAD",
+      "PUT"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 164,
+    "question": "DNS record nào dùng để xác định máy chủ mail cho một tên miền?",
+    "options": [
+      "CNAME",
+      "SOA",
+      "MX",
+      "AAA",
+      "PTR"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 165,
+    "question": "Mô hình Workgroup sử dụng user đăng nhập là",
+    "options": [
+      "Local user",
+      "Domain user",
+      "Bất kì",
+      "Anonymous"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 166,
+    "question": "Thành phần nào không thuộc kiến trúc logic của Active Directory",
+    "options": [
+      "Organizational Units (OU)",
+      "Domain Tree",
+      "Object",
+      "Domain controller",
+      "Domain"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 167,
+    "question": "Thành phần nào thuộc kiến trúc vật lý của Active Directory",
+    "options": [
+      "Domain",
+      "Object",
+      "Organizational Units (OU)",
+      "Site",
+      "Domain Tree"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 168,
+    "question": "Organizational Units (OU) có thể chửa gì?",
+    "options": [
+      "Forest",
+      "Domain Controller",
+      "Domain Tree",
+      "Objects",
+      "Domain"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 169,
+    "question": "Dịch vụ nào sẽ lưu trữ thông tin về các đối tượng trong domain",
+    "options": [
+      "Active Directory Lightweight Directory Services (AD LDS)",
+      "Active Directory Rights Management Services (AD RMS)",
+      "Active Directory Domain Services ADDS",
+      "Active Directory Federation Services (AD FS)"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 170,
+    "question": "Khi Roamming profile cho user đến máy DC1, lưu trong thư mục đã chia sẻ Homedir. Câu lệnh là",
+    "options": [
+      "\\\\DC1\\Homedir\\%Username%",
+      "\\\\DC1\\Homedir\\User",
+      "\\\\DC1\\Homedir\\%User%",
+      "\\\\DC1\\Homedir\\Username"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 171,
+    "question": "Jery vừa thuộc nhóm Marketing và nhóm Accounting, user Jery có quyền Read thư mục D:\\Data. Trong khi đó, nhóm Marketing có quyền Write thư mục D:\\Data, nhưng nhóm Accounting bị cấm quyền Write file D:\\Data\\vb2.txt. Vậy Jery có quyền gì trên file vb2.txt:",
+    "options": [
+      "Không có quyền gì",
+      "Read và Write",
+      "Read",
+      "Write"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 172,
+    "question": "Quyền nào là quyền cơ bản trên NTFS",
+    "options": [
+      "Take Ownership",
+      "Modify",
+      "Synchronize",
+      "Delete"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 173,
+    "question": "Quyền nào là quyền đặc biệt trên NTFS",
+    "options": [
+      "Synchronize",
+      "Take Ownership",
+      "Modify",
+      "Delete"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 174,
+    "question": "Khi copy file và thư mục trong cùng phân vùng NTFS thì:",
+    "options": [
+      "Các quyền bị xóa bỏ",
+      "Có toàn quyền ở thư mục đích chứa chúng",
+      "Các file và thư mục vẫn giữ nguyên quyền đã được thiết lập",
+      "Các file và thư mục có quyền của thư mục đích chứa chúng"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 175,
+    "question": "Khi copy file và thư mục từ phân vùng NTFS này sang một phân vùng NTFS khác thì",
+    "options": [
+      "Các file và thư mục vẫn giữ nguyên quyền đã được thiết lập",
+      "Các file và thư mục có quyền của thư mục đích chứa chúng",
+      "Các quyền bị xóa bỏ",
+      "Có toàn quyền ở thư mục đích chứa chúng"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 176,
+    "question": "Khi di chuyển file và thư mục từ phân vùng NTFS này sang một phân vùng NTFS khác thì",
+    "options": [
+      "Các file và thư mục vẫn giữ nguyên quyền đã được thiết lập",
+      "Các quyền bị xóa bỏ",
+      "Có toàn quyền ở thư mục đích chứa chúng",
+      "Các file và thư mục có quyền của thư mục đích chứa chúng"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 177,
+    "question": "Máy chủ DC là",
+    "options": [
+      "Máy chủ quản lý user và computer",
+      "Máy chủ cung cấp các dịch vụ và quản lý toàn bộ mạng",
+      "Máy chủ các tài nguyên trong mạng công ty",
+      "Máy chủ quản lý miền"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 178,
+    "question": "Để truy cập thư mục Data được share ẩn trên PC01, sử dụng lệnh",
+    "options": [
+      "Data",
+      "\\\\PC01\\Data\\$",
+      "\\\\PC01/Data",
+      "\\\\Data\\$"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 179,
+    "question": "User u1 phân quyền NTFS bị cấm truy xuất tới thư mục Data, biết thư mục Data được chia sẻ cho nhóm Everyone với quyền Read, lúc này u1 có quyền gì?",
+    "options": [
+      "u1 có thể đọc dữ liệu trong thư mục Data",
+      "u1 không thể truy xuất thư mục chia sẻ Data",
+      "u1 có thể truy xuất thư mục chia sẻ Data, nhưng chỉ có quyền đọc",
+      "u1 có toàn quyền truy xuất thư mục chia sẻ Data"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 180,
+    "question": "User u1 thuộc 2 group g1 và g2, g1 có quyền list, read & execute trên thư mục Data, g2 bị cấm quyền truy xuất thư mục Data. Quyền của u1 là",
+    "options": [
+      "u1 có quyền truy xuất thư mục Data",
+      "u1 không có quyền truy xuất thư mục Data",
+      "u1 chỉ có thể xem nội dung thư mục Data, nhưng không mở được các file trên thư mục này",
+      "u1 có thể đọc và thực thi các tập tin chương trình đặt trong thư mục Data"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 181,
+    "question": "Trong môi trường Microsoft, mô hình nào có các thông tin người dùng được lưu trữ tập trung và người dùng phải chứng thực khi đăng nhập vào mạng:",
+    "options": [
+      "Server",
+      "Workgroup",
+      "Domain",
+      "Client"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 182,
+    "question": "Jery vừa thuộc nhóm Marketing và nhóm Accounting, user Jery có quyền Read thư mục D:\\Dat. Trong khi đó, nhóm Marketing có quyền Write thư mục D:\\Data, nhưng nhóm Accounting bị cấm quyền Write file D:\\Data\\vb2.txt. Vậy Jery có quyền gì trên file vb2.txt:",
+    "options": [
+      "Không có quyền gì cả",
+      "Read & Write",
+      "Write",
+      "Read"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 183,
+    "question": "Quyền nào là quyền đặc biệt trên NTFS",
+    "options": [
+      "Take Ownership",
+      "Modify",
+      "Write",
+      "Execute"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 184,
+    "question": "Quyền nào là quyền cơ bản trên NTFS",
+    "options": [
+      "Modify",
+      "Take Ownership",
+      "Synchronize",
+      "Delete"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 185,
+    "question": "Trong Windows, User Profile là nơi",
+    "options": [
+      "Là nơi lưu tất cả các thuộc tính của user",
+      "Lưu tất cả các thông tin liên quan đến user (desktop, start menu...)",
+      "Là thư mục gốc của user khi đăng nhập",
+      "Các user khác có thể đọc thư mục này"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 186,
+    "question": "Máy PC01 chia sẻ thư mục Shared với tên là Shared_PC01, máy trong LAN có thể truy cập trực tiếp thư mục này bằng lệnh",
+    "options": [
+      "\\\\PC01\\shared_pc01",
+      "\\\\PC01/SharedShared_PC01",
+      "\\\\PC01\\Shared",
+      "\\\\PC01"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 187,
+    "question": "Để share ẩn một thư mục ta thêm",
+    "options": [
+      "Chữ $ vào sau tên chia sẻ",
+      "Chữ $ vào trước tên chia sẻ",
+      "Chữ & vào trước tên chia sẻ",
+      "Chữ & vào sau tên chia sẻ"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 188,
+    "question": "Quyền change trên thư mục chia sẻ không được làm gì?",
+    "options": [
+      "Tạo thư mục, tập tin",
+      "Gán, rút quyền sở hữu",
+      "Thay đổi thuộc tính",
+      "Xóa thư mục, tập tin"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 189,
+    "question": "Thư mục Data được phân quyền cho user u1 như sau: • Share permission: Full control. • NTFS permission: Deny write. Vậy quyền u1 trên Data là",
+    "options": [
+      "Thay đổi nội dung file trong Data",
+      "Tạo một folder trong Data",
+      "Chỉ đọc được nội dung Data",
+      "Tạo một file trong thư mục con của Data"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 190,
+    "question": "Các quyền trên thư mục chia sẻ là:",
+    "options": [
+      "Read, write, execute",
+      "Full control, read, change",
+      "Full control, read, write, execute",
+      "Full control, read, write"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 191,
+    "question": "Giao thức nào sau đây được sử dụng để truyền thông tin giám sát giữa Manager và Agent trong hệ thống giám sát mạng?",
+    "options": [
+      "IP",
+      "TCP",
+      "HTTP",
+      "ICMP",
+      "SNMP"
+    ],
+    "answer": 4
+  },
+  {
+    "id": 192,
+    "question": "Chức năng của firewall",
+    "options": [
+      "Ngăn được các tấn công bên ngoài mạng",
+      "Kiểm soát luồng dữ liệu vào ra của mạng",
+      "Ngăn được các tấn công bên trong mạng",
+      "Phát hiện được các tấn công bên ngoài mạng"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 193,
+    "question": "Mục tiêu của đảm bảo an toàn cho một hệ thống CNTT được biết đến với mô hình có tên gọi là CIA gồm các tính chất",
+    "options": [
+      "Tính toàn vẹn, tính sẵn sàng, tính xác thực",
+      "Tính bí mật, tính xác thực, tính toàn vẹn",
+      "Tính bí mật, tính toàn vẹn, tính chống chối",
+      "Tính bí mật, tính toàn vẹn, tính sẵn sàng"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 194,
+    "question": "Chức năng của hệ thống IDS đặt trước một mạng LAN",
+    "options": [
+      "Phát hiện được các tấn công bên ngoài mạng",
+      "Ngăn được các tấn công bên ngoài mạng",
+      "Ngăn được các tấn công bên trong mạng",
+      "Phát hiện được các tấn công bên trong mạng",
+      "Kiểm soát luồng dữ liệu vào ra của mạng"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 195,
+    "question": "Tấn công DOS (Denial of Service) thuộc loại tấn công nào ?",
+    "options": [
+      "Tấn công nội bộ (Local Attack)",
+      "Tấn công thụ động (Passive Attack)",
+      "Tấn công chủ động (Active Attack)",
+      "Tấn công mã hóa"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 196,
+    "question": "Hình thức tấn công thụ động chống lại nguyên tắc cốt lõi nào của an toàn thông tin?",
+    "options": [
+      "sẵn sàng",
+      "toàn vẹn",
+      "tính xác thực",
+      "bí mật"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 197,
+    "question": "Phương pháp mã hóa đảm bảo tiêu chuẩn gì của an toàn thông tin",
+    "options": [
+      "bí mật",
+      "tính xác thực",
+      "sẵn sàng",
+      "toàn vẹn"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 198,
+    "question": "Trong bảo mật nhiều lớp, phương pháp nào dùng bảo mật lớp physical",
+    "options": [
+      "Mã hóa dữ liệu",
+      "Camera",
+      "Antivirus",
+      "Firewall"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 199,
+    "question": "Trong bảo mật nhiều lớp, phương pháp nào dùng bảo mật lớp Application",
+    "options": [
+      "Firewall",
+      "Antivirus",
+      "Camera",
+      "Mã hóa dữ liệu"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 200,
+    "question": "Người quản trị sử dụng các cấu hình mặc định, đặt password đơn giản đã gây ra lỗ hổng dạng gì",
+    "options": [
+      "về mặt quản trị hệ thống",
+      "về mặt chính sách",
+      "về mặt con người",
+      "về mặt kỹ thuật"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 201,
+    "question": "Tấn công nào sau đây là dạng tấn công bị động?",
+    "options": [
+      "Dos",
+      "mã hóa dữ liệu",
+      "bẻ mật khẩu",
+      "Scan port"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 202,
+    "question": "Đặc điểm nào sau đây không phải mô tả tấn công Dos?",
+    "options": [
+      "Chiếm dụng băng thông mạng",
+      "Chiếm dụng tài nguyên Server",
+      "Người dùng hợp pháp không truy xuất được vào Server",
+      "Xóa dữ liệu trên Server"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 203,
+    "question": "Kiến trúc AAA gồm các yếu tố nào?",
+    "options": [
+      "Authentication, Authorization, Access control",
+      "Availability, Authorization, Accounting",
+      "Authentication, Authorization, Availability",
+      "Authentication, Authorization, Accounting"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 204,
+    "question": "Tiêu chuẩn an toàn thông tin CIA là?",
+    "options": [
+      "Bí mật, toàn vẹn, sẵn sàng",
+      "Xác thực, toàn vẹn, sẵn sàng",
+      "Bí mật, sẵn sàng, xác thực",
+      "Bí mật, toàn vẹn, xác thực"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 205,
+    "question": "PDUs at the Network layer of the OSI are called what?",
+    "options": [
+      "Transport",
+      "Segments",
+      "Packets",
+      "Frames"
+    ],
+    "answer": 2
+  }
+]

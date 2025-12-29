@@ -1,0 +1,279 @@
+/* 1. Cấu hình chung & Hình nền */
+:root {
+    --text-color: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.1); /* Màu kính trong suốt */
+    --glass-border: 1px solid rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --blur-strength: blur(12px); /* Độ mờ của kính */
+    --accent-color: #00d2ff; /* Màu điểm nhấn (xanh neon) */
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    color: var(--text-color);
+    overflow: hidden;
+    /* HÌNH NỀN: Bạn có thể thay link ảnh khác ở đây */
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background-size: cover;
+}
+
+/* 2. Modal Chào mừng (Kính mờ) */
+.modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Nền tối để nổi bật modal */
+    display: flex; justify-content: center; align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: rgba(20, 20, 30, 0.85); /* Kính tối màu */
+    backdrop-filter: var(--blur-strength);
+    border: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 500px;
+    color: white;
+}
+
+.hidden { display: none !important; }
+
+#start-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white; border: none;
+    padding: 12px 40px; font-size: 18px; font-weight: bold;
+    cursor: pointer; border-radius: 50px;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+}
+#start-btn:hover { transform: scale(1.05); }
+
+/* 3. Layout Chính */
+.main-container {
+    display: flex;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.2); /* Lớp phủ tối nhẹ toàn màn hình */
+}
+
+/* Cột Trái: Câu hỏi */
+.question-area {
+    flex: 3;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    /* Scrollbar đẹp hơn */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.3) transparent;
+}
+
+/* Tiêu đề & Chữ */
+h3 { color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px; }
+.question-text { 
+    font-size: 1.5em; 
+    font-weight: 600; 
+    margin-bottom: 30px; 
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    line-height: 1.4;
+}
+
+/* Nút Đáp Án (Hiệu ứng kính) */
+.option-btn {
+    display: block; width: 100%; text-align: left;
+    padding: 18px 25px; margin-bottom: 15px;
+    
+    /* Style Kính */
+    background: var(--glass-bg);
+    backdrop-filter: var(--blur-strength);
+    border: var(--glass-border);
+    border-radius: 15px;
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.option-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(10px); /* Di chuyển nhẹ sang phải */
+    border-color: var(--accent-color);
+}
+
+/* Trạng thái Đúng/Sai */
+.correct-answer { 
+    background: rgba(40, 167, 69, 0.6) !important; /* Xanh lá trong suốt */
+    border-color: #28a745 !important;
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.5);
+}
+.wrong-answer { 
+    background: rgba(220, 53, 69, 0.6) !important; /* Đỏ trong suốt */
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 15px rgba(220, 53, 69, 0.5);
+}
+.disabled { pointer-events: none; opacity: 0.8; }
+
+/* Khung Giải thích */
+.explanation-box {
+    margin-top: 25px; padding: 20px;
+    background: rgba(0, 210, 255, 0.1); /* Xanh neon rất nhạt */
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0 10px 10px 0;
+    color: #e0f7fa;
+    display: none; /* Mặc định ẩn */
+    animation: slideIn 0.5s ease;
+}
+.explanation-title { color: var(--accent-color); font-weight: bold; text-transform: uppercase; font-size: 0.9em; display: block; margin-bottom: 5px; }
+
+@keyframes slideIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Cột Phải: Sidebar (Tấm kính dọc) */
+.sidebar {
+    flex: 1;
+    max-width: 350px;
+    background: rgba(20, 20, 30, 0.6); /* Đậm hơn một chút */
+    backdrop-filter: blur(20px); /* Mờ mạnh hơn */
+    border-left: var(--glass-border);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+}
+
+.grid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+    gap: 12px;
+    overflow-y: auto;
+    padding-right: 5px;
+    margin-top: 20px;
+}
+
+/* Các ô tròn số câu */
+.q-circle {
+    width: 45px; height: 45px;
+    display: flex; justify-content: center; align-items: center;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: 0.2s;
+    border: 1px solid transparent;
+}
+.q-circle:hover { background: rgba(255,255,255,0.3); }
+.q-circle.active { 
+    border: 2px solid var(--accent-color); 
+    background: rgba(0, 210, 255, 0.2);
+    box-shadow: 0 0 10px var(--accent-color);
+}
+.q-circle.done-correct { background: #28a745; color: white; box-shadow: 0 0 5px #28a745; }
+.q-circle.done-wrong { background: #dc3545; color: white; box-shadow: 0 0 5px #dc3545; }
+
+/* Nút Điều hướng */
+.navigation-buttons button {
+    padding: 12px 25px; cursor: pointer;
+    background: rgba(255,255,255,0.1);
+    color: white; border: var(--glass-border);
+    border-radius: 8px;
+    transition: 0.2s;
+}
+.navigation-buttons button:hover { background: rgba(255,255,255,0.2); }
+
+/* Tùy chỉnh thanh cuộn (Webkit) */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.4); }
+
+/* --- STYLE CHO MODAL KẾT QUẢ (MỚI) --- */
+
+/* Áp dụng hiệu ứng kính mờ cho bảng kết quả */
+#result-modal .modal-content {
+    background: var(--glass-bg-dark); /* Nền kính tối */
+    backdrop-filter: var(--blur-strength);
+    -webkit-backdrop-filter: var(--blur-strength);
+    border: 1px solid rgba(0, 210, 255, 0.3); /* Viền xanh neon nhẹ */
+    box-shadow: 0 0 30px rgba(0, 210, 255, 0.2), inset 0 0 20px rgba(0, 210, 255, 0.05); /* Hiệu ứng phát sáng */
+    border-radius: 30px;
+    padding: 40px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    /* Hiệu ứng hiện ra (pop-in) */
+    animation: modalPopIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modalPopIn {
+    from { opacity: 0; transform: scale(0.8) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+#result-modal h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    
+    /* 1. Định nghĩa màu nền gradient */
+    background: linear-gradient(to right, #fff, var(--accent-color));
+    
+    /* 2. Cắt nền theo chữ (Dòng cũ - hỗ trợ Chrome/Safari) */
+    -webkit-background-clip: text; 
+    
+    /* 3. THÊM DÒNG NÀY (Chuẩn quốc tế - hỗ trợ Firefox/Edge mới) */
+    background-clip: text; 
+    
+    /* 4. Làm chữ trong suốt để lộ nền gradient bên dưới */
+    -webkit-text-fill-color: transparent;
+    /* Có thể thêm dòng này để chắc ăn hơn */
+    color: transparent; 
+    
+    text-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+}
+
+/* Layout thống kê (chia 2 cột) */
+.result-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.stat-item { display: flex; flex-direction: column; align-items: center; }
+
+/* Số liệu lớn */
+.stat-value {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* Nhãn nhỏ bên dưới */
+.stat-label { font-size: 0.9rem; color: #aaa; text-transform: uppercase; letter-spacing: 1px; margin-top: 5px; }
+
+/* Màu sắc riêng cho từng chỉ số */
+#final-correct { color: var(--success-color); text-shadow: 0 0 15px rgba(46, 204, 113, 0.4); }
+#final-wrong { color: var(--error-color); text-shadow: 0 0 15px rgba(231, 76, 60, 0.4); }
+
+/* Phần tổng điểm */
+.total-score-box { font-size: 1.5rem; margin-bottom: 30px; }
+#final-score { color: white; font-weight: bold; font-size: 2rem; margin-left: 10px; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+
+/* Nút bấm trong modal */
+#result-modal .nav-btn { width: 100%; margin-bottom: 12px; font-size: 1.1rem; padding: 15px; }
+/* Style cho nút phụ (Xem lại bài) */
+.secondary-action {
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+.secondary-action:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: white !important;
+    box-shadow: none !important;
+}

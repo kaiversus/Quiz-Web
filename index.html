@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống Ôn tập Mạng máy tính</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="welcome-modal" class="modal">
+        <!-- <div class="modal-content">
+            <h2 style="color: var(--accent-color); margin-top: 0;">Chào mừng bạn đến với bài ôn tập!</h2>
+            <p>Hệ thống bao gồm các câu hỏi trắc nghiệm kiến thức mạng.</p>
+            <ul>
+                <li>Chọn đáp án để biết kết quả ngay lập tức.</li>
+                <li>Sử dụng danh sách bên phải để chuyển câu.</li>
+            </ul>
+            <button id="start-btn">BẮT ĐẦU LÀM BÀI</button>
+        </div> -->
+        
+        <div class="modal-content">
+            <h2 style="color: var(--accent-color); margin-top: 0;">Nạp dữ liệu ôn tập</h2>
+            
+            <p>Chọn file câu hỏi (.json) từ máy tính của bạn để bắt đầu.</p>
+            
+            <div style="margin: 20px 0; text-align: left;">
+                <label for="file-upload" style="display:block; margin-bottom:10px; color:#aaa;">File câu hỏi:</label>
+                <input type="file" id="file-upload" accept=".json" style="color: white; font-family: 'Inter';">
+            </div>
+
+            <button id="start-btn" class="nav-btn primary-action">BẮT ĐẦU NGAY</button>
+        </div>
+    </div>
+    
+
+    <div class="main-container hidden" id="main-ui">
+        
+        <div class="question-area">
+            <div class="header-bar">
+                <h3>Câu hỏi <span id="q-number">1</span></h3>
+            </div>
+            
+            <div id="question-content">
+                </div>
+
+            <div class="navigation-buttons">
+                <button id="prev-btn" onclick="changeQuestion(-1)">Câu trước</button>
+                <button id="next-btn" onclick="changeQuestion(1)">Câu sau</button>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <h3>Danh sách câu</h3>
+            <div id="question-list" class="grid-list">
+                </div>
+            <div class="summary">
+                <p>Đúng: <span id="score-correct" style="color:green">0</span> | Sai: <span id="score-wrong" style="color:red">0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <div id="result-modal" class="modal hidden">
+    <div class="modal-content">
+        <h2>🎉 Kết quả bài làm</h2>
+        
+        <div class="result-stats">
+            <div class="stat-item">
+                <span id="final-correct" class="stat-value">0/0</span>
+                <span class="stat-label">Câu Đúng ✅</span>
+            </div>
+            <div class="stat-item">
+                <span id="final-wrong" class="stat-value">0</span>
+                <span class="stat-label">Câu Sai ❌</span>
+            </div>
+        </div>
+
+        <div class="total-score-box">
+             Tổng điểm: <span id="final-score">0.0</span>
+        </div>
+
+        <button onclick="location.reload()" class="nav-btn primary-action">Làm lại bài thi 🔄</button>
+        <button onclick="closeResultModal()" class="nav-btn secondary-action">Xem lại bài làm 📜</button>
+    </div>
+</div>
+</body>
+
+</html>

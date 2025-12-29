@@ -1,0 +1,1748 @@
+DU_LIEU_THO = r"""
+Câu hỏi 1
+Sắp xếp các thông tin sau cho đúng: Data Link, MAC, ARP, Transport, IPv4, IPv6
+The correct answer is: Data Link frame, MAC-48bits, ARP ánh xạ IP & MAC của một thiết bị, Transport Segment, IPv4-32bit, IPv6-128bit
+
+Câu hỏi 2
+Sắp xếp các thông tin sau cho đúng: Ethernet, Trunk, WiFi, Token ring, RADIUS
+The correct answer is: Ethernet 802.3, Trunk 802.1Q, WiFi 802.11ax, Token ring 802.5, RADIUS 802.1X
+
+Câu hỏi 3
+Sắp xếp các thông tin sau cho đúng: Presentation, Application, Transport, Data Link, Network, Physical
+The correct answer is: Presentation data, Application data, Transport Segment, Data Link frame, Network packet, Physical bit
+
+Câu hỏi 4
+Sắp xếp kích thước Header: UDP, IPv6 header, TCP, IPv4 header
+The correct answer is: UDP - 8 bytes, IPv6 header 40 bytes, TCP-20 bytes, IPv4 header- 20 to 60 bytes
+
+Câu hỏi 5
+Sắp xếp chức năng: telnet, ping, ipconfig, tracert, ssh, nslookup
+The correct answer is: tenet - truy cập và quản lý trị hệ thống ở xa, ping - kiểm tra kết nối giữa máy nguồn và máy ở xa, ipconfig xem thông tin địa chỉ IP, tracert - xem đường đi từ nguồn đến đích của gói tin, ssh truy cập và quản lý trị hệ thống ở xa, nslookup phân giải tên miền thành IP và ngược lại
+
+Câu hỏi 6
+Sắp xếp port: HTTPS, ssh, SMTP, DNS, POP3, FTP, DHCP, Telnet
+The correct answer is: HTTPS 443, ssh 22, SMTP-25, DNS-53, POP3-110, FTP-21, DHCP-67, Telnet - 23
+
+Câu hỏi 7
+Sắp xếp tầng OSI: Repeater, Hub, Switch, Router, Bridge
+The correct answer is: Repeater Physical, Hub Physical, Switch Data Link, Router Network, Bridge Data Link
+
+Câu hỏi 8
+Sắp xếp tầng: SMTP, IP, ICMP, HTTP, UDP, TCP, OSPF
+The correct answer is: SMTP Application, IP- Network, ICMP Network, HTTP-Application, UDP-Transport, TCP - Transport, OSPF Network
+
+Câu hỏi 9
+Kết nối chức năng của các tầng trong mô hình OSI: Nén dữ liệu, Truyền bit, Mã hóa, Phân đoạn, Đóng gói frame, Đánh địa chỉ IP
+The correct answer is: Nén dữ liệu Presentation, Truyền các bít dữ liệu trên môi trường truyền dẫn Physical, Mã hóa dữ liệu - Presentation, Phân đoạn dữ liệu - Transport, Đóng gói dữ liệu thành frame - Data link, Đánh địa chỉ IP - Network, Đánh số các packet - Transport
+
+Câu hỏi 10
+Sắp xếp thông tin: IPv4, ARP, IPv6, Data Link, Transport, MAC
+The correct answer is: Ipv4-32 bit, ARP ánh xạ IP & MAC của một thiết bị, Ipv6 - 128 bit, Data Link- frame, Transport - segment, MAC-48 bit
+
+Câu hỏi 11
+Kết hợp các giao thức với chức năng của nó: SMTP, DNS, DNS record PTR, DNS Record A, Đường Trunk
+The correct answer is: SMTP - Giao thức được dùng để gửi email, DNS - Dịch vụ phân giải tên miền, DNS record PTR - Reverse Lookup zone, DNS Record A Forward Lookup zone, Đường Trunk - đường đi chung cho các VLAN
+
+Câu hỏi 12
+Kết hợp các giao thức với port: FTP, SSH, Telnet, HTTPS, POP3
+The correct answer is: FTP-21, SSH-22, Telnet-23, HTTPS-443, POP3-110
+
+Câu hỏi 13
+Tầng nào cung cấp các phương tiện để người sử dụng có thể truy nhập được vào môi trường OSI và cung cấp các dịch vụ thông tin phân tán
+A. Transport
+B. Application
+C. Session
+D. Presentation
+The correct answer is: Application
+
+Câu hỏi 14
+Tầng hai trong mô hình OSI tách luồng bit từ Tăng vật lý chuyến lên thành
+A. PSU
+B. Frame
+C. Packet
+D. Segment
+The correct answer is: Frame
+
+Câu hỏi 15
+Nếu như một loại mã hóa dữ liệu nào đó được dùng cho các mục đích an toàn thì tăng nào trong OSI có chức năng mã hóa:
+A. Session
+B. Transport
+C. Application
+D. Presentation
+The correct answer is: Presentation
+
+Câu hỏi 16
+Kích thước nhỏ nhất của UDP header là
+A. 16bytes
+B. 32bytes
+C. 20bytes
+D. 8bytes
+The correct answer is: 8bytes
+
+Câu hỏi 17
+Sự biến đổi dữ liệu thành các xung điện xảy ra tại lớp nào của OSI:
+A. Session
+B. Physical
+C. Transport
+D. Application
+The correct answer is: Physical
+
+Câu hỏi 18
+Mức nào trong OSI thực hiện đảm bảo truyền toàn bộ dữ liệu từ máy nguồn đến máy đích
+A. Session
+B. Physical
+C. Application
+D. Transport
+The correct answer is: Transport
+
+Câu hỏi 19
+Card giao diện mạng thực hiện chức năng chủ yếu tại tầng nào của mô hình OSI
+A. Transport
+B. Session
+C. Physical
+D. Datalink
+The correct answer is: Datalink
+
+Câu hỏi 20
+Mức nào trong OSI tương ứng với mức IP trong TCP/IP:
+A. Session
+B. Physical
+C. Transport
+D. Network
+The correct answer is: Network
+
+Câu hỏi 21
+FDM (frequency-division multiplexing) được dùng trong truyền tín hiệu nào?
+A. Electric
+B. Analog
+C. Satellite
+D. Digital
+The correct answer is: Analog
+
+Câu hỏi 22
+Kích thước lớn nhất của IPv4 header là
+A. 20bytes
+B. 60bytes
+C. 16bytes
+D. 32bytes
+The correct answer is: 60bytes
+
+Câu hỏi 23
+Kích thước của TCP header là
+A. 16bytes
+B. 8bytes
+C. 20bytes
+D. 32bytes
+The correct answer is: 20bytes
+
+Câu hỏi 24
+Địa chỉ MAC nào là đúng?
+A. AD-ED-5C-DF-5A-97
+B. AQ-ED-5C-DF-5A-97
+C. AC-ED-5C-DF-5A-97
+D. AS-ED-5C-DF-5A-97
+The correct answer is: AC-ED-5C-DF-5A-97
+
+Câu hỏi 25
+Đơn vị nào chỉ tốc độ truyền dẫn dữ liệu?
+A. Kb
+B. Kbps
+C. Mb
+D. KB
+The correct answer is: Kbps
+
+Câu hỏi 26
+Tốc độ truyền dẫn dữ liệu 1Mbps có nghĩa gì?
+A. Trong 1 giây truyền được 1000byte dữ liệu
+B. Trong 1 giây truyền được 1 Megabyte dữ liệu
+C. Trong 1 giây truyền được 1000byte dữ liệu
+D. Trong 1 giây truyền được 1000bit dữ liệu
+The correct answer is: Trong 1 giây truyền được 1000bit dữ liệu
+
+Câu hỏi 27
+Tốc độ truyền dẫn dữ liệu 2Kbps có nghĩa gì?
+A. Trong 1 giây truyền được 2*1024bit dữ liệu
+B. Trong 1 giây truyền được 2*1000byte dữ liệu
+C. Trong 1 giây truyền được 2*1024byte dữ liệu
+D. Trong 1 giây truyền được 2*1000bit dữ liệu
+The correct answer is: Trong 1 giây truyền được 2*1000bit dữ liệu
+
+Câu hỏi 28
+Có các dạng delay nào trong packet-switching?
+A. Processing, Delay, Transmission, Propagation
+B. Processing, Lineing, Transmission, Propagation
+C. Processing, Waiting, Transmission, Propagation
+D. Processing, Queueing, Transmission, Propagation
+The correct answer is: Processing, Queueing, Transmission, Propagation
+
+Câu hỏi 29
+Thời gian cần để chuyển tất cả các packet lên liên kết là dạng delay nào trong packet-switching?
+A. Transmission
+B. Propagation
+C. Queueing
+D. Processing
+The correct answer is: Transmission
+
+Câu hỏi 30
+Thời gian cần để truyền dữ liệu từ điểm bắt đầu của liên kết đến Router tiếp theo là dạng delay nào trong packet-switching?
+A. Transmission
+B. Propagation
+C. Processing
+D. Queueing
+The correct answer is: Propagation
+
+Câu hỏi 31
+Kỹ thuật dòn kênh nào có thể được sử dụng để truyền các kênh có băng thông không bằng nhau
+A. TDM (time-division multiplexing)
+B. TDM & FDM
+C. None of of all
+D. FDM (frequency-division multiplexing)
+The correct answer is: TDM (time-division multiplexing)
+
+Câu hỏi 32
+Trong mạng điện thoại, kỹ thuật dồn kênh nào được dùng?
+A. None of of all
+B. TDM & FDM
+C. FDM (frequency-division multiplexing)
+D. TDM (time-division multiplexing)
+The correct answer is: FDM (frequency-division multiplexing)
+
+Câu hỏi 33
+Kỹ thuật dồn kênh nào được dùng truyền tín hiệu số
+A. TDM (time-division multiplexing)
+B. TDM & FDM
+C. FDM (frequency-division multiplexing)
+D. None of of all
+The correct answer is: TDM (time-division multiplexing)
+
+Câu hỏi 34
+Chi phí lắp đặt thấp hơn và dễ vận hành hơn các sơ đồ mạng khác là mạng
+A. Bus
+B. Mesh
+C. Start
+D. Ring
+The correct answer is: Bus
+
+Câu hỏi 35
+Đồ hình mạng nào mà các thiết bị kết nối mạng có một đường kết nối riêng lẻ
+A. Ring
+B. Bus
+C. Start
+D. Mesh
+The correct answer is: Start
+
+Câu hỏi 36
+Đồ hình mạng nào có khả năng tăng tính dự phòng cho hệ thống
+A. Bus
+B. Start
+C. Mesh
+D. Ring
+The correct answer is: Mesh
+
+Câu hỏi 37
+Công cụ nào dùng để kiểm tra một host đang hoạt động hay không?
+A. ping
+B. nslookup
+C. tracert
+D. route
+The correct answer is: ping
+
+Câu hỏi 38
+Công cụ nào dùng để hiện thị các bước (hops) để gói tin từ máy tính của bạn tới máy đích?
+A. nslookup
+B. tracert
+C. route
+D. ping
+The correct answer is: tracert
+
+Câu hỏi 39
+Thiết bị mạng nào hoạt động ở layer Network trong mô hình OSI
+A. Hub
+B. Switch
+C. Router
+D. Repeater
+The correct answer is: Router
+
+Câu hỏi 40
+Thiết bị mạng nào hoạt động ở layer 2 trong mô hình TCP/IP
+A. Router
+B. Switch
+C. Hub
+D. Repeater
+The correct answer is: Switch
+
+Câu hỏi 41
+Email và FTP hoạt động ở layer nào trong mô hình OSI?
+A. Session
+B. Transport
+C. Application
+D. Physical
+The correct answer is: Application
+
+Câu hỏi 42
+Địa chỉ MAC có bao nhiêu bit
+A. 48
+B. 32
+C. 16
+D. 64
+The correct answer is: 48
+
+Câu hỏi 43
+Điều gì được yêu cầu phải thực hiện trước khi TCP bắt đầu gửi các segment
+A. Chỉ số port được thống nhất trước giữa máy gửi và máy nhận
+B. Đánh số tuần tự vào các segment
+C. Three-way handshake
+D. Chỉ số báo nhận của các segment
+The correct answer is: Three-way handshake
+
+Câu hỏi 44
+Câu nào sau đây mô tả thứ tự đúng của dữ liệu được đóng gói?
+A. User datagrams, session, segments, packet, frames, bits
+B. User datagrams, packets, segments, frames, bits
+C. User datagrams, segments, packets, frames, bits
+D. User datagrams, packets, segments, session, frames, bits
+The correct answer is: User datagrams, segments, packets, frames, bits
+
+Câu hỏi 45
+Câu nào sau đây là mô tả đúng khi switch nhận vào gói tin ARP request
+A. Switch chỉ chuyển tiếp gói ARP request đến cổng kết nối với máy đích
+B. Địa chỉ MAC đích trong frame là FF-FF-FF-FF-FF-FF
+C. Địa chỉ MAC nguồn trong frame là FF-FF-FF-FF-FF-FF
+D. Switch sẽ trực tiếp trả lời gói ARP reply
+The correct answer is: Địa chỉ MAC đích trong frame là FF-FF-FF-FF-FF-FF
+
+Câu hỏi 46
+Giao thức nào phân giải địa chỉ IP thành MAC?
+A. TCP
+B. IP
+C. ARP
+D. RARP
+The correct answer is: ARP
+
+Câu hỏi 47
+Giao thức nào hoạt động ở tầng Transport?
+A. IP & ICMP
+B. UDP & IP
+C. TCP & UDP
+D. ICMP & ARP
+The correct answer is: TCP & UDP
+
+Câu hỏi 48
+Giao thức nào được dùng trong công cụ ping để quản lý các thông báo kết nối mạng
+A. ICMP
+B. TCP
+C. UDP
+D. IP
+The correct answer is: ICMP
+
+Câu hỏi 49
+Cờ nào được bật khi một client gửi yêu cầu kết nối TCP đến Server
+A. FIN
+B. START
+C. SYN
+D. ACK
+The correct answer is: SYN
+
+Câu hỏi 50
+Giao thức nào được dùng để thực hiện các kết nối tin cậy
+A. ICMP
+B. TCP
+C. IP
+D. UDP
+The correct answer is: TCP
+
+Câu hỏi 51
+Giao thức nào được dùng để thực hiện truyền dữ liệu lớn cần đảm bảo thời gian thực
+A. TCP
+B. ICMP
+C. IP
+D. UDP
+The correct answer is: UDP
+
+Câu hỏi 52
+Kích thước của UDP header là
+A. 20bytes
+B. 16bytes
+C. 32bytes
+D. 8bytes
+The correct answer is: 8bytes
+
+Câu hỏi 53
+Giao thức nào được sử dụng để tìm địa chỉ MAC cho thiết bị mạng cục bộ?
+A. IP
+B. ARP
+C. DNS
+D. ICMP
+The correct answer is: ARP
+
+Câu hỏi 54
+Cable gì? (Hình ảnh cáp đồng trục)
+a. coxial
+b. fiber
+c. twisted pair
+d. thinnet
+The correct answer is: coxial
+
+Câu hỏi 55
+Địa chỉ đích nào sẽ được Host A sử dụng để gửi dữ liệu đến máy chủ HTTPS như trong hình bên dưới?
+a. The IP address of the switch, MAC address of RouterA's Fa0/0
+b. The IP address of the HTTPS server, MAC address of RouterA's Fa0/0
+c. The MAC address of the remote switch, IP address of the HTTPS server
+d. The IP address of the HTTPS server, IP address of the switch
+The correct answer is: The IP address of the HTTPS server, MAC address of RouterA's Fa0/0
+
+Câu hỏi 56
+Cable gì? (Hình ảnh cáp xoắn đôi)
+a. fiber
+b. twisted pair
+c. thinnet
+d. coxial
+The correct answer is: twisted pair
+
+Câu hỏi 57
+Tiện ích nào sau đây xác định đường đi của gói tin từ nguồn tới đích
+a. telnet
+b. ssh
+c. nslookup
+d. ping
+e. tracert
+The correct answer is: tracert
+
+Câu hỏi 58
+Trong Token bus, vòng tròn logic được thiết lập bởi các trạm
+a. Các trạm có nhu cầu nhận dữ liệu
+b. Tất cả các trạm trên mạng
+c. Các trạm có nhu cầu truyền dữ liệu
+d. Các trạm trung chuyển dữ liệu
+The correct answer is: Các trạm có nhu cầu truyền dữ liệu
+
+Câu hỏi 59
+Các thiết bị này nối bằng kiểu nối cable gì? (PC to Router, Switch to Switch...)
+a. cross
+b. rollover
+c. straight
+d. twisted
+The correct answer is: straight
+
+Câu hỏi 60
+Hai đầu nối này trong kiểu nối cable gì? (Thứ tự màu 1-8 giống nhau)
+a. straight
+b. cross
+c. twisted
+d. rollover
+The correct answer is: straight
+
+Câu hỏi 61
+Hai đầu nối này trong kiểu nối cable gì? (Thứ tự màu đảo ngược)
+a. cross
+b. twisted
+c. straight
+d. rollover
+The correct answer is: rollover
+
+Câu hỏi 62
+Cho biết mô hình mạng Wifi khi hai máy laptop kết nối mạng trực tiếp với nhau bằng card mạng wifi?
+a. Base Station Subsystem (BSS)
+b. Ad hoc
+c. Extended Service Set (ESS)
+d. Distribution Subsystem (DS)
+The correct answer is: Ad hoc
+
+Câu hỏi 63
+Xem hình vẽ sau, cho biết mô hình triển khai mạng Wifi? (Nhiều AP kết nối với nhau)
+a. Distribution Subsystem (DS)
+b. Ad hoc
+c. Extended Service Set (ESS)
+d. Base Station Subsystem (BSS)
+The correct answer is: Extended Service Set (ESS)
+
+Câu hỏi 64
+Thiết bị mạng nào sau đây hoạt động ở layer Data Link (Chọn nhiều)
+a. hub
+b. bridge
+c. router
+d. repeater
+e. switch
+The correct answer is: switch, bridge
+
+Câu hỏi 65
+Card mạng hoạt động ở tầng nào trong mô hình OSI
+a. transport
+b. physical
+c. data link
+d. network
+The correct answer is: data link
+
+Câu hỏi 66
+Chuẩn cáp mạng nào sau đây hỗ trợ tốc độ lên tới 1Gb/s sử dụng 4 cặp cáp của CAT5e?
+a. 1000BASE-T
+b. 1000BASE-LX
+c. 1000BASE-X
+d. 1000BASE-SX
+The correct answer is: 1000BASE-T
+
+Câu hỏi 67
+Trường nào trong IP Header được dùng để tránh trường hợp một gói tin tồn tại mãi trên mạng?
+a. flags
+b. checksum
+c. header length
+d. TTL
+The correct answer is: TTL
+
+Câu hỏi 68
+Lý do nào sau đây mà giao thức Ethernet sử dụng địa chỉ vật lý (physical address)?
+a. Nó cho phép một máy tính xác định là ở xa hay trong mạng cục bộ
+b. Nó tạo ra sự khác biệt giữa các cách truyền thông ở layer 2 và layer 3
+c. Nó dùng để định danh duy nhất cho các thiết bị ở layer 2
+d. Nó định nghĩa mô hình địa chỉ luận lý cho các thiết bị
+The correct answer is: Nó dùng để định danh duy nhất cho các thiết bị ở layer 2
+
+Câu hỏi 69
+Các câu nào sau đây mô tả đúng các địa chỉ cho frame và packet mà host TestkingB nhận được từ host TestKingA?
+a. Destination MAC: 0011.43da.2c98. Source MAC: 0007.0e97.af4e
+b. Destination MAC: 0011.43da.2c98. Source MAC: 0007.0e56.ab2e
+c. Destination MAC: 0011.43da.2c98. Source MAC: 00b0.d0ef.5f6a
+d. Destination MAC: 0011.43da.2c98. Source MAC: 0007.0e8f.088a
+The correct answer is: Destination MAC: 0011.43da.2c98. Source MAC: 0007.0e56.ab2e
+
+Câu hỏi 70
+Thiết bị làm việc ở tầng mạng và có thể định tuyến đường đi cho việc truyền thông trên mạng
+a. router
+b. hub
+c. switch
+d. gateway
+The correct answer is: router
+
+Câu hỏi 71
+Host A đang giao tiếp với Host B. Các thông tin gì của gói tin khi dữ liệu rời khỏi Router TestKing 1?
+a. Src: 000A.8A47.E612; IP: 192.168.23.4. Des: 000B.DC04.12F4; 192.168.127.7
+b. Src: 000A.8A47.E612; 192.168.23.4. Des: 0010.7BE7.FAEF; 192.168.23.1
+c. Src: 0010.7B3A.8191; 192.168.23.4. Des: 000B.DC04.12F4; 192.168.127.7
+d. Src: 0010.7BE7.FAEF; 192.168.23.1. Des: 000B.DC04.12F4; 192.168.127.7
+The correct answer is: Src: 0010.7B3A.8191; 192.168.23.4. Des: 000B.DC04.12F4; 192.168.127.7
+
+Câu hỏi 72
+Thiết bị làm việc ở tăng Vật lý và chức năng như một bộ khuyếch đại tín hiệu giữa 2 cổng của hai phân đoạn mạng
+a. repeater
+b. router
+c. hub
+d. switch
+The correct answer is: repeater
+
+Câu hỏi 73
+Các chuẩn nào sau đây không phải là chuẩn của WiFi?
+a. 802.11ax
+b. 802.11g
+c. 802.11v
+d. 802.11a
+The correct answer is: 802.11v
+
+Câu hỏi 74
+Những câu nào sau đây là mô tả đúng cho kiểu kết nối tin cậy trong quá trình truyền dữ liệu?
+a. Nếu hết thời gian chờ trong việc truyền gói tin thì máy gửi sẽ ngắt kết nối với máy nhận
+b. Khi buffer đầy, dữ liệu sẽ bị loại bỏ và không được truyền lại
+c. Là quá trình gửi dữ liệu có báo nhận
+d. Giá trị windows-size được sử dụng để điều khiển số lượng dữ liệu truyền đi trước khi chờ báo nhận gửi về
+The correct answer is: Là quá trình gửi dữ liệu có báo nhận
+
+Câu hỏi 75
+Phương pháp truy nhập nào có thể lắng nghe lưu thông mạng trên đường truyền trước khi truyền dữ liệu và có phát hiện đụng độ
+a. Token Ring
+b. Token Bus
+c. CSMA/CD
+d. CSMA/CA
+The correct answer is: CSMA/CD
+
+Câu hỏi 76
+Giao thức nào thực hiện truyền các thông báo điều khiển giữa các gateway hay trạm của liên mạng
+a. ICMP
+b. ARP
+c. RARP
+d. TCP
+The correct answer is: ICMP
+
+Câu hỏi 77
+Dịch vụ HTTP ở tầng Application sử dụng cơ chế truyền nào ở tầng Transport
+a. half-duplex
+b. best-effort
+c. reliable
+d. full-duplex
+The correct answer is: reliable
+
+Câu hỏi 78
+Chuẩn Ethernet nào có sử dụng cáp quang:
+a. 1000BASE-RX
+b. 1000BASE-FX
+c. 1000BASE-CX
+d. 1000BASE-TX
+The correct answer is: 1000BASE-FX
+
+Câu hỏi 79
+Công nghệ LAN nào sử dụng CSMA/CD
+a. Ethernet
+b. Token Bus
+c. FDDI
+d. Token Ring
+The correct answer is: Ethernet
+
+Câu hỏi 80
+Công nghệ nào sử dụng vòng tròn phụ hoạt động khi hệ thống bị lỗi và có tác dụng sửa lỗi
+a. Token Bus
+b. FDDI
+c. Ethernet
+d. Token Ring
+The correct answer is: FDDI
+
+Câu hỏi 81
+Dịch vụ nào cho phép chuyến các file từ trạm này sang trạm khác, bất kể yếu tố địa lý hay hệ điều hành sử dụng
+a. Telnet
+b. SMTP
+c. FTP
+d. HTTP
+The correct answer is: FTP
+
+Câu hỏi 82
+Đơn vị dữ liệu datagram được dùng trong giao thức nào trong TCP/IP
+a. TCP
+b. ICMP
+c. IP
+d. UDP
+The correct answer is: IP
+
+Câu hỏi 83
+Giao thức cho phép gửi thư đi
+a. SNMP
+b. FTP
+c. SMTP
+d. ICMP
+The correct answer is: SMTP
+
+Câu hỏi 84
+Thiết bị làm việc ở tăng Vật lý và chức năng như một bộ khuyếch đại tín hiệu giữa 2 cổng của hai phân đoạn mạng
+a. router
+b. switch
+c. repeater
+d. hub
+The correct answer is: repeater
+
+Câu hỏi 85
+Hai nhà cung cấp dịch vụ ISP kết nối với nhau qua thiết bị
+a. repeater
+b. router
+c. switch
+d. hub
+The correct answer is: router
+
+Câu hỏi 86
+Hai nhà cung cấp dịch vụ ISP kết nối với nhau qua thiết bị
+a. router
+b. switch
+c. repeater
+d. hub
+The correct answer is: router
+
+Câu hỏi 87
+Trong frame, trường nào được dùng để phát hiện lỗi
+a. Flag
+b. MTU
+c. PDU
+d. FCS
+The correct answer is: FCS
+
+Câu hỏi 88
+Giao thức nào trong TCP/IP có trao đổi thông tin điều khiển trước khi truyền dữ liệu
+a. IP
+b. UDP
+c. ICMP
+d. TCP
+The correct answer is: TCP
+
+Câu hỏi 89
+Cable gì? (Hình ảnh cáp đồng trục)
+a. fiber
+b. coxial
+c. twisted pair
+d. thinnet
+The correct answer is: coxial
+
+Câu hỏi 90
+Phần nào trong địa chỉ IP được ROUTER sử dụng khi tìm đường đi
+a. Network address
+b. PC address
+c. Host address
+d. router address
+The correct answer is: Network address
+
+Câu hỏi 91
+Địa chỉ 19.219.255.255 là địa chỉ gì
+a. Broadcast lớp A
+b. Broadcast lớp B
+c. Host lớp B
+d. Broadcast lớp C
+The correct answer is: Broadcast lớp B
+
+Câu hỏi 92
+Một mạng con lớp B mượn 5 bít để chia subnet thì subnetmask sẽ là
+a. 255.255.255.1
+b. 255.255.255.128
+c. 255.255.248.0
+d. 255.255.255.248
+The correct answer is: 255.255.248.0
+
+Câu hỏi 93
+Một mạng lớp B cần chia thành 3 mạng con sử dụng subnet mask nào sau đây
+a. 255.255.192.0
+b. 255.255.255.224
+c. 255.255.255.192
+d. 255.255.224.0
+The correct answer is: 255.255.192.0
+
+Câu hỏi 94
+Địa chỉ IPv6 nào dưới đây tương đương với địa chỉ loopback của IPv4 127.0.0.1
+a. 1
+b. 2000/3
+c. ::1
+d. 0::/10
+The correct answer is: ::1
+
+Câu hỏi 95
+Địa chỉ nào biểu diễn địa chỉ link-local của IPv6
+a. FE81:280f.512b:e14f3d69
+b. FE80::380e:611a:e14f:3d69
+c. FE08:280e:611:a:f14f.3d69
+d. FEFE:0345:5f1b::e14d:3d69
+The correct answer is: FE80::380e:611a:e14f:3d69
+
+Câu hỏi 96
+Một mạng con lớp B mượn 5 bít để chia subnet thì subnet mask sẽ là:
+a. 255.255.255.248
+b. 255.255.248.0
+c. 255.255.255.128
+d. 255.255.255.1
+The correct answer is: 255.255.248.0
+
+Câu hỏi 97
+Mạng có subnet mask 255.255.255.192 có thể đánh địa chỉ cho bao nhiêu máy
+a. 192
+b. 124
+c. 62
+d. 64
+The correct answer is: 62
+
+Câu hỏi 98
+Địa chỉ IP nào sau đây là địa chỉ dạng Private
+a. 172.30.150.1
+b. 172.50.30.1
+c. 11.11.11.11
+d. 193.120.56.1
+The correct answer is: 172.30.150.1
+
+Câu hỏi 99
+Địa chỉ mạng lớp B 172.16.0.0/19 cung cấp bao nhiêu mạng con và số host trong 1 mạng con?
+a. 7 subnets, mỗi subnet có 30 hosts
+b. 8 subnets, mỗi subnet có 30 hosts
+c. 7 subnets, mỗi subnet có 8190 hosts
+d. 7 subnets, mỗi subnet có 2046 hosts
+e. 8 subnets, mỗi subnet có 8190 hosts
+The correct answer is: 8 subnets, mỗi subnet có 8190 hosts
+
+Câu hỏi 100
+Địa chỉ mạng của Host có địa chỉ IP là 172.16.66.0/21 là bao nhiêu?
+a. 172.16.48.0
+b. 172.16.36.0
+c. 172.16.64.0
+d. 172.16.0.0
+The correct answer is: 172.16.64.0
+
+Câu hỏi 101
+Giả sử cần 500 subnets, mỗi subnet có khoảng 100 hosts. Subnetmask nào sẽ được dùng, biết hệ thống dùng địa chỉ IP Lớp B?
+a. 255.255.254.0
+b. 255.255.255.0
+c. 255.255.255.128
+d. 255.255.255.252
+The correct answer is: 255.255.255.128
+
+Câu hỏi 102
+Nếu một cổng Ethernet trên Router được gán địa chỉ IP là 172.16.112.1/25, thì địa chỉ mạng con hợp lệ là gì?
+a. 172.16.112.0
+b. 172.16.255.0
+c. 172.16.0.0
+d. 172.16.96.0
+The correct answer is: 172.16.112.0
+
+Câu hỏi 103
+HOST A trên mạng con Teachers truyền một gói tin đến HOST D trên mạng con Student. Địa chỉ Lớp 2 và Lớp 3 nào được chứa trong các PDU được truyền từ Router đến HOST D?
+The correct answer is: Destination MAC: 00-00-0c-94-36-dd, Source MAC: 00-00-00-94-36-cd, Destination IP: 172.16.20.200, Source IP: 172.16.10.100
+
+Câu hỏi 104
+Nếu Host B muốn gửi gói tin đến Host A, địa chỉ đích nào sẽ ở trong khung dữ liệu (frame) khi nó rời Host B?
+The correct answer is: CC:CC:CC:CC:CC:CC
+
+Câu hỏi 105
+Giá trị AD (Administrative Distance) mặc định của OSPF là?
+a. 110
+b. 150
+c. 120
+d. 90
+The correct answer is: 110
+
+Câu hỏi 106
+Giá trị AD (Administrative Distance) mặc định của OSPF là?
+a. 120
+b. 150
+c. 110
+d. 90
+The correct answer is: 110
+
+Câu hỏi 107
+Giá trị AD (Administrative Distance) mặc định của RIP là?
+a. 120
+b. 90
+c. 150
+d. 110
+The correct answer is: 120
+
+Câu hỏi 108
+Giá trị AD (Administrative Distance) mặc định của RIP là?
+a. 110
+b. 150
+c. 90
+d. 120
+The correct answer is: 120
+
+Câu hỏi 109
+Giá trị AD (Administrative Distance) mặc định của Static Routing là?
+a. 1
+b. 150
+c. 120
+d. 90
+The correct answer is: 1
+
+Câu hỏi 110
+Giá trị AD (Administrative Distance) mặc định của Static Routing là?
+a. 150
+b. 90
+c. 120
+d. 1
+The correct answer is: 1
+
+Câu hỏi 111
+Một VLAN là một tập các thiết bị nằm cùng miền
+a. Bandwidth domain
+b. Storm domain
+c. Broadcast domain
+d. Collision domain
+The correct answer is: Broadcast domain
+
+Câu hỏi 112
+Which domain do devices in a VLAN belong to?
+a. Storm domain
+b. Collision domain
+c. Broadcast domain
+d. Bandwidth domain
+The correct answer is: Broadcast domain
+
+Câu hỏi 113
+Một VLAN là một tập các thiết bị nằm cùng miền
+a. Collision domain
+b. Storm domain
+c. Broadcast domain
+d. Bandwidth domain
+The correct answer is: Broadcast domain
+
+Câu hỏi 114
+Thiết bị nào sau đây được dùng để kết nối các VLAN
+a. Bridge
+b. Router
+c. Hub
+d. Switch
+The correct answer is: Router
+
+Câu hỏi 115
+Thiết bị nào sau đây được dùng để kết nối các VLAN
+a. Switch
+b. Bridge
+c. Hub
+d. Router
+The correct answer is: Router
+
+Câu hỏi 116
+Giao thức STP dùng để làm gì?
+a. Dùng để cập nhật định tuyến trong môi trường Switch
+b. Dùng để quản lý việc thêm, xóa, sửa thông tin VLAN trong hệ thống có nhiều Switch
+c. Dùng để chống "routing loop" trong mạng
+d. Dùng để tránh "switching loop" trong mạng
+The correct answer is: Dùng để tránh "switching loop" trong mạng
+
+Câu hỏi 117
+Giao thức STP dùng để làm gì?
+a. Dùng để quản lý việc thêm, xóa, sửa thông tin VLAN trong hệ thống có nhiều Switch
+b. Dùng để tránh "switching loop" trong mạng
+c. Dùng để cập nhật định tuyến trong môi trường Switch
+d. Dùng để chống "routing loop" trong mạng
+The correct answer is: Dùng để tránh "switching loop" trong mạng
+
+Câu hỏi 118
+Để kiểm tra interface fa0/5 có được gán cho VLAN 10 không, thì ta sử dụng lệnh nào sau đây?
+a. show vtp
+b. show vlan
+c. show ip interface
+d. show interfaces trunk
+The correct answer is: show vlan
+
+Câu hỏi 119
+Để kiểm tra interface fa0/5 có được gán cho VLAN 10 không, thì ta sử dụng lệnh nào sau đây?
+a. show interfaces trunk
+b. show vtp
+c. show ip interface
+d. show vlan
+The correct answer is: show vlan
+
+Câu hỏi 120
+Để kiểm tra interface fa0/5 đã được kích hoạt đường giao tiếp chung của các VLAN, thì ta sử dụng lệnh nào sau đây?
+a. show vlan
+b. show interfaces trunk
+c. show ip interface
+d. show vtp
+The correct answer is: show interfaces trunk
+
+Câu hỏi 121
+Tham số được STP sử dụng để bầu chọn "root bridge"?
+a. Địa chỉ MAC
+b. IP cost
+c. Địa chỉ IP
+d. port cost
+The correct answer is: Địa chỉ MAC
+
+Câu hỏi 122
+Tham số được STP sử dụng để bầu chọn "root bridge"?
+a. Địa chỉ IP
+b. Địa chỉ MAC
+c. IP cost
+d. port cost
+The correct answer is: Địa chỉ MAC
+
+Câu hỏi 123
+Để kiểm tra interface fa0/5 đã được kích hoạt đường giao tiếp chung của các VLAN, thì ta sử dụng lệnh nào sau đây?
+a. show vtp
+b. show interfaces trunk
+c. show ip interface
+d. show vlan
+The correct answer is: show interfaces trunk
+
+Câu hỏi 124
+Để kiểm tra bảng định tuyến trên Router 1 thì ta sử dụng lệnh nào sau đây?
+a. show vlan
+b. show ip interface
+c. show routing-table
+d. show ip route
+The correct answer is: show ip route
+
+Câu hỏi 125
+Để kiểm tra bảng định tuyến trên Router 1 thì ta sử dụng lệnh nào sau đây?
+a. show ip interface
+b. show ip route
+c. show vlan
+d. show routing-table
+The correct answer is: show ip route
+
+Câu hỏi 126
+Giao thức nào sau đây được dùng để phân phối thông tin về cấu hình VLAN đến các Switch khác trong mạng?
+a. SNMP
+b. STP
+c. VTP
+d. EIGRP
+The correct answer is: VTP
+
+Câu hỏi 127
+Giao thức nào sau đây được dùng để phân phối thông tin về cấu hình VLAN đến các Switch khác trong mạng?
+a. SNMP
+b. EIGRP
+c. STP
+d. VTP
+The correct answer is: VTP
+
+Câu hỏi 128
+Xem mô hình mạng. Mục đích của việc kết nối các Switch dạng như thế này
+a. Tránh được vòng lặp
+b. Dùng để phân hoạch mạng thành nhiều miền đụng độ
+c. Để tăng cường tính dự phòng cho hệ thống mạng
+d. Dùng để phân hoạch mạng thành nhiều miền đụng độ
+The correct answer is: Để tăng cường tính dự phòng cho hệ thống mạng
+
+Câu hỏi 129
+Xem mô hình mạng. Mục đích của việc kết nối các Switch dạng như thế này
+a. Tránh được vòng lặp
+b. Dùng để phân hoạch mạng thành nhiều miền đụng độ
+c. Dùng để phân hoạch mạng thành nhiều miền đụng độ
+d. Để tăng cường tính dự phòng cho hệ thống mạng
+The correct answer is: Để tăng cường tính dự phòng cho hệ thống mạng
+
+Câu hỏi 130
+Xem mô hình mạng. Switch nào được chọn là Root Bridge?
+a. SW2
+b. SW3
+c. SW1
+d. Không có Switch nào
+The correct answer is: SW1
+
+Câu hỏi 131
+Xem mô hình mạng. Switch nào được chọn là Root Bridge?
+a. Không có Switch nào
+b. SW1
+c. SW2
+d. SW3
+The correct answer is: SW1
+
+Câu hỏi 132
+Xem mô hình mạng. Những thông tin cấu hình nào sau đây là đúng cho các host trong mô hình trên?
+a. Địa chỉ IP của HB: 192.1.1.125
+b. Subnet mask của HA: 255.255.255.224
+c. Subnet mask của HC: 255.255.255.224
+d. Địa chỉ IP của HC: 192.1.1.66
+The correct answer is: Subnet mask của HC: 255.255.255.224
+
+Câu hỏi 133
+Xem mô hình mạng. Những thông tin cấu hình nào sau đây là đúng cho các host trong mô hình trên?
+a. Địa chỉ IP của HB: 192.1.1.125
+b. Subnet mask của HC: 255.255.255.224
+c. Subnet mask của HA: 255.255.255.224
+d. Địa chỉ IP của HC: 192.1.1.66
+The correct answer is: Subnet mask của HC: 255.255.255.224
+
+Câu hỏi 134
+Xem mô hình mạng. Những thông tin cấu hình nào sau đây là đúng cho các host trong mô hình trên?
+a. Địa chỉ IP của HA: 192.168.1.128
+b. Subnet mask của HA: 255.255.255.224
+c. Địa chỉ IP của HC: 192.1.1.66
+d. Địa chỉ IP máy HB là 192.168.1.100
+The correct answer is: Địa chỉ IP máy HB là 192.168.1.100
+
+Câu hỏi 135
+Xem mô hình mạng. Những thông tin cấu hình nào sau đây là đúng cho các host trong mô hình trên?
+a. Subnet mask của HA: 255.255.255.224
+b. Địa chỉ IP của HC: 192.1.1.66
+c. Địa chỉ IP của HA: 192.168.1.128
+d. Địa chỉ IP máy HB là 192.168.1.100
+The correct answer is: Địa chỉ IP máy HB là 192.168.1.100
+
+Câu hỏi 136
+Xem mô hình mạng. Router trong mô hình mạng được cấu hình như trên. Switch kết nối với router qua đường trunk. Trên Switch cấu hình 3 VLAN: VLAN1, VLAN2, and VLAN3. Một máy tính A kết nối vào VLAN2. Hỏi địa chỉ default gateway phải đặt cho máy tính này là địa chỉ nào sau đây?
+a. 192.168.1.1
+b. 192.168.3.1
+c. 192.168.2.1
+d. 192.168.3.2
+The correct answer is: 192.168.2.1
+
+Câu hỏi 137
+Xem mô hình mạng. Router trong mô hình mạng được cấu hình như trên. Switch kết nối với router qua đường trunk. Trên Switch cấu hình 3 VLAN: VLAN1, VLAN2, and VLAN3. Một máy tính A kết nối vào VLAN2. Hỏi địa chỉ default gateway phải đặt cho máy tính này là địa chỉ nào sau đây?
+a. 192.168.3.1
+b. 192.168.1.1
+c. 192.168.2.1
+d. 192.168.3.2
+The correct answer is: 192.168.2.1
+
+Câu hỏi 138
+Xem mô hình mạng. Router trong mô hình mạng được cấu hình như trên. Switch kết nối với router qua đường trunk. Trên Switch cấu hình 3 VLAN: VLAN1, VLAN2, and VLAN3. Một máy tính A kết nối vào VLAN2. Hỏi địa chỉ IP có thể đặt cho máy tính này là địa chỉ nào sau đây?
+a. 192.168.2.255
+b. 192.168.2.100
+c. 192.168.2.0
+d. 192.168.2.1
+The correct answer is: 192.168.2.100
+
+Câu hỏi 139
+Xem mô hình mạng. Router trong mô hình mạng được cấu hình như trên. Switch kết nối với router qua đường trunk. Trên Switch cấu hình 3 VLAN: VLAN1, VLAN2, and VLAN3. Một máy tính A kết nối vào VLAN2. Hỏi địa chỉ IP có thể đặt cho máy tính này là địa chỉ nào sau đây?
+a. 192.168.2.0
+b. 192.168.2.1
+c. 192.168.2.255
+d. 192.168.2.100
+The correct answer is: 192.168.2.100
+
+Câu hỏi 140
+Xem mô hình mạng. Máy của Sales không liên lạc được với Server B. Những địa chỉ IP nào đánh sai
+a. 192.168.1.30
+b. 192.168.1.41
+c. 192.168.1.25
+d. 192.168.1.81
+The correct answer is: 192.168.1.41
+
+Câu hỏi 141
+Xem mô hình mạng. Máy của Sales không liên lạc được với Server B. Những địa chỉ IP nào đánh sai
+a. 192.168.1.81
+b. 192.168.1.30
+c. 192.168.1.41
+d. 192.168.1.25
+The correct answer is: 192.168.1.41
+
+Câu hỏi 142
+Xem mô hình mạng. Địa chỉ IP nào sau đây có thể được gán cho máy PC?
+a. 192.168.1.145
+b. 192.168.1.160
+c. 192.168.1.159
+d. 192.168.1.143
+The correct answer is: 192.168.1.145
+
+Câu hỏi 143
+Xem mô hình mạng. Địa chỉ IP nào sau đây có thể được gán cho máy PC?
+a. 192.168.1.159
+b. 192.168.1.145
+c. 192.168.1.143
+d. 192.168.1.160
+The correct answer is: 192.168.1.145
+
+Câu hỏi 144
+Xem mô hình mạng. Địa chỉ IP nào sau đây có thể được gán cho máy PC?
+a. 192.168.1.159
+b. 192.168.1.143
+c. 192.168.1.160
+d. 192.168.1.144
+The correct answer is: 192.168.1.144
+
+Câu hỏi 145
+Xem bảng MAC sau. Switch sẽ làm gì với các gói được gửi từ Client A đến Client E?
+a. Flood
+b. Flood and Forward
+c. Forward
+d. Filter
+The correct answer is: Filter
+
+Câu hỏi 146
+Xem bảng MAC sau. Switch sẽ làm gì với các gói được gửi từ Client A đến Client D?
+a. Flood and Forward
+b. Forward
+c. Flood
+d. Filter
+The correct answer is: Forward
+
+Câu hỏi 147
+Switch thực hiện chức năng Filter dựa vào thông tin gì?
+a. IP đích
+b. IP nguồn
+c. MAC nguồn
+d. MAC đích
+The correct answer is: MAC đích
+
+Câu hỏi 148
+Switch thực hiện chức năng Learn dựa vào thông tin gì?
+a. IP đích
+b. IP nguồn
+c. MAC đích
+d. MAC nguồn
+The correct answer is: MAC nguồn
+
+Câu hỏi 149
+Switch làm gì khi nhận được một khung dữ liệu (frame) trên một cổng với MAC đích là không xác định?
+a. Flood frame trên mạng (phía cổng nhận) để tìm kiếm thiết bị
+b. Bỏ các frame
+c. Chuyển frame ngược lại nơi gửi
+d. Forward frame trên một port khác
+The correct answer is: Flood frame trên mạng (phía cổng nhận) để tìm kiếm thiết bị
+
+Câu hỏi 150
+Giao thức nào sau đây là giao thức định tuyến?
+a. ICMP
+b. UDP
+c. OSPF
+d. TCP
+The correct answer is: OSPF
+
+Câu hỏi 151
+Nếu Host A muốn gửi gói tin đến Host B, địa chỉ nguồn sẽ ở trong khung nào khi nó rời khỏi Router R1?
+a. BB:BB:BB:BB:BB:BB
+b. 172.168.11.65
+c. CC:CC:CC:CC:CC:CC
+d. 172.168.10.130
+e. AA:AA:AA:AA:AA:AA
+f. 172.168.11.88
+The correct answer is: CC:CC:CC:CC:CC:CC
+
+Câu hỏi 152
+DNS record nào ánh xạ từ hostname ra IP
+a. A
+b. MX
+c. CNAME
+d. SOA
+The correct answer is: A
+
+Câu hỏi 153
+DNS record nào được sử dụng khí phân giải từ IP ra tên miền?
+a. MX
+b. PTR
+c. A
+d. CNAME
+e. SOA
+The correct answer is: PTR
+
+Câu hỏi 154
+Chức năng Reservation trong DHCP server cho phép thực hiện điều gì sau đây?
+a. Dùng để thiết lập địa chỉ Default gateway cho các máy tính trong một Scope
+b. Dùng để cấp phát IP cố định cho một host dựa vào địa chỉ MAC của host đó
+c. MX
+d. Dùng để cấp phát IP cố định cho một host dựa vào Hostname của host đó
+The correct answer is: Dùng để cấp phát IP cố định cho một host dựa vào địa chỉ MAC của host đó
+
+Câu hỏi 155
+Chức năng RelayAgent trong dịch vụ DHCP cho phép thực hiện điều gì sau đây?
+a. Dùng để cấp phát IP cho một host ở cùng mạng với DHCP Server
+b. Dùng để cấp phát IP cho một host dựa vào Hostname của host đó
+c. Dùng để cấp phát IP cho một host ở mạng khác so với DHCP Server
+d. Dùng để thiết lập địa chỉ IP cố định cho một host dựa vào địa chỉ MAC của host đó
+The correct answer is: Dùng để cấp phát IP cho một host ở mạng khác so với DHCP Server
+
+Câu hỏi 156
+Thứ tự các gói tin trao đổi giữa DHCP client và DHCP server để xin cấp phát địa chỉ IP động là?
+a. DHCPOFFER, DHCPDISCOVER, DHCPREQUEST, DHCPACK
+b. DHCPREQUEST, DHCPDISCOVER, DHCPOFFER, DHCPACK
+c. DHCPDISCOVER, DHCPREQUEST, DHCPOFFER, DHCPACK
+d. DHCPDISCOVER, DHCPOFFER, DHCPREQUEST, DHCPACK
+The correct answer is: DHCPDISCOVER, DHCPOFFER, DHCPREQUEST, DHCPACK
+
+Câu hỏi 157
+Câu nào sau đây là đúng khi nói về gói tin DHCPDISCOVER?
+a. Địa chỉ MAC nguồn trong gói tin này là địa chỉ MAC của DHCP client
+b. Địa chỉ MAC đích trong gói tin này là địa chỉ MAC của DHCP server
+c. Địa chỉ IP đích trong gói tin này là địa chỉ IP của DHCP server
+d. Địa chỉ MAC nguồn trong gói tin này là địa chỉ MAC của DHCP Server
+The correct answer is: Địa chỉ MAC nguồn trong gói tin này là địa chỉ MAC của DHCP client
+
+Câu hỏi 158
+Câu nào sau đây là đúng khi nói về gói tin DHCPOFFER?
+a. Địa chỉ MAC đích trong gói tin này là địa chỉ MAC của DHCP server
+b. Địa chỉ IP đích trong gói tin này là địa chỉ IP của DHCP server
+c. Địa chỉ MAC nguồn trong gói tin này là địa chỉ MAC của DHCP Server
+d. Địa chỉ MAC nguồn trong gói tin này là địa chỉ MAC của DHCP client
+The correct answer is: Địa chỉ MAC nguồn trong gói tin này là địa chỉ MAC của DHCP Server
+
+Câu hỏi 159
+Các thông số cấu hình nào trong DHCP Server là tham số tùy chọn khi cấu hình cấp phát địa chỉ IP cho các máy trong mạng?
+a. IP & Subnet Mask
+b. Subnet Mask và DNS
+c. IP và Default Gateway
+d. Default Gateway và DNS
+The correct answer is: Default Gateway và DNS
+
+Câu hỏi 160
+Giao thức nào sau đây dùng để gửi email?
+a. NTP
+b. SMTP
+c. IMAP
+d. ICMP
+e. SNMP
+The correct answer is: SMTP
+
+Câu hỏi 161
+Giao thức nào sau đây dùng để nhận email?
+a. NTP
+b. ICMP
+c. SNMP
+d. SMTP
+e. POP3
+The correct answer is: POP3
+
+Câu hỏi 162
+Trong FTP active, Server FTP dùng cổng nào để truyền dữ liệu đi cho client:
+a. 23
+b. 22
+c. 21
+d. 20
+e. 1024
+The correct answer is: 21
+
+Câu hỏi 163
+Dịch vụ web an toàn dùng cặp giao thức và cổng nào
+a. HTTPS/443
+b. HTTP/443
+c. HTTPS/81
+d. HTTPS/8080
+e. HTTPS/80
+The correct answer is: HTTPS/443
+
+Câu hỏi 164
+DHCP server sử dụng giao thức nào ở tầng transport và cổng bao nhiêu để lắng nghe các yêu cầu cung cấp địa chỉ IP từ DHCP client?
+a. TCP/23
+b. UDP/67
+c. TCP/68
+d. TCP/67
+e. UDP/23
+f. UDP/68
+The correct answer is: UDP/67
+
+Câu hỏi 165
+DHCP server sử dụng giao thức nào ở tầng transport và cổng bao nhiêu để trả lời các thông tin cung cấp địa chỉ IP cho DHCP client?
+a. UDP/68
+b. TCP/23
+c. UDP/67
+d. UDP/23
+e. TCP/67
+f. TCP/68
+The correct answer is: UDP/68
+
+Câu hỏi 166
+Thời điểm nào DHCP client sẽ liên lạc với DHCP server để gia hạn thời gian thuê địa chỉ IP?
+a. Khi hết thời gian thuê
+b. 50% thời gian thuê
+c. DHCP client sẽ không cần liên lạc với DHCP server, địa chỉ IP được cấp một lần và sử dụng cho đến khi client chuyển tới một mạng khác
+d. 90% thời gian thuê
+e. 25% thời gian thuê
+The correct answer is: 50% thời gian thuê
+
+Câu hỏi 167
+Câu nào sau đây mô tả đúng về phân giải thuận (forward lookup) trong DNS?
+a. Chuyển tiếp yêu cầu phân giải tên miền đến một DNS Server khác
+b. Phân giải tên ra địa chỉ IP
+c. Phân giải IP từ DNS cục bộ mà không cần sự giúp đỡ của các DNS khác
+d. Phân giải IP ra tên
+The correct answer is: Phân giải tên ra địa chỉ IP
+
+Câu hỏi 168
+Câu nào sau đây là đúng nhất về phân giải ngược (reverse lookup) trong DNS?
+a. Phân giải từ IP ra tên miền
+b. Phân giải từ tên miền ra địa chỉ IP
+c. Yêu cầu phân giải được chuyển đến cho một DNS server khác để phân giải
+d. Yêu cầu phân giải ngược được thực hiện trên DNS server cục bộ mà không cần trợ giúp từ các DNS server khác
+The correct answer is: Phân giải từ IP ra tên miền
+
+Câu hỏi 169
+DNS sử dụng giao thức và cổng nào cho các truy vấn trực tiếp?
+a. TCP/53
+b. UDP/53
+c. TCP/68
+d. UDP/67
+The correct answer is: UDP/53
+
+Câu hỏi 170
+DNS sử dụng giao thức và cổng nào cho việc chuyển tiếp các zone?
+a. TCP/53
+b. UDP/53
+c. UDP/67
+d. TCP/68
+The correct answer is: TCP/53
+
+Câu hỏi 171
+Các thông số cấu hình nào trong DHCP Server là tham số tùy chọn khi cấu hình cấp phát địa chỉ IP cho các máy trong mạng?
+a. IP & Subnet Mask
+b. IP và Default Gateway
+c. Default Gateway và DNS
+d. Subnet Mask và DNS
+The correct answer is: Default Gateway và DNS
+
+Câu hỏi 172
+Trong FTP passive, sau khi Server xác nhận yêu cầu truyền dữ liệu được gửi từ port N của Client thì:
+a. Client mở port N+1 để nhận dữ liệu từ Server.
+b. Server dùng port 20 để truyền dữ liệu cho Client.
+c. Server dùng port N+1 để truyền dữ liệu cho Client.
+d. Client mở port 20 để nhận dữ liệu từ Server.
+The correct answer is: Client mở port N+1 để nhận dữ liệu từ Server.
+
+Câu hỏi 173
+FTP sử dụng giao thức và cổng nào cho việc truyền dữ liệu?
+a. UDP/20
+b. UDP/21
+c. TCP/21
+d. TCP/20
+The correct answer is: TCP/20
+
+Câu hỏi 174
+FTP sử dụng giao thức và cổng nào cho việc truyền các chỉ thị?
+a. UDP/21
+b. TCP/21
+c. TCP/20
+d. UDP/20
+The correct answer is: TCP/21
+
+Câu hỏi 175
+Trong FTP active, sau khi Server xác nhận yêu cầu truyền dữ liệu được gửi từ port N của Client thì:
+a. Client mở port N+1 để nhận dữ liệu từ Server.
+b. Server dùng port 20 để truyền dữ liệu cho Client.
+c. Server dùng port N+1 để truyền dữ liệu cho Client.
+d. Client mở port N+1 để nhận dữ liệu từ Server.
+The correct answer is: Server dùng port 20 để truyền dữ liệu cho Client.
+
+Câu hỏi 176
+Phương thức nào trong giao thức HTTP được dùng khi Client gửi thông tin lên cho Server để xử lý dữ liệu
+a. GET
+b. OPTION
+c. PUT
+d. POST
+e. HEAD
+The correct answer is: POST
+
+Câu hỏi 177
+Phương thức nào trong giao thức HTTP được dùng khi Client muốn kiểm tra một đối tượng có tồn tại trên Server hay không
+a. OPTION
+b. POST
+c. GET
+d. HEAD
+e. PUT
+The correct answer is: HEAD
+
+Câu hỏi 178
+DNS record nào dùng để xác định máy chủ mail cho một tên miền?
+a. CNAME
+b. SOA
+c. MX
+d. AAA
+e. PTR
+The correct answer is: MX
+
+Câu hỏi 179
+Mô hình Workgroup sử dụng user đăng nhập là
+a. Local user
+b. Domain user
+c. Bất kì
+d. Anonymous
+The correct answer is: Local user
+
+Câu hỏi 180
+Thành phần nào không thuộc kiến trúc logic của Active Directory
+a. Organizational Units (OU)
+b. Domain Tree
+c. Object
+d. Domain controller
+e. Domain
+The correct answer is: Domain controller
+
+Câu hỏi 181
+Thành phần nào thuộc kiến trúc vật lý của Active Directory
+a. Domain
+b. Object
+c. Organizational Units (OU)
+d. Site
+e. Domain Tree
+The correct answer is: Site
+
+Câu hỏi 182
+Organizational Units (OU) có thể chửa gì?
+a. Forest
+b. Domain Controller
+c. Domain Tree
+d. Objects
+e. Domain
+The correct answer is: Objects
+
+Câu hỏi 183
+Dịch vụ nào sẽ lưu trữ thông tin về các đối tượng trong domain
+a. Active Directory Lightweight Directory Services (AD LDS)
+b. Active Directory Rights Management Services (AD RMS)
+c. Active Directory Domain Services ADDS
+d. Active Directory Federation Services (AD FS)
+The correct answer is: Active Directory Domain Services ADDS
+
+Câu hỏi 184
+Khi Roamming profile cho user đến máy DC1, lưu trong thư mục đã chia sẻ Homedir. Câu lệnh là
+a. \\DC1\Homedir\%Username%
+b. \\DC1\Homedir\User
+c. \\DC1\Homedir\%User%
+d. \\DC1\Homedir\Username
+The correct answer is: \\DC1\Homedir\%Username%
+
+Câu hỏi 185
+Jery vừa thuộc nhóm Marketing và nhóm Accounting, user Jery có quyền Read thư mục D:\Data. Trong khi đó, nhóm Marketing có quyền Write thư mục D:\Data, nhưng nhóm Accounting bị cấm quyền Write file D:\Data\vb2.txt. Vậy Jery có quyền gì trên file vb2.txt:
+a. Không có quyền gì
+b. Read và Write
+c. Read
+d. Write
+The correct answer is: Không có quyền gì
+
+Câu hỏi 186
+Quyền nào là quyền cơ bản trên NTFS
+a. Take Ownership
+b. Modify
+c. Synchronize
+d. Delete
+The correct answer is: Modify
+
+Câu hỏi 187
+Quyền nào là quyền đặc biệt trên NTFS
+a. Synchronize
+b. Take Ownership
+c. Modify
+d. Delete
+The correct answer is: Take Ownership
+
+Câu hỏi 188
+Khi copy file và thư mục trong cùng phân vùng NTFS thì:
+a. Các quyền bị xóa bỏ
+b. Có toàn quyền ở thư mục đích chứa chúng
+c. Các file và thư mục vẫn giữ nguyên quyền đã được thiết lập
+d. Các file và thư mục có quyền của thư mục đích chứa chúng
+The correct answer is: Các file và thư mục vẫn giữ nguyên quyền đã được thiết lập
+
+Câu hỏi 189
+Khi copy file và thư mục từ phân vùng NTFS này sang một phân vùng NTFS khác thì
+a. Các file và thư mục vẫn giữ nguyên quyền đã được thiết lập
+b. Các file và thư mục có quyền của thư mục đích chứa chúng
+c. Các quyền bị xóa bỏ
+d. Có toàn quyền ở thư mục đích chứa chúng
+The correct answer is: Các file và thư mục có quyền của thư mục đích chứa chúng
+
+Câu hỏi 190
+Khi di chuyển file và thư mục từ phân vùng NTFS này sang một phân vùng NTFS khác thì
+a. Các file và thư mục vẫn giữ nguyên quyền đã được thiết lập
+b. Các quyền bị xóa bỏ
+c. Có toàn quyền ở thư mục đích chứa chúng
+d. Các file và thư mục có quyền của thư mục đích chứa chúng
+The correct answer is: Các file và thư mục có quyền của thư mục đích chứa chúng
+
+Câu hỏi 191
+Máy chủ DC là
+a. Máy chủ quản lý user và computer
+b. Máy chủ cung cấp các dịch vụ và quản lý toàn bộ mạng
+c. Máy chủ các tài nguyên trong mạng công ty
+d. Máy chủ quản lý miền
+The correct answer is: Máy chủ quản lý user và computer
+
+Câu hỏi 192
+Để truy cập thư mục Data được share ẩn trên PC01, sử dụng lệnh
+a. Data
+b. \\PC01\Data\$
+c. \\PC01/Data
+d. \\Data\$
+The correct answer is: \\Data\$
+
+Câu hỏi 193
+User u1 phân quyền NTFS bị cấm truy xuất tới thư mục Data, biết thư mục Data được chia sẻ cho nhóm Everyone với quyền Read, lúc này u1 có quyền gì?
+a. u1 có thể đọc dữ liệu trong thư mục Data
+b. u1 không thể truy xuất thư mục chia sẻ Data
+c. u1 có thể truy xuất thư mục chia sẻ Data, nhưng chỉ có quyền đọc
+d. u1 có toàn quyền truy xuất thư mục chia sẻ Data
+The correct answer is: u1 có thể đọc dữ liệu trong thư mục Data
+
+Câu hỏi 194
+User u1 thuộc 2 group g1 và g2, g1 có quyền list, read & execute trên thư mục Data, g2 bị cấm quyền truy xuất thư mục Data. Quyền của u1 là
+a. u1 có quyền truy xuất thư mục Data
+b. u1 không có quyền truy xuất thư mục Data
+c. u1 chỉ có thể xem nội dung thư mục Data, nhưng không mở được các file trên thư mục này
+d. u1 có thể đọc và thực thi các tập tin chương trình đặt trong thư mục Data
+The correct answer is: u1 chỉ có thể xem nội dung thư mục Data, nhưng không mở được các file trên thư mục này
+
+Câu hỏi 195
+Trong môi trường Microsoft, mô hình nào có các thông tin người dùng được lưu trữ tập trung và người dùng phải chứng thực khi đăng nhập vào mạng:
+a. Server
+b. Workgroup
+c. Domain
+d. Client
+The correct answer is: Server
+
+Câu hỏi 196
+Jery vừa thuộc nhóm Marketing và nhóm Accounting, user Jery có quyền Read thư mục D:\Dat. Trong khi đó, nhóm Marketing có quyền Write thư mục D:\Data, nhưng nhóm Accounting bị cấm quyền Write file D:\Data\vb2.txt. Vậy Jery có quyền gì trên file vb2.txt:
+a. Không có quyền gì cả
+b. Read & Write
+c. Write
+d. Read
+The correct answer is: Read & Write
+
+Câu hỏi 197
+Quyền nào là quyền đặc biệt trên NTFS
+a. Take Ownership
+b. Modify
+c. Write
+d. Execute
+The correct answer is: Execute
+
+Câu hỏi 198
+Quyền nào là quyền cơ bản trên NTFS
+a. Modify
+b. Take Ownership
+c. Synchronize
+d. Delete
+The correct answer is: Take Ownership
+
+Câu hỏi 199
+Trong Windows, User Profile là nơi
+a. Là nơi lưu tất cả các thuộc tính của user
+b. Lưu tất cả các thông tin liên quan đến user (desktop, start menu...)
+c. Là thư mục gốc của user khi đăng nhập
+d. Các user khác có thể đọc thư mục này
+The correct answer is: Là thư mục gốc của user khi đăng nhập
+
+Câu hỏi 200
+Máy PC01 chia sẻ thư mục Shared với tên là Shared_PC01, máy trong LAN có thể truy cập trực tiếp thư mục này bằng lệnh
+a. \\PC01\shared_pc01
+b. \\PC01/SharedShared_PC01
+c. \\PC01\Shared
+d. \\PC01
+The correct answer is: \\PC01
+
+Câu hỏi 201
+Để share ẩn một thư mục ta thêm
+a. Chữ $ vào sau tên chia sẻ
+b. Chữ $ vào trước tên chia sẻ
+c. Chữ & vào trước tên chia sẻ
+d. Chữ & vào sau tên chia sẻ
+The correct answer is: Chữ $ vào sau tên chia sẻ
+
+Câu hỏi 202
+Quyền change trên thư mục chia sẻ không được làm gì?
+a. Tạo thư mục, tập tin
+b. Gán, rút quyền sở hữu
+c. Thay đổi thuộc tính
+d. Xóa thư mục, tập tin
+The correct answer is: Tạo thư mục, tập tin
+
+Câu hỏi 203
+Thư mục Data được phân quyền cho user u1 như sau: • Share permission: Full control. • NTFS permission: Deny write. Vậy quyền u1 trên Data là
+a. Thay đổi nội dung file trong Data
+b. Tạo một folder trong Data
+c. Chỉ đọc được nội dung Data
+d. Tạo một file trong thư mục con của Data
+The correct answer is: Tạo một file trong thư mục con của Data
+
+Câu hỏi 204
+Các quyền trên thư mục chia sẻ là:
+a. Read, write, execute
+b. Full control, read, change
+c. Full control, read, write, execute
+d. Full control, read, write
+The correct answer is: Full control, read, write
+
+Câu hỏi 205
+Giao thức nào sau đây được sử dụng để truyền thông tin giám sát giữa Manager và Agent trong hệ thống giám sát mạng?
+a. IP
+b. TCP
+c. HTTP
+d. ICMP
+e. SNMP
+The correct answer is: SNMP
+
+Câu hỏi 206
+Hệ thống giám sát mạng sẽ theo dõi những thông tin gì? (chọn 2)
+a. Lưu lượng mạng
+b. Nguồn điện của thiết bị
+c. Các hoạt động của user
+d. Thông tin về thiết bị
+The correct answers are: Lưu lượng mạng, Thông tin về thiết bị
+
+Câu hỏi 207
+Chức năng của firewall
+a. Ngăn được các tấn công bên ngoài mạng
+b. Kiểm soát luồng dữ liệu vào ra của mạng
+c. Ngăn được các tấn công bên trong mạng
+d. Phát hiện được các tấn công bên ngoài mạng
+The correct answer is: Kiểm soát luồng dữ liệu vào ra của mạng
+
+Câu hỏi 208
+Mục tiêu của đảm bảo an toàn cho một hệ thống CNTT được biết đến với mô hình có tên gọi là CIA gồm các tính chất
+a. Tính toàn vẹn, tính sẵn sàng, tính xác thực
+b. Tính bí mật, tính xác thực, tính toàn vẹn
+c. Tính bí mật, tính toàn vẹn, tính chống chối
+d. Tính bí mật, tính toàn vẹn, tính sẵn sàng
+The correct answer is: Tính bí mật, tính toàn vẹn, tính sẵn sàng
+
+Câu hỏi 209
+Chức năng của hệ thống IDS đặt trước một mạng LAN
+a. Phát hiện được các tấn công bên ngoài mạng
+b. Ngăn được các tấn công bên ngoài mạng
+c. Ngăn được các tấn công bên trong mạng
+d. Phát hiện được các tấn công bên trong mạng
+e. Kiểm soát luồng dữ liệu vào ra của mạng
+The correct answer is: Phát hiện được các tấn công bên ngoài mạng
+
+Câu hỏi 210
+Tấn công DOS (Denial of Service) thuộc loại tấn công nào ?
+a. Tấn công nội bộ (Local Attack)
+b. Tấn công thụ động (Passive Attack)
+c. Tấn công chủ động (Active Attack)
+d. Tấn công mã hóa
+The correct answer is: Tấn công chủ động (Active Attack)
+
+Câu hỏi 211
+Hình thức tấn công thụ động chống lại nguyên tắc cốt lõi nào của an toàn thông tin?
+a. sẵn sàng
+b. toàn vẹn
+c. tính xác thực
+d. bí mật
+The correct answer is: bí mật
+
+Câu hỏi 212
+Phương pháp mã hóa đảm bảo tiêu chuẩn gì của an toàn thông tin
+a. bí mật
+b. tính xác thực
+c. sẵn sàng
+d. toàn vẹn
+The correct answer is: bí mật
+
+Câu hỏi 213
+Trong bảo mật nhiều lớp, phương pháp nào dùng bảo mật lớp physical
+a. Mã hóa dữ liệu
+b. Camera
+c. Antivirus
+d. Firewall
+The correct answer is: Camera
+
+Câu hỏi 214
+Trong bảo mật nhiều lớp, phương pháp nào dùng bảo mật lớp Application
+a. Firewall
+b. Antivirus
+c. Camera
+d. Mã hóa dữ liệu
+The correct answer is: Antivirus
+
+Câu hỏi 215
+Để đảm bảo cho một hệ thống CNTT được an toàn, các mục tiêu quan trọng của người quản trị bảo mật là? (Chọn 3)
+a. Làm giảm thời gian "Time to recover"
+b. Làm tăng thời gian "Time to recover"
+c. Làm tăng thời gian "Time to detect"
+d. Làm giảm thời gian "Time to detect"
+e. Làm tăng thời gian "Time to compromise"
+f. Làm giảm thời gian "Time to compromise"
+The correct answers are: Làm tăng thời gian "Time to compromise", Làm giảm thời gian "Time to detect", Làm giảm thời gian "Time to recover"
+
+Câu hỏi 216
+Để nâng cao việc phát triển các giải pháp an toàn cho một hệ thống CNTT, người ta tập trung đầu tư vào 3 vấn đề chính là?
+a. Đội ngũ chuyên gia bảo mật
+b. Tăng chi phí đầu tư cho bảo mật
+c. Con người
+d. Đào tạo nâng cao nhận thức
+e. Quy trình
+f. Công nghệ
+The correct answers are: Con người, Quy trình, Công nghệ
+
+Câu hỏi 217
+Người quản trị sử dụng các cấu hình mặc định, đặt password đơn giản đã gây ra lỗ hổng dạng gì
+a. về mặt quản trị hệ thống
+b. về mặt chính sách
+c. về mặt con người
+d. về mặt kỹ thuật
+The correct answer is: về mặt quản trị hệ thống
+
+Câu hỏi 218
+Tấn công nào sau đây là dạng tấn công bị động?
+a. Dos
+b. mã hóa dữ liệu
+c. bẻ mật khẩu
+d. Scan port
+The correct answer is: Scan port
+
+Câu hỏi 219
+Đặc điểm nào sau đây không phải mô tả tấn công Dos?
+a. Chiếm dụng băng thông mạng
+b. Chiếm dụng tài nguyên Server
+c. Người dùng hợp pháp không truy xuất được vào Server
+d. Xóa dữ liệu trên Server
+The correct answer is: Xóa dữ liệu trên Server
+
+Câu hỏi 220
+Kiến trúc AAA gồm các yếu tố nào?
+a. Authentication, Authorization, Access control
+b. Availability, Authorization, Accounting
+c. Authentication, Authorization, Availability
+d. Authentication, Authorization, Accounting
+The correct answer is: Authentication, Authorization, Accounting
+
+Câu hỏi 221
+Tiêu chuẩn an toàn thông tin CIA là?
+a. Bí mật, toàn vẹn, sẵn sàng
+b. Xác thực, toàn vẹn, sẵn sàng
+c. Bí mật, sẵn sàng, xác thực
+d. Bí mật, toàn vẹn, xác thực
+The correct answer is: Bí mật, toàn vẹn, sẵn sàng
+
+Câu hỏi 222
+PDUs at the Network layer of the OSI are called what?
+a. Transport
+b. Segments
+c. Packets
+d. Frames
+The correct answer is: Packets
+"""
