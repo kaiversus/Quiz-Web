@@ -1,5 +1,5 @@
 // // --- CẤU HÌNH API KEY TẠI ĐÂY ---
-// const MY_API_KEY = "AIzaSyADvE70PnLfhiZdH8dHCBwEb0z6hoMHIE0"; // Ví dụ: "AIzaSyD..."
+// const MY_API_KEY = "AIzaSyCi2vzJJ8ME9zs5BKuSKmICbfb8eiKobpU"; // Ví dụ: "AIzaSyD..."
 // // --------------------------------
 
 let quizData = [];
