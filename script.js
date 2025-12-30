@@ -1,6 +1,6 @@
-// --- CẤU HÌNH API KEY TẠI ĐÂY ---
-const MY_API_KEY = "AIzaSyADvE70PnLfhiZdH8dHCBwEb0z6hoMHIE0"; // Ví dụ: "AIzaSyD..."
-// --------------------------------
+// // --- CẤU HÌNH API KEY TẠI ĐÂY ---
+// const MY_API_KEY = "AIzaSyADvE70PnLfhiZdH8dHCBwEb0z6hoMHIE0"; // Ví dụ: "AIzaSyD..."
+// // --------------------------------
 
 let quizData = [];
 let currentIdx = 0;
@@ -14,10 +14,10 @@ document.getElementById('process-btn').addEventListener('click', async () => {
     const btn = document.getElementById('process-btn');
 
     // Kiểm tra đầu vào
-    if (MY_API_KEY === "DÁN_KEY_CỦA_BẠN_VÀO_ĐÂY" || !MY_API_KEY) {
-        alert("⚠️ Bạn chưa dán API Key vào trong file script.js!");
-        return;
-    }
+    // if (MY_API_KEY === "DÁN_KEY_CỦA_BẠN_VÀO_ĐÂY" || !MY_API_KEY) {
+    //     alert("⚠️ Bạn chưa dán API Key vào trong file script.js!");
+    //     return;
+    // }
     
     if (!fileInput.files.length) { alert("⚠️ Vui lòng chọn file!"); return; }
 
@@ -113,54 +113,27 @@ async function readDocxFile(file) {
     return result.value;
 }
 
-// --- PHẦN 3: GỌI GEMINI API (V1 STABLE - DÙNG KEY CỨNG) ---
+// --- PHẦN 3: GỌI GEMINI API  ---
+
+// --- PHẦN 3: GỌI VỀ BACKEND (Đã sửa đổi) ---
 
 async function generateQuestionsWithGeminiV1(text) {
-    // SỬ DỤNG BIẾN MY_API_KEY Ở ĐẦU FILE
-    // Quay về v1 và gemini-pro
-    // Dùng Gemini 2.5 Flash
-const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${MY_API_KEY}`;    
-const prompt = `
-        Bạn là trợ lý tạo đề thi trắc nghiệm.
-        Văn bản nguồn: """${text.substring(0, 30000)}""" 
-
-        Nhiệm vụ: Tạo JSON danh sách câu hỏi trắc nghiệm từ văn bản trên.
-        Yêu cầu output (JSON Array thuần túy, KHÔNG dùng Markdown \`\`\`json):
-        [
-            {
-                "id": 1,
-                "question": "Câu hỏi?",
-                "options": ["A", "B", "C", "D"],
-                "answer": 0,
-                "explanation": "Giải thích ngắn."
-            }
-        ]
-        - Ngôn ngữ: Tiếng Việt.
-        - Trong phần explaination, hãy tìm kiếm thông tin và tự điền vào phần giải thích, vui lòng chi tiết và chính xác,
-        trích nguồn đầy đủ, nếu câu hỏi quá phức tạp hoặc không có giải thích chính xác, hãy để trống và đừng điền gì cả.
-    `;
-
-    const requestBody = {
-        contents: [{ parts: [{ text: prompt }] }]
-    };
-
-    const response = await fetch(url, {
+    // Gọi về server của chính mình (Vercel) thay vì gọi thẳng Google
+    const response = await fetch('/api/proxy', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(requestBody)
+        body: JSON.stringify({ 
+            text: text.substring(0, 30000) // Gửi văn bản lên server
+        })
     });
 
     const data = await response.json();
 
-    if (data.error) {
-        console.error("API Error Details:", data.error);
-        throw new Error(`Google Error (${data.error.code}): ${data.error.message}`);
+    if (!response.ok) {
+        throw new Error(data.error || "Lỗi từ Server khi gọi AI");
     }
 
-    if (!data.candidates || !data.candidates[0].content) {
-        throw new Error("Không có phản hồi từ AI (Safety Block hoặc Lỗi mạng).");
-    }
-
+    // Server đã trả về đúng định dạng Google response, ta xử lý lấy JSON như cũ
     const rawText = data.candidates[0].content.parts[0].text;
     let cleanJson = rawText.replace(/```json/g, '').replace(/```/g, '').trim();
     
