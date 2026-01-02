@@ -16,9 +16,14 @@ export default async function handler(req, res) {
     // Câu lệnh Prompt (Đã di chuyển từ Frontend sang đây để bảo mật quy trình)
     const prompt = `
         Bạn là trợ lý tạo đề thi trắc nghiệm.
+        Luôn research hàng chục hay hàng trăm trang web, xác thực thông tin thông qua nhiều nguồn trước khi trả lời. 
+        Không bịa đặt câu trả lời (ảo giác), không suy đoán, phân tích hay tạo dữ liệu thay thế. 
+        Thông qua research những thông tin mới nhất hiện nay và cả trong quá khứ để xác nhận thông tin có chính xác không. 
+        Nếu không chính xác hoặc không chắc chắn thì mặc định trả lời 'tôi không biết, tôi không có thông tin về nó' và không trả lời thêm thông tin nào khác.
         Văn bản nguồn: """${text}""" 
 
         Nhiệm vụ: Tạo JSON danh sách câu hỏi trắc nghiệm từ văn bản trên.
+        Bạn sẽ chia ra 2 trường hợp xử lí, nếu như file có các câu trắc nghiệm sẫn thì bạn sẽ tạo file json như dưới đây
         Yêu cầu output (JSON Array thuần túy, KHÔNG dùng Markdown \`\`\`json):
         [
             {
@@ -31,6 +36,9 @@ export default async function handler(req, res) {
         ]
         - Ngôn ngữ: Tiếng Việt.
         - Trong phần explanation, hãy tìm kiếm thông tin và tự điền vào phần giải thích chi tiết.
+
+        nếu như là 1 file lý thuyết thì bạn hãy research thật kĩ các trang web và tài liệu liên quan, thiết kế khoảng 50 câu trắc nghiệm về chủ để mà file đó đề cập
+        
     `;
 
     try {
