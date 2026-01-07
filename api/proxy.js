@@ -23,12 +23,7 @@ export default async function handler(req, res) {
 
         Nhiệm vụ: Tạo JSON danh sách câu hỏi trắc nghiệm từ văn bản trên.
         
-        1. Nếu file đã có sẵn câu hỏi: Trích xuất và format lại đúng định dạng JSON.
-        2. Nếu là file lý thuyết: 
-           - Hãy tạo ra **30 câu hỏi trắc nghiệm** quan trọng nhất (Không tạo quá 30 câu để tránh lỗi quá tải).
-           - Tập trung vào các ý chính, định nghĩa, số liệu quan trọng.
-           - Phần giải thích phải ngắn gọn, súc tích (khoảng 1-2 câu).
-        
+        1. Nếu file đã có sẵn câu hỏi: Trích xuất và format lại đúng định dạng JSON đầy đủ tất cả các câu hỏi trong file
         Yêu cầu output (JSON Array thuần túy, KHÔNG dùng Markdown \`\`\`json):
         [
             {
