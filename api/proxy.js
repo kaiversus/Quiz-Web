@@ -12,37 +12,60 @@ export default async function handler(req, res) {
 
     // Lấy Key từ biến môi trường Vercel
     const apiKey = process.env.MY_API_KEY; 
+
+    // --- SỬA LỖI 1: Dùng đúng tên Model chuẩn (1.5-flash) ---
+    const MODEL_NAME = "gemini-1.5-flash";
     
-    // Câu lệnh Prompt (Đã di chuyển từ Frontend sang đây để bảo mật quy trình)
+    // --- SỬA LỖI 2: Tối ưu Prompt để đảm bảo đủ Output ---
     const prompt = `
-        Bạn là trợ lý tạo đề thi trắc nghiệm.
-        Luôn research hàng chục hay hàng trăm trang web, xác thực thông tin thông qua nhiều nguồn trước khi trả lời. 
-        Không bịa đặt câu trả lời (ảo giác), không suy đoán, phân tích hay tạo dữ liệu thay thế. 
-        Thông qua research những thông tin mới nhất hiện nay và cả trong quá khứ để xác nhận thông tin có chính xác không. 
-        Nếu không chính xác hoặc không chắc chắn thì mặc định trả lời 'tôi không biết, tôi không có thông tin về nó' và không trả lời thêm thông tin nào khác.
+        Bạn là trợ lý tạo đề thi trắc nghiệm chuyên nghiệp.
         Văn bản nguồn: """${text}""" 
 
         Nhiệm vụ: Tạo JSON danh sách câu hỏi trắc nghiệm từ văn bản trên.
-        Bạn sẽ chia ra 2 trường hợp xử lí, nếu như file có các câu trắc nghiệm sẫn thì bạn sẽ tạo file json như dưới đây
+        
+        1. Nếu file đã có sẵn câu hỏi: Trích xuất và format lại đúng định dạng JSON.
+        2. Nếu là file lý thuyết: 
+           - Hãy tạo ra **30 câu hỏi trắc nghiệm** quan trọng nhất (Không tạo quá 30 câu để tránh lỗi quá tải).
+           - Tập trung vào các ý chính, định nghĩa, số liệu quan trọng.
+           - Phần giải thích phải ngắn gọn, súc tích (khoảng 1-2 câu).
+        
         Yêu cầu output (JSON Array thuần túy, KHÔNG dùng Markdown \`\`\`json):
         [
             {
                 "id": 1,
-                "question": "Câu hỏi?",
-                "options": ["A", "B", "C", "D"],
+                "question": "Nội dung câu hỏi?",
+                "options": ["A. Lựa chọn 1", "B. Lựa chọn 2", "C. Lựa chọn 3", "D. Lựa chọn 4"],
                 "answer": 0,
-                "explanation": "Giải thích ngắn."
+                "explanation": "Giải thích ngắn gọn tại sao đúng."
             }
         ]
         - Ngôn ngữ: Tiếng Việt.
-        - Trong phần explanation, hãy tìm kiếm thông tin và tự điền vào phần giải thích chi tiết.
-        
+        - Đảm bảo JSON hợp lệ, không bị cắt cụt.
     `;
 
+    // Hàm thử lại (Retry) để chống lỗi Overload
+    async function fetchWithRetry(url, options, retries = 3, backoff = 2000) {
+        try {
+            const response = await fetch(url, options);
+            if (response.status === 503 && retries > 0) {
+                console.log(`Google API bận. Đang thử lại... (Còn ${retries} lần)`);
+                await new Promise(r => setTimeout(r, backoff));
+                return fetchWithRetry(url, options, retries - 1, backoff * 2);
+            }
+            return response;
+        } catch (err) {
+            if (retries > 0) {
+                await new Promise(r => setTimeout(r, backoff));
+                return fetchWithRetry(url, options, retries - 1, backoff * 2);
+            }
+            throw err;
+        }
+    }
+
     try {
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${apiKey}`;
         
-        const response = await fetch(url, {
+        const response = await fetchWithRetry(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -53,10 +76,10 @@ export default async function handler(req, res) {
         const data = await response.json();
 
         if (data.error) {
-            return res.status(500).json({ error: data.error.message });
+            console.error("Gemini API Error:", data.error);
+            return res.status(500).json({ error: data.error.message || "Lỗi từ Google API" });
         }
 
-        // Trả nguyên kết quả từ Google về cho Frontend xử lý tiếp
         return res.status(200).json(data);
 
     } catch (error) {
