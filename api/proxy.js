@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     const apiKey = process.env.MY_API_KEY; 
 
     // --- SỬA LỖI 1: Dùng đúng tên Model chuẩn (1.5-flash) ---
-    const MODEL_NAME = "gemini-1.5-flash";
+    const MODEL_NAME = "gemini-2.5-flash";
     
     // --- SỬA LỖI 2: Tối ưu Prompt để đảm bảo đủ Output ---
     const prompt = `
