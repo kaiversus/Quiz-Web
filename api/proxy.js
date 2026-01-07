@@ -36,8 +36,6 @@ export default async function handler(req, res) {
         ]
         - Ngôn ngữ: Tiếng Việt.
         - Trong phần explanation, hãy tìm kiếm thông tin và tự điền vào phần giải thích chi tiết.
-
-        nếu như là 1 file lý thuyết thì bạn hãy research thật kĩ các trang web và tài liệu liên quan, thiết kế khoảng 50 câu trắc nghiệm về chủ để mà file đó đề cập
         
     `;
 
