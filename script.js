@@ -32,38 +32,31 @@ document.getElementById('process-btn').addEventListener('click', async () => {
         let textContent = "";
 
         // 1. Đọc nội dung file
-        try {
-            if (file.name.endsWith('.pdf')) {
-                textContent = await readPdfFile(file);
-            } else if (file.name.endsWith('.docx')) {
+try {
+        const file = fileInput.files[0];
+        let payload = {};
+
+        // Kiểm tra nếu là file ảnh hoặc PDF scan
+        if (file.type.startsWith('image/') || file.name.endsWith('.pdf')) {
+            const base64Data = await fileToBase64(file);
+            payload = {
+                fileData: base64Data,
+                mimeType: file.type || 'application/pdf',
+                isVisual: true // Đánh dấu để backend biết đây là dữ liệu hình ảnh
+            };
+        } else {
+            // Xử lý file văn bản bình thường như cũ
+            let textContent = "";
+            if (file.name.endsWith('.docx')) {
                 textContent = await readDocxFile(file);
             } else {
                 textContent = await readTextFile(file);
             }
-        } catch (readErr) {
-            console.error(readErr);
-            throw new Error("Lỗi đọc file. Hãy thử file khác (Word/Txt).");
+            payload = { text: textContent, isVisual: false };
         }
 
-        if (!textContent || textContent.trim().length < 10) {
-            throw new Error("📄 File rỗng hoặc file ảnh scan không lấy được chữ.");
-        }
-
-        console.log("Đã đọc được " + textContent.length + " ký tự.");
-
-        // 2. Gửi text cho AI xử lý (Dùng Key đã dán cứng)
-        const aiQuestions = await generateQuestionsWithGeminiV1(textContent);
-        
-        if (aiQuestions && aiQuestions.length > 0) {
-            quizData = aiQuestions;
-            // 3. Vào giao diện làm bài
-            document.getElementById('welcome-modal').classList.add('hidden');
-            document.getElementById('main-ui').classList.remove('hidden');
-            renderSidebar();
-            loadQuestion(0);
-        } else {
-            throw new Error("AI trả về rỗng. Hãy thử lại.");
-        }
+        // Gọi hàm gửi dữ liệu đã được cập nhật
+        const aiQuestions = await generateQuestionsWithGeminiV2(payload);
 
     } catch (error) {
         console.error("Lỗi chính:", error);
@@ -122,9 +115,7 @@ async function generateQuestionsWithGeminiV1(text) {
     const response = await fetch('/api/proxy', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-            text: text.substring(0, 30000) // Gửi văn bản lên server
-        })
+        body: JSON.stringify(payload)
     });
 
     const data = await response.json();
@@ -285,4 +276,13 @@ function updateScore(isCorrect) {
     if(isCorrect) correctCount++; else wrongCount++;
     document.getElementById('score-correct').innerText = correctCount;
     document.getElementById('score-wrong').innerText = wrongCount;
+}
+
+function fileToBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result.split(',')[1]); // Lấy phần data sau dấu phẩy
+        reader.onerror = error => reject(error);
+    });
 }
