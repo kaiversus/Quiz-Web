@@ -73,7 +73,7 @@ document.getElementById('process-btn').addEventListener('click', async () => {
     btn.disabled = true;
     btn.style.opacity = 0.5;
     loadingText.style.display = 'block';
-    loadingText.innerHTML = "Đang xử lý & nén ảnh... <br>Hệ thống AI đang đọc đề bài, vui lòng chờ 15-30 giây ⏳";
+    loadingText.innerHTML = "Hệ thống đang làm việc, trong lúc đó thì bạn làm quả lọ đi nhé -.-";
 
     try {
         const file = fileInput.files[0];
