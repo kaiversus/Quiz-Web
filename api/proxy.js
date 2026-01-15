@@ -1,71 +1,45 @@
 export default async function handler(req, res) {
-    // Chỉ chấp nhận method POST
-    if (req.method !== 'POST') {
-        return res.status(405).json({ error: 'Method Not Allowed' });
-    }
+    if (req.method !== 'POST') return res.status(405).json({ error: 'Method Not Allowed' });
 
-    const { text } = req.body;
+    const { text, fileData, mimeType, isVisual } = req.body;
+    const apiKey = process.env.MY_API_KEY;
+    const MODEL_NAME = "gemini-1.5-flash"; // Dùng 1.5 Flash vì nó xử lý ảnh rất nhanh và rẻ
 
-    if (!text) {
-        return res.status(400).json({ error: 'Thiếu nội dung văn bản (text)' });
-    }
-
-    // Lấy Key từ biến môi trường Vercel
-    const apiKey = process.env.MY_API_KEY; 
-
-    // --- SỬA LỖI 1: Dùng đúng tên Model chuẩn (1.5-flash) ---
-    const MODEL_NAME = "gemini-2.5-flash";
-    
-    // --- SỬA LỖI 2: Tối ưu Prompt để đảm bảo đủ Output ---
-    const prompt = `
-        Bạn là trợ lý tạo đề thi trắc nghiệm chuyên nghiệp.
-        Văn bản nguồn: """${text}""" 
-
-        Nhiệm vụ: Tạo JSON danh sách câu hỏi trắc nghiệm từ văn bản trên.
-        
-        1. Nếu file đã có sẵn câu hỏi: Trích xuất và format lại đúng định dạng JSON đầy đủ tất cả các câu hỏi trong file
-        Yêu cầu output (JSON Array thuần túy, KHÔNG dùng Markdown \`\`\`json):
-        [
-            {
-                "id": 1,
-                "question": "Nội dung câu hỏi?",
-                "options": ["A. Lựa chọn 1", "B. Lựa chọn 2", "C. Lựa chọn 3", "D. Lựa chọn 4"],
-                "answer": 0,
-                "explanation": "Giải thích ngắn gọn tại sao đúng."
-            }
-        ]
-        - Ngôn ngữ: Tiếng Việt.
-        - Đảm bảo JSON hợp lệ, không bị cắt cụt.
-    `;
-
-    // Hàm thử lại (Retry) để chống lỗi Overload
-    async function fetchWithRetry(url, options, retries = 3, backoff = 2000) {
-        try {
-            const response = await fetch(url, options);
-            if (response.status === 503 && retries > 0) {
-                console.log(`Google API bận. Đang thử lại... (Còn ${retries} lần)`);
-                await new Promise(r => setTimeout(r, backoff));
-                return fetchWithRetry(url, options, retries - 1, backoff * 2);
-            }
-            return response;
-        } catch (err) {
-            if (retries > 0) {
-                await new Promise(r => setTimeout(r, backoff));
-                return fetchWithRetry(url, options, retries - 1, backoff * 2);
-            }
-            throw err;
+    let contents = [];
+    const promptText = `Nhiệm vụ: Tạo JSON danh sách câu hỏi trắc nghiệm từ nội dung được cung cấp. 
+    Nếu là hình ảnh, hãy đọc kỹ chữ trong ảnh. 
+    Yêu cầu output (JSON Array thuần túy):
+    [
+        {
+            "id": 1,
+            "question": "Nội dung câu hỏi?",
+            "options": ["A. Lựa chọn 1", "B. Lựa chọn 2", "C. Lựa chọn 3", "D. Lựa chọn 4"],
+            "answer": 0,
+            "explanation": "Giải thích ngắn gọn."
         }
+    ]`;
+
+    if (isVisual) {
+        // Gửi nội dung kèm hình ảnh/PDF cho Gemini
+        contents = [{
+            parts: [
+                { text: promptText },
+                { inline_data: { mime_type: mimeType, data: fileData } }
+            ]
+        }];
+    } else {
+        // Gửi text thuần túy
+        contents = [{
+            parts: [{ text: promptText + `\n\nVăn bản nguồn: """${text}"""` }]
+        }];
     }
 
     try {
         const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${apiKey}`;
-        
-        const response = await fetchWithRetry(url, {
+        const response = await fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                contents: [{ parts: [{ text: prompt }] }]
-            })
+            body: JSON.stringify({ contents })
         });
 
         const data = await response.json();
