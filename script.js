@@ -1,79 +1,129 @@
+// --- CẤU HÌNH BIẾN TOÀN CỤC ---
 let quizData = [];
 let currentIdx = 0;
 let userAnswers = {};
 
-// --- PHẦN 1: XỬ LÝ SỰ KIỆN NÚT BẤM ---
+// --- HÀM CHUYỂN ĐỔI FILE SANG BASE64 (Cho tính năng đọc ảnh) ---
+function fileToBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result.split(',')[1]); // Lấy phần data sau dấu phẩy
+        reader.onerror = error => reject(error);
+    });
+}
 
+// --- PHẦN 1: XỬ LÝ SỰ KIỆN NÚT BẤM ---
 document.getElementById('process-btn').addEventListener('click', async () => {
     const fileInput = document.getElementById('file-upload');
     const loadingText = document.getElementById('loading-text');
     const btn = document.getElementById('process-btn');
 
+    // 1. Kiểm tra đầu vào
     if (!fileInput.files.length) { 
         alert("⚠️ Vui lòng chọn file!"); 
         return; 
     }
 
-    // Hiệu ứng loading
+    // 2. Hiệu ứng loading
     btn.disabled = true;
     btn.style.opacity = 0.5;
     loadingText.style.display = 'block';
-    loadingText.innerText = "Hệ thống đang xử lý... Vui lòng chờ giây lát.";
+    loadingText.innerText = "Hệ thống đang xử lý... Vui lòng chờ giây lát ⏳";
 
     try {
-        const file = fileInput.files[0];
+        const file = fileInput.files[0]; // Chỉ khai báo 1 lần tại đây
         let payload = {};
 
-        // 1. Phân loại và xử lý file (Hỗ trợ file văn bản và file scan/ảnh)
+        // 3. Phân loại và xử lý file
+        // Nếu là file Ảnh hoặc PDF -> Dùng chế độ Vision (đọc ảnh/scan)
         if (file.type.startsWith('image/') || file.name.endsWith('.pdf')) {
-            // Nếu là ảnh hoặc PDF (Xử lý như file scan)
             const base64Data = await fileToBase64(file);
             payload = {
                 fileData: base64Data,
                 mimeType: file.type || 'application/pdf',
-                isVisual: true
+                isVisual: true // Cờ báo hiệu cho Backend biết đây là xử lý ảnh
             };
-        } else {
-            // Xử lý file văn bản bình thường (.txt, .docx, .json)
+        } 
+        // Nếu là file Word/Text/JSON -> Dùng chế độ Text
+        else {
             let textContent = "";
             if (file.name.endsWith('.docx')) {
                 textContent = await readDocxFile(file);
             } else {
                 textContent = await readTextFile(file);
             }
+            
+            if (!textContent || textContent.trim().length < 10) {
+                throw new Error("File không có nội dung text. Hãy thử tải lên dạng ảnh chụp hoặc PDF.");
+            }
+            
             payload = { 
                 text: textContent, 
                 isVisual: false 
             };
         }
 
-        // 2. Gửi dữ liệu cho AI thông qua backend proxy
+        // 4. Gửi dữ liệu sang Backend
         const aiQuestions = await generateQuestionsWithGemini(payload);
         
-        // 3. Xử lý kết quả trả về và cập nhật UI
+        // 5. Xử lý kết quả trả về
         if (aiQuestions && aiQuestions.length > 0) {
             quizData = aiQuestions;
-            // Vào giao diện làm bài
+            // Ẩn màn hình chào, hiện màn hình làm bài
             document.getElementById('welcome-modal').classList.add('hidden');
             document.getElementById('main-ui').classList.remove('hidden');
             renderSidebar();
             loadQuestion(0);
         } else {
-            throw new Error("AI không thể tạo câu hỏi từ file này. Hãy thử file khác.");
+            throw new Error("AI không tìm thấy câu hỏi nào. Hãy kiểm tra lại file.");
         }
 
     } catch (error) {
         console.error("Lỗi chính:", error);
         alert("❌ LỖI: " + error.message);
     } finally {
+        // Tắt loading dù thành công hay thất bại
         btn.disabled = false;
         btn.style.opacity = 1;
         loadingText.style.display = 'none';
     }
 });
 
-// --- PHẦN 2: CÁC HÀM ĐỌC FILE ---
+// --- PHẦN 2: GỌI API (Đã cập nhật nhận Payload) ---
+async function generateQuestionsWithGemini(payload) {
+    const response = await fetch('/api/proxy', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    });
 
+    const data = await response.json();
+
+    if (!response.ok) {
+        throw new Error(data.error || "Lỗi từ Server");
+    }
+
+    // Xử lý chuỗi JSON từ AI (loại bỏ markdown ```json nếu có)
+    const rawText = data.candidates[0].content.parts[0].text;
+    let cleanJson = rawText.replace(/```json/g, '').replace(/```/g, '').trim();
+    
+    // Tìm cặp ngoặc vuông [] ngoài cùng
+    const firstBracket = cleanJson.indexOf('[');
+    const lastBracket = cleanJson.lastIndexOf(']');
+    if (firstBracket !== -1 && lastBracket !== -1) {
+        cleanJson = cleanJson.substring(firstBracket, lastBracket + 1);
+    }
+
+    try {
+        return JSON.parse(cleanJson);
+    } catch (e) {
+        console.error("JSON lỗi:", cleanJson);
+        throw new Error("AI trả về định dạng không đúng. Hãy thử lại!");
+    }
+}
+
+// --- PHẦN 3: CÁC HÀM ĐỌC FILE VĂN BẢN (Giữ nguyên) ---
 function readTextFile(file) {
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
@@ -92,49 +142,7 @@ async function readDocxFile(file) {
     return result.value;
 }
 
-function fileToBase64(file) {
-    return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = () => resolve(reader.result.split(',')[1]); 
-        reader.onerror = error => reject(error);
-    });
-}
-
-// --- PHẦN 3: GỌI VỀ BACKEND (Proxy Vercel) ---
-
-async function generateQuestionsWithGemini(payload) {
-    const response = await fetch('/api/proxy', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-    });
-
-    const data = await response.json();
-
-    if (!response.ok) {
-        throw new Error(data.error || "Lỗi từ Server khi gọi AI");
-    }
-
-    // Xử lý lấy JSON từ phản hồi của Gemini
-    const rawText = data.candidates[0].content.parts[0].text;
-    let cleanJson = rawText.replace(/```json/g, '').replace(/```/g, '').trim();
-    
-    const firstBracket = cleanJson.indexOf('[');
-    const lastBracket = cleanJson.lastIndexOf(']');
-    if (firstBracket !== -1 && lastBracket !== -1) {
-        cleanJson = cleanJson.substring(firstBracket, lastBracket + 1);
-    }
-
-    try {
-        return JSON.parse(cleanJson);
-    } catch (e) {
-        console.error("JSON lỗi:", cleanJson);
-        throw new Error("Lỗi định dạng JSON từ AI. Hãy thử lại!");
-    }
-}
-
-// --- PHẦN 4: LOGIC GIAO DIỆN ---
+// --- PHẦN 4: LOGIC GIAO DIỆN & LÀM BÀI (Giữ nguyên logic cũ) ---
 
 function renderSidebar() {
     const list = document.getElementById('question-list');
@@ -173,6 +181,7 @@ function loadQuestion(index) {
         <div id="explanation" class="explanation-box"></div> 
     `;
 
+    // Khôi phục trạng thái nếu đã làm
     if (userAnswers.hasOwnProperty(index)) {
         const savedAnswer = userAnswers[index];
         const correctAns = qData.answer;
@@ -239,4 +248,8 @@ function updateScore(isCorrect) {
     if(isCorrect) correctCount++; else wrongCount++;
     document.getElementById('score-correct').innerText = correctCount;
     document.getElementById('score-wrong').innerText = wrongCount;
+}
+
+function closeResultModal() {
+    document.getElementById('result-modal').classList.add('hidden');
 }
