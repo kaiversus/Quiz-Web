@@ -296,4 +296,4 @@ function updateScore(isCorrect) {
 
 function closeResultModal() {
     document.getElementById('result-modal').classList.add('hidden');
-}s
+}
