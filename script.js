@@ -158,12 +158,29 @@ async function generateQuestionsWithGemini(payload) {
     try {
         const data = JSON.parse(responseText);
         const rawText = data.candidates[0].content.parts[0].text;
+        
+        // Làm sạch chuỗi JSON
         let cleanJson = rawText.replace(/```json/g, '').replace(/```/g, '').trim();
         
         const firstBracket = cleanJson.indexOf('[');
         const lastBracket = cleanJson.lastIndexOf(']');
+        
+        // Kiểm tra xem có tìm thấy ngoặc không
         if (firstBracket !== -1 && lastBracket !== -1) {
             cleanJson = cleanJson.substring(firstBracket, lastBracket + 1);
+        } else {
+            // Nếu không tìm thấy ngoặc, in ra để debug
+            console.error("Không tìm thấy cấu trúc JSON [] trong phản hồi:", rawText);
+            throw new Error("AI không trả về định dạng danh sách câu hỏi hợp lệ.");
+        }
+
+        // --- ĐOẠN SỬA ĐỂ DEBUG ---
+        try {
+            return JSON.parse(cleanJson);
+        } catch (parseError) {
+            console.error("Lỗi cú pháp JSON:", parseError);
+            console.log("Chuỗi JSON bị lỗi (hãy copy chuỗi này kiểm tra tại jsonlint.com):", cleanJson);
+            throw new Error("Dữ liệu từ AI bị lỗi cú pháp. Vui lòng thử lại hoặc giảm bớt nội dung input.");
         }
         return JSON.parse(cleanJson);
     } catch (e) {
