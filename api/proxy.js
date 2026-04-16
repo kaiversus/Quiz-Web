@@ -24,7 +24,7 @@ export default async function handler(req, res) {
             return res.status(500).json({ error: "Server chưa cấu hình API Key (MY_API_KEY)" });
         }
 
-        const MODEL_NAME = "gemini-2.5-flash"; 
+        const MODEL_NAME = "gemma-4-26b-a4b-it"; 
 
         // Cấu hình Prompt
         let contents = [];
