@@ -19,7 +19,7 @@ export default async function handler(req, res) {
         }
 
         // ✅ Dùng gemini-1.5-flash: hỗ trợ system_instruction + JSON mode + vision
-        const MODEL_NAME = "gemini-1.5-pro";
+        const MODEL_NAME = "gemini-2.5-pro";
 
         // ✅ System instruction tách riêng, KHÔNG nhét vào contents
         const systemInstruction = {
