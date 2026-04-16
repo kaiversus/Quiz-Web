@@ -28,21 +28,44 @@ export default async function handler(req, res) {
 
         // Cấu hình Prompt
         let contents = [];
-        const systemInstruction = `Bạn là một trợ lý giáo dục chuyên nghiệp. Nhiệm vụ của bạn là đọc nội dung đầu vào (văn bản hoặc hình ảnh tài liệu scan) và tạo ra các câu hỏi trắc nghiệm.
+        const systemInstruction = `Bạn là trợ lý giáo dục chuyên nghiệp. Nhiệm vụ: đọc nội dung đầu vào và tạo câu hỏi trắc nghiệm
+        QUY TẮC ĐẦU RA BẮT BUỘC:
+        - Chỉ trả về JSON Array thuần túy, KHÔNG có bất kỳ text nào khác
+        - KHÔNG dùng markdown, KHÔNG dùng \`\`\`json, KHÔNG có lời giải thích ngoài JSON
+        - KHÔNG có dấu phẩy thừa ở phần tử cuối mảng
+        - Đảm bảo tất cả dấu ngoặc, dấu phẩy đúng cú pháp JSON hợp lệ
         
-        YÊU CẦU QUAN TRỌNG:
-        1. Output bắt buộc phải là một JSON Array hợp lệ.
-        2. Không bọc trong Markdown (không dùng \`\`\`json).
-        3. Nếu là hình ảnh, hãy cố gắng luận giải các chữ mờ hoặc chữ viết tay tiếng Việt chính xác nhất có thể.
-        4. Cấu trúc JSON mẫu:
+        CẤU TRÚC JSON:
         [
-            {
-                "id": 1,
-                "question": "Câu hỏi là gì?",
-                "options": ["A. Đáp án 1", "B. Đáp án 2", "C. Đáp án 3", "D. Đáp án 4"],
-                "answer": 0,
-                "explanation": "Giải thích vì sao đúng."
-            }
+          {
+            "id": 1,
+            "question": "Nội dung câu hỏi?",
+            "options": ["A. Đáp án 1", "B. Đáp án 2", "C. Đáp án 3", "D. Đáp án 4"],
+            "answer": 0,
+            "explanation": "Giải thích ngắn gọn tại sao đáp án đúng."
+          }
+        ]
+        
+        GIẢI THÍCH CÁC TRƯỜNG:
+        - "id": số thứ tự nguyên, bắt đầu từ 1
+        - "question": câu hỏi rõ ràng, đầy đủ
+        - "options": mảng đúng 4 phần tử, bắt đầu bằng "A. ", "B. ", "C. ", "D. "
+        - "answer": chỉ số (0, 1, 2 hoặc 3) của đáp án đúng trong mảng options
+        - "explanation": giải thích ngắn gọn, chính xác
+        
+        XỬ LÝ HÌNH ẢNH:
+        - Nếu chữ mờ hoặc viết tay tiếng Việt, hãy luận giải chính xác nhất có thể
+        - Ưu tiên ngữ cảnh để đoán các từ không rõ
+        
+        VÍ DỤ HỢP LỆ:
+        [
+          {
+            "id": 1,
+            "question": "Thủ đô của Việt Nam là gì?",
+            "options": ["A. TP. Hồ Chí Minh", "B. Đà Nẵng", "C. Hà Nội", "D. Huế"],
+            "answer": 2,
+            "explanation": "Hà Nội là thủ đô của nước Cộng hòa Xã hội chủ nghĩa Việt Nam từ năm 1976."
+          }
         ]`;
 
         if (isVisual) {
