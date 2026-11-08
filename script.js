@@ -2,9 +2,92 @@
 // const MY_API_KEY = "AIzaSyCi2vzJJ8ME9zs5BKuSKmICbfb8eiKobpU"; // Ví dụ: "AIzaSyD..."
 // // --------------------------------
 
+let sourceQuestions = [];
 let quizData = [];
 let currentIdx = 0;
 let userAnswers = {};
+let roundNumber = 0;
+let correctCount = 0;
+let wrongCount = 0;
+let shuffleQuestions = true;
+let shuffleOptions = true;
+let roundFinished = false;
+
+document.getElementById('show-result-btn').addEventListener('click', showRoundResult);
+document.getElementById('finish-round-btn').addEventListener('click', showRoundResult);
+document.getElementById('review-btn').addEventListener('click', () => {
+    document.getElementById('result-modal').classList.add('hidden');
+});
+document.getElementById('next-round-btn').addEventListener('click', () => {
+    const retryQuestions = quizData
+        .filter((question, index) => userAnswers[index] !== question.answer)
+        .map(question => question.sourceIndex);
+    if (roundFinished && retryQuestions.length) startRound(retryQuestions);
+});
+document.getElementById('restart-btn').addEventListener('click', () => {
+    roundNumber = 0;
+    startRound(sourceQuestions.map((_, index) => index));
+});
+
+function shuffle(items) {
+    const result = [...items];
+    for (let i = result.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [result[i], result[j]] = [result[j], result[i]];
+    }
+    return result;
+}
+
+function startRound(sourceIndexes) {
+    const indexes = shuffleQuestions ? shuffle(sourceIndexes) : [...sourceIndexes];
+    quizData = indexes.map(sourceIndex => {
+        const original = sourceQuestions[sourceIndex];
+        const options = original.options.map((text, index) => ({ text, index }));
+        const orderedOptions = shuffleOptions ? shuffle(options) : options;
+        return {
+            sourceIndex,
+            question: original.question,
+            explanation: original.explanation,
+            options: orderedOptions.map(option => option.text),
+            answer: orderedOptions.findIndex(option => option.index === original.answer)
+        };
+    });
+    roundNumber++;
+    currentIdx = 0;
+    userAnswers = {};
+    correctCount = 0;
+    wrongCount = 0;
+    roundFinished = false;
+    document.getElementById('round-number').textContent = roundNumber;
+    document.getElementById('sidebar-round').textContent = roundNumber;
+    document.getElementById('round-total').textContent = quizData.length;
+    document.getElementById('score-correct').textContent = '0';
+    document.getElementById('score-wrong').textContent = '0';
+    document.getElementById('show-result-btn').classList.add('hidden');
+    document.getElementById('finish-round-btn').classList.remove('hidden');
+    document.getElementById('result-modal').classList.add('hidden');
+    renderSidebar();
+    loadQuestion(0);
+}
+
+function showRoundResult() {
+    if (!quizData.length) return;
+    roundFinished = true;
+    const unansweredCount = quizData.length - correctCount - wrongCount;
+    const finished = wrongCount === 0 && unansweredCount === 0;
+    document.getElementById('result-title').textContent = finished ? '🎉 Đã trả lời đúng tất cả!' : `Kết quả lượt ${roundNumber}`;
+    document.getElementById('result-message').textContent = finished
+        ? `Bạn đã hoàn thành sau ${roundNumber} lượt.`
+        : `Lượt tiếp theo gồm ${wrongCount} câu sai và ${unansweredCount} câu chưa làm.`;
+    document.getElementById('final-correct').textContent = `${correctCount}/${quizData.length}`;
+    document.getElementById('final-wrong').textContent = wrongCount;
+    document.getElementById('final-unanswered').textContent = unansweredCount;
+    document.getElementById('next-round-btn').classList.toggle('hidden', finished);
+    document.getElementById('restart-btn').classList.toggle('hidden', !finished);
+    document.getElementById('finish-round-btn').classList.add('hidden');
+    document.getElementById('show-result-btn').classList.remove('hidden');
+    document.getElementById('result-modal').classList.remove('hidden');
+}
 
 // --- PHẦN 1: XỬ LÝ SỰ KIỆN NÚT BẤM ---
 
@@ -55,12 +138,23 @@ document.getElementById('process-btn').addEventListener('click', async () => {
         const aiQuestions = await generateQuestionsWithGeminiV1(textContent);
         
         if (aiQuestions && aiQuestions.length > 0) {
-            quizData = aiQuestions;
+            if (!aiQuestions.every(question =>
+                typeof question.question === 'string' &&
+                Array.isArray(question.options) && question.options.length >= 2 &&
+                question.options.every(option => typeof option === 'string') &&
+                Number.isInteger(question.answer) &&
+                question.answer >= 0 && question.answer < question.options.length
+            )) {
+                throw new Error('Dữ liệu câu hỏi không hợp lệ. Hãy thử lại.');
+            }
+            sourceQuestions = aiQuestions;
+            shuffleQuestions = document.getElementById('shuffle-questions').checked;
+            shuffleOptions = document.getElementById('shuffle-options').checked;
+            roundNumber = 0;
             // 3. Vào giao diện làm bài
             document.getElementById('welcome-modal').classList.add('hidden');
             document.getElementById('main-ui').classList.remove('hidden');
-            renderSidebar();
-            loadQuestion(0);
+            startRound(sourceQuestions.map((_, index) => index));
         } else {
             throw new Error("AI trả về rỗng. Hãy thử lại.");
         }
@@ -155,11 +249,12 @@ async function generateQuestionsWithGeminiV1(text) {
 
 function renderSidebar() {
     const list = document.getElementById('question-list');
-    list.innerHTML = '';
+    list.replaceChildren();
     quizData.forEach((_, index) => {
-        const circle = document.createElement('div');
+        const circle = document.createElement('button');
+        circle.type = 'button';
         circle.className = 'q-circle';
-        circle.innerText = index + 1;
+        circle.textContent = index + 1;
         circle.id = `q-circle-${index}`;
         circle.onclick = () => loadQuestion(index);
         list.appendChild(circle);
@@ -169,7 +264,9 @@ function renderSidebar() {
 function loadQuestion(index) {
     if (index < 0 || index >= quizData.length) return;
     currentIdx = index;
-    document.getElementById('q-number').innerText = index + 1;
+    document.getElementById('q-number').textContent = index + 1;
+    document.getElementById('prev-btn').disabled = index === 0;
+    document.getElementById('next-btn').disabled = index === quizData.length - 1;
     
     // Cập nhật active sidebar
     document.querySelectorAll('.q-circle').forEach(c => c.classList.remove('active'));
@@ -179,110 +276,76 @@ function loadQuestion(index) {
     const qData = quizData[index];
     const content = document.getElementById('question-content');
     
-    // Tạo danh sách nút (chưa tô màu)
-    let optionsHtml = '';
-    qData.options.forEach((opt, i) => {
-        optionsHtml += `<button class="option-btn" id="btn-opt-${i}" onclick="checkAnswer(${i}, this)">${opt}</button>`;
+    const questionText = document.createElement('div');
+    questionText.className = 'question-text';
+    questionText.textContent = qData.question;
+    const optionsList = document.createElement('div');
+    optionsList.className = 'options-list';
+    qData.options.forEach((option, optionIndex) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'option-btn';
+        button.textContent = option;
+        button.addEventListener('click', () => checkAnswer(optionIndex));
+        optionsList.appendChild(button);
     });
+    const feedback = document.createElement('div');
+    feedback.id = 'feedback';
+    const explanation = document.createElement('div');
+    explanation.id = 'explanation';
+    explanation.className = 'explanation-box';
+    content.replaceChildren(questionText, optionsList, feedback, explanation);
 
-    content.innerHTML = `
-        <div class="question-text">${qData.question}</div>
-        <div class="options-list">${optionsHtml}</div>
-        <div id="feedback" style="margin-top:15px; font-weight:bold;"></div>
-        <div id="explanation" class="explanation-box"></div> 
-    `;
-
-    // --- PHẦN MỚI: KHÔI PHỤC TRẠNG THÁI NẾU ĐÃ LÀM RỒI ---
-    if (userAnswers.hasOwnProperty(index)) {
-        const savedAnswer = userAnswers[index]; // Đáp án người dùng đã chọn trước đó
-        const correctAns = qData.answer;        // Đáp án đúng của câu hỏi
-        
-        const feedback = document.getElementById('feedback');
-        const explanationDiv = document.getElementById('explanation');
-        const allBtns = document.querySelectorAll('.option-btn');
-
-        // Disable tất cả nút
-        allBtns.forEach(btn => btn.classList.add('disabled'));
-
-        // Tô màu lại các nút
-        // 1. Nếu chọn đúng:
-        if (savedAnswer === correctAns) {
-            document.getElementById(`btn-opt-${savedAnswer}`).classList.add('correct-answer');
-            feedback.innerHTML = '<span style="color:var(--success-color)">Chính xác!</span>';
-        } 
-        // 2. Nếu chọn sai:
-        else {
-            document.getElementById(`btn-opt-${savedAnswer}`).classList.add('wrong-answer');
-            document.getElementById(`btn-opt-${correctAns}`).classList.add('correct-answer'); // Hiện đáp án đúng
-            feedback.innerHTML = '<span style="color:var(--error-color)">Sai rồi!</span>';
-        }
-
-        // Hiện lại giải thích
-        if (qData.explanation) {
-            explanationDiv.innerHTML = `<span class="explanation-title">Giải thích:</span> ${qData.explanation}`;
-            explanationDiv.style.display = 'block';
-        }
+    if (Object.hasOwn(userAnswers, index)) {
+        showAnswer(index);
+    } else if (roundFinished) {
+        Array.from(optionsList.children).forEach(button => { button.disabled = true; });
+        feedback.textContent = 'Chưa làm trong lượt này.';
     }
 }
 
-function checkAnswer(selectedOptIndex, btnElement) {
-    // Nếu câu này đã làm rồi thì không cho chọn lại (đề phòng lỗi)
-    if (userAnswers.hasOwnProperty(currentIdx)) return;
-
-    // 1. LƯU ĐÁP ÁN NGƯỜI DÙNG CHỌN
-    userAnswers[currentIdx] = selectedOptIndex;
-
-    const qData = quizData[currentIdx];
+function showAnswer(index) {
+    const qData = quizData[index];
+    const selectedOptIndex = userAnswers[index];
     const allBtns = document.querySelectorAll('.option-btn');
     const feedback = document.getElementById('feedback');
-    const explanationDiv = document.getElementById('explanation'); 
-    const circle = document.getElementById(`q-circle-${currentIdx}`);
-
-    // Disable tất cả các nút
-    allBtns.forEach(btn => btn.classList.add('disabled'));
-
-    // Xử lý đúng/sai
+    const explanationDiv = document.getElementById('explanation');
+    const circle = document.getElementById(`q-circle-${index}`);
+    allBtns.forEach(button => { button.disabled = true; });
     if (selectedOptIndex === qData.answer) {
-        btnElement.classList.add('correct-answer');
-        feedback.innerHTML = '<span style="color:var(--success-color)">Chính xác!</span>';
-        
-        // Cập nhật sidebar
+        allBtns[selectedOptIndex].classList.add('correct-answer');
+        feedback.textContent = 'Chính xác!';
+        feedback.className = 'feedback-correct';
         circle.classList.add('done-correct');
-        circle.classList.remove('done-wrong');
-        
-        // Cập nhật điểm
-        updateScore(true);
     } else {
-        btnElement.classList.add('wrong-answer');
-        // Hiện đáp án đúng
+        allBtns[selectedOptIndex].classList.add('wrong-answer');
         allBtns[qData.answer].classList.add('correct-answer');
-        feedback.innerHTML = '<span style="color:var(--error-color)">Sai rồi!</span>';
-        
-        // Cập nhật sidebar
+        feedback.textContent = 'Sai rồi!';
+        feedback.className = 'feedback-wrong';
         circle.classList.add('done-wrong');
-        circle.classList.remove('done-correct');
-        
-        // Cập nhật điểm
-        updateScore(false);
     }
-    
-    // Hiện giải thích
     if (qData.explanation) {
-        explanationDiv.innerHTML = `<span class="explanation-title">Giải thích:</span> ${qData.explanation}`;
+        const title = document.createElement('span');
+        title.className = 'explanation-title';
+        title.textContent = 'Giải thích:';
+        explanationDiv.replaceChildren(title, document.createTextNode(qData.explanation));
         explanationDiv.style.display = 'block';
-    } else {
-        explanationDiv.style.display = 'none';
+    }
+}
+
+function checkAnswer(selectedOptIndex) {
+    if (roundFinished || Object.hasOwn(userAnswers, currentIdx)) return;
+    userAnswers[currentIdx] = selectedOptIndex;
+    const isCorrect = selectedOptIndex === quizData[currentIdx].answer;
+    if (isCorrect) correctCount++; else wrongCount++;
+    document.getElementById('score-correct').textContent = correctCount;
+    document.getElementById('score-wrong').textContent = wrongCount;
+    showAnswer(currentIdx);
+    if (correctCount + wrongCount === quizData.length) {
+        showRoundResult();
     }
 }
 
 function changeQuestion(step) {
     loadQuestion(currentIdx + step);
-}
-
-let correctCount = 0;
-let wrongCount = 0;
-function updateScore(isCorrect) {
-    if(isCorrect) correctCount++; else wrongCount++;
-    document.getElementById('score-correct').innerText = correctCount;
-    document.getElementById('score-wrong').innerText = wrongCount;
 }

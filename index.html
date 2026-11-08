@@ -45,6 +45,11 @@
                         style="width: 100%; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; color: white;">
                 </div>
 
+                <div class="quiz-settings">
+                    <label class="setting-option"><input type="checkbox" id="shuffle-questions" checked> Xáo trộn câu hỏi</label>
+                    <label class="setting-option"><input type="checkbox" id="shuffle-options" checked> Xáo trộn đáp án</label>
+                </div>
+
                 <button id="process-btn">🚀 TẠO ĐỀ THI & BẮT ĐẦU</button>
                 <p id="loading-text" style="display:none; color: #00d2ff; margin-top:10px;">Đang đọc file và nhờ AI soạn câu hỏi... (Vui lòng chờ)</p>
         </div>
@@ -55,7 +60,7 @@
         
         <div class="question-area">
             <div class="header-bar">
-                <h3>Câu hỏi <span id="q-number">1</span></h3>
+                <h3>Lượt <span id="round-number">1</span> · Câu hỏi <span id="q-number">1</span>/<span id="round-total">0</span></h3>
             </div>
             
             <div id="question-content">
@@ -64,23 +69,25 @@
             <div class="navigation-buttons">
                 <button id="prev-btn" onclick="changeQuestion(-1)">Câu trước</button>
                 <button id="next-btn" onclick="changeQuestion(1)">Câu sau</button>
+                <button id="finish-round-btn" class="primary-action" type="button">Làm xong</button>
             </div>
         </div>
 
         <div class="sidebar">
-            <h3>Danh sách câu</h3>
+            <h3>Danh sách câu · Lượt <span id="sidebar-round">1</span></h3>
             <div id="question-list" class="grid-list">
                 </div>
             <div class="summary">
                 <p>Đúng: <span id="score-correct" style="color:green">0</span> | Sai: <span id="score-wrong" style="color:red">0</span></p>
+                <button id="show-result-btn" class="nav-btn primary-action hidden" type="button">Xem kết quả lượt</button>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
     <div id="result-modal" class="modal hidden">
     <div class="modal-content">
-        <h2>🎉 Kết quả bài làm</h2>
+        <h2 id="result-title">Kết quả lượt</h2>
+        <p id="result-message"></p>
         
         <div class="result-stats">
             <div class="stat-item">
@@ -91,16 +98,18 @@
                 <span id="final-wrong" class="stat-value">0</span>
                 <span class="stat-label">Câu Sai ❌</span>
             </div>
+            <div class="stat-item">
+                <span id="final-unanswered" class="stat-value">0</span>
+                <span class="stat-label">Chưa làm</span>
+            </div>
         </div>
 
-        <div class="total-score-box">
-             Tổng điểm: <span id="final-score">0.0</span>
-        </div>
-
-        <button onclick="location.reload()" class="nav-btn primary-action">Làm lại bài thi 🔄</button>
-        <button onclick="closeResultModal()" class="nav-btn secondary-action">Xem lại bài làm 📜</button>
+        <button id="next-round-btn" class="nav-btn primary-action" type="button">Làm lại câu sai và chưa làm</button>
+        <button id="review-btn" class="nav-btn secondary-action" type="button">Xem lại lượt này</button>
+        <button id="restart-btn" class="nav-btn secondary-action hidden" type="button">Làm lại từ đầu</button>
     </div>
 </div>
+<script src="script.js"></script>
 </body>
 
 </html>

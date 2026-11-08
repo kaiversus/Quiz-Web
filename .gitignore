@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Local environment and Vercel settings
+.env
+.env.*
+!.env.example
+.vercel/
+
+# Logs and generated files
+*.log
+coverage/
+dist/
+build/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Editor and operating system files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+.vercel
+.env*
