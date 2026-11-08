@@ -40,7 +40,12 @@ function compressImageToBase64(file) {
 }
 
 document.getElementById('show-result-btn').addEventListener('click', showRoundResult);
-document.getElementById('finish-round-btn').addEventListener('click', showRoundResult);
+document.getElementById('finish-round-btn').addEventListener('click', () => {
+    const unansweredCount = quizData.length - correctCount - wrongCount;
+    const message = `Bạn có chắc muốn kết thúc lượt này?\n\n` +
+        `Còn ${unansweredCount} câu chưa làm. Các câu sai và chưa làm sẽ chuyển sang lượt sau.`;
+    if (window.confirm(message)) showRoundResult();
+});
 document.getElementById('review-btn').addEventListener('click', () => {
     document.getElementById('result-modal').classList.add('hidden');
 });

@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const path = require('node:path');
 
-function createQuiz() {
+function createQuiz({ confirm = () => true } = {}) {
     const nodes = new Map();
 
     class Element {
@@ -52,7 +52,7 @@ function createQuiz() {
 
     // A fixed random value makes the shuffle deterministic while exercising its mapping.
     const random = Object.assign(Object.create(Math), { random: () => 0 });
-    const context = vm.createContext({ document, Math: random, console });
+    const context = vm.createContext({ document, Math: random, console, window: { confirm } });
     vm.runInContext(fs.readFileSync(path.join(__dirname, '..', 'script.js'), 'utf8'), context);
     const run = code => vm.runInContext(code, context);
     run("sourceQuestions = [{question:'A',options:['a0','a1','a2'],answer:1},{question:'B',options:['b0','b1','b2'],answer:2},{question:'C',options:['c0','c1','c2'],answer:0}]");
@@ -119,6 +119,27 @@ test('finishing early retries wrong and unanswered questions', () => {
     assert.equal(document.getElementById('round-total').textContent, 2);
     assert.equal(run('roundFinished'), false);
     assert.equal(run('roundNumber'), 2);
+});
+
+test('canceling the finish confirmation keeps the round open', () => {
+    let allowFinish = false;
+    let prompt = '';
+    const { document, run } = createQuiz({ confirm: message => {
+        prompt = message;
+        return allowFinish;
+    } });
+    run('startRound([0,1,2])');
+    document.getElementById('finish-round-btn').click();
+    assert.match(prompt, /3 câu chưa làm/);
+    assert.equal(run('roundFinished'), false);
+    assert.equal(document.getElementById('result-modal').classList.contains('hidden'), true);
+
+    run('checkAnswer(quizData[0].answer)');
+    assert.equal(run('correctCount'), 1);
+    allowFinish = true;
+    document.getElementById('finish-round-btn').click();
+    assert.equal(run('roundFinished'), true);
+    assert.equal(document.getElementById('final-unanswered').textContent, 2);
 });
 
 test('quiz script loads after the result controls it registers', () => {
