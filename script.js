@@ -1,7 +1,3 @@
-// // --- CẤU HÌNH API KEY TẠI ĐÂY ---
-// const MY_API_KEY = "AIzaSyCi2vzJJ8ME9zs5BKuSKmICbfb8eiKobpU"; // Ví dụ: "AIzaSyD..."
-// // --------------------------------
-
 let sourceQuestions = [];
 let quizData = [];
 let currentIdx = 0;
@@ -12,6 +8,36 @@ let wrongCount = 0;
 let shuffleQuestions = true;
 let shuffleOptions = true;
 let roundFinished = false;
+
+function fileToBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result.split(',')[1]);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
+}
+
+function compressImageToBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onerror = reject;
+        reader.onload = () => {
+            const image = new Image();
+            image.onerror = () => reject(new Error('Không đọc được file ảnh.'));
+            image.onload = () => {
+                const scale = Math.min(1, 1500 / Math.max(image.width, image.height));
+                const canvas = document.createElement('canvas');
+                canvas.width = Math.round(image.width * scale);
+                canvas.height = Math.round(image.height * scale);
+                canvas.getContext('2d').drawImage(image, 0, 0, canvas.width, canvas.height);
+                resolve(canvas.toDataURL('image/jpeg', 0.7).split(',')[1]);
+            };
+            image.src = reader.result;
+        };
+        reader.readAsDataURL(file);
+    });
+}
 
 document.getElementById('show-result-btn').addEventListener('click', showRoundResult);
 document.getElementById('finish-round-btn').addEventListener('click', showRoundResult);
@@ -112,30 +138,46 @@ document.getElementById('process-btn').addEventListener('click', async () => {
 
     try {
         const file = fileInput.files[0];
-        let textContent = "";
+        let payload;
 
         // 1. Đọc nội dung file
         try {
-            if (file.name.endsWith('.pdf')) {
-                textContent = await readPdfFile(file);
-            } else if (file.name.endsWith('.docx')) {
-                textContent = await readDocxFile(file);
+            if (file.type.startsWith('image/')) {
+                payload = {
+                    fileData: await compressImageToBase64(file),
+                    mimeType: 'image/jpeg',
+                    isVisual: true
+                };
+            } else if (file.name.toLowerCase().endsWith('.pdf')) {
+                let textContent = '';
+                try {
+                    textContent = await readPdfFile(file);
+                } catch (error) {
+                    console.warn('Không trích xuất được chữ từ PDF, thử gửi PDF trực tiếp:', error);
+                }
+                if (textContent.trim().length >= 10) {
+                    payload = { text: textContent.substring(0, 30000), isVisual: false };
+                } else {
+                    if (file.size > 4 * 1024 * 1024) {
+                        throw new Error('PDF scan quá 4 MB. Hãy chia nhỏ file hoặc dùng ảnh chụp.');
+                    }
+                    payload = { fileData: await fileToBase64(file), mimeType: 'application/pdf', isVisual: true };
+                }
             } else {
-                textContent = await readTextFile(file);
+                const textContent = file.name.toLowerCase().endsWith('.docx')
+                    ? await readDocxFile(file)
+                    : await readTextFile(file);
+                if (!textContent || textContent.trim().length < 10) {
+                    throw new Error('File rỗng hoặc không lấy được chữ.');
+                }
+                payload = { text: textContent.substring(0, 30000), isVisual: false };
             }
         } catch (readErr) {
             console.error(readErr);
-            throw new Error("Lỗi đọc file. Hãy thử file khác (Word/Txt).");
+            throw new Error(`Lỗi đọc file: ${readErr.message}`);
         }
 
-        if (!textContent || textContent.trim().length < 10) {
-            throw new Error("📄 File rỗng hoặc file ảnh scan không lấy được chữ.");
-        }
-
-        console.log("Đã đọc được " + textContent.length + " ký tự.");
-
-        // 2. Gửi text cho AI xử lý (Dùng Key đã dán cứng)
-        const aiQuestions = await generateQuestionsWithGeminiV1(textContent);
+        const aiQuestions = await generateQuestionsWithGemini(payload);
         
         if (aiQuestions && aiQuestions.length > 0) {
             if (!aiQuestions.every(question =>
@@ -211,24 +253,29 @@ async function readDocxFile(file) {
 
 // --- PHẦN 3: GỌI VỀ BACKEND (Đã sửa đổi) ---
 
-async function generateQuestionsWithGeminiV1(text) {
-    // Gọi về server của chính mình (Vercel) thay vì gọi thẳng Google
+async function generateQuestionsWithGemini(payload) {
     const response = await fetch('/api/proxy', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-            text: text.substring(0, 30000) // Gửi văn bản lên server
-        })
+        body: JSON.stringify(payload)
     });
 
-    const data = await response.json();
-
-    if (!response.ok) {
-        throw new Error(data.error || "Lỗi từ Server khi gọi AI");
+    const responseText = await response.text();
+    let data;
+    try {
+        data = JSON.parse(responseText);
+    } catch {
+        throw new Error(`Server trả về dữ liệu không hợp lệ (${response.status}).`);
     }
 
-    // Server đã trả về đúng định dạng Google response, ta xử lý lấy JSON như cũ
-    const rawText = data.candidates[0].content.parts[0].text;
+    if (!response.ok) {
+        throw new Error(data.error || `Lỗi server (${response.status}).`);
+    }
+
+    const rawText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+    if (typeof rawText !== 'string') {
+        throw new Error('AI không trả về câu hỏi. Hãy thử lại với tài liệu khác.');
+    }
     let cleanJson = rawText.replace(/```json/g, '').replace(/```/g, '').trim();
     
     const firstBracket = cleanJson.indexOf('[');

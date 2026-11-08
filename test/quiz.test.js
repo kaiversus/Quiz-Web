@@ -79,6 +79,7 @@ test('shuffled answers retain the correct answer and wrong questions repeat unti
     document.getElementById('next-round-btn').click();
     assert.equal(run('roundNumber'), 2);
     assert.equal(run('quizData.length'), 1);
+    assert.equal(document.getElementById('round-total').textContent, 1);
     assert.equal(run('quizData[0].sourceIndex'), missedIndex);
     assert.equal(run('correctCount + wrongCount'), 0);
 
@@ -115,6 +116,7 @@ test('finishing early retries wrong and unanswered questions', () => {
     document.getElementById('next-round-btn').click();
     const retry = run('quizData');
     assert.deepEqual(Array.from(retry, question => question.sourceIndex), [1, 2]);
+    assert.equal(document.getElementById('round-total').textContent, 2);
     assert.equal(run('roundFinished'), false);
     assert.equal(run('roundNumber'), 2);
 });

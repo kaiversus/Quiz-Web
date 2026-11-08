@@ -13,7 +13,7 @@ const proxySource = await readFile(path.join(root, 'api', 'proxy.js'), 'utf8');
 const proxyModule = await import(`data:text/javascript;base64,${Buffer.from(proxySource).toString('base64')}`);
 
 const app = express();
-app.use(express.json({ limit: '1mb' }));
+app.use(express.json({ limit: '6mb' }));
 app.all('/api/proxy', proxyModule.default);
 
 for (const asset of ['index.html', 'script.js', 'style.css', 'pic.gif']) {

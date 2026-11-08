@@ -22,12 +22,12 @@
             </ul>
             <button id="start-btn">BẮT ĐẦU LÀM BÀI</button>
         </div> -->
-        
+
         <!-- <div class="modal-content">
             <h2 style="color: var(--accent-color); margin-top: 0;">Nạp dữ liệu ôn tập</h2>
-            
+
             <p>Chọn file câu hỏi (.json) từ máy tính của bạn để bắt đầu.</p>
-            
+
             <div style="margin: 20px 0; text-align: left;">
                 <label for="file-upload" style="display:block; margin-bottom:10px; color:#aaa;">File câu hỏi:</label>
                 <input type="file" id="file-upload" accept=".json" style="color: white; font-family: 'Inter';">
@@ -37,11 +37,11 @@
         </div> -->
         <div class="modal-content">
                 <h2>Ôn tập Trắc nghiệm 🤖</h2>
-                <p>Tải lên file tài liệu (PDF, Word, Text), AI sẽ tự tạo đề thi cho bạn.</p>
+                <p>Tải lên file tài liệu (PDF, Word, Text, ảnh), AI sẽ tự tạo đề thi cho bạn.</p>
 
                 <div style="margin-bottom: 20px; text-align: left;">
                     <label style="font-weight:bold; display:block; margin-bottom:5px;"> Chọn file tài liệu</label>
-                    <input type="file" id="file-upload" accept=".txt,.json,.pdf,.docx" 
+                    <input type="file" id="file-upload" accept=".txt,.json,.pdf,.docx,.png,.jpg,.jpeg"
                         style="width: 100%; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; color: white;">
                 </div>
 
@@ -54,15 +54,15 @@
                 <p id="loading-text" style="display:none; color: #00d2ff; margin-top:10px;">Đang đọc file và nhờ AI soạn câu hỏi... (Vui lòng chờ)</p>
         </div>
     </div>
-    
+
 
     <div class="main-container hidden" id="main-ui">
-        
+
         <div class="question-area">
             <div class="header-bar">
                 <h3>Lượt <span id="round-number">1</span> · Câu hỏi <span id="q-number">1</span>/<span id="round-total">0</span></h3>
             </div>
-            
+
             <div id="question-content">
                 </div>
 
@@ -88,7 +88,7 @@
     <div class="modal-content">
         <h2 id="result-title">Kết quả lượt</h2>
         <p id="result-message"></p>
-        
+
         <div class="result-stats">
             <div class="stat-item">
                 <span id="final-correct" class="stat-value">0/0</span>
